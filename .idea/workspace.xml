@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="operatingsystemsbsc" targetName="touch" />
+      <config projectName="operatingsystemsbsc" targetName="tail" />
+      <config projectName="operatingsystemsbsc" targetName="size" />
+      <config projectName="operatingsystemsbsc" targetName="cp" />
+      <config projectName="operatingsystemsbsc" targetName="example" />
+      <config projectName="operatingsystemsbsc" targetName="head" />
+      <config projectName="operatingsystemsbsc" targetName="cmp" />
+      <config projectName="operatingsystemsbsc" targetName="cat" />
+      <config projectName="operatingsystemsbsc" targetName="echo" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbefa415-c4b4-415e-a26c-6a1bff3e2526" name="Default Changelist" comment="update">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1qfHOY2igUpqbMTN7kSVxECSs6L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/c/code" />
+      <recent name="$PROJECT_DIR$/c/code/examples" />
+      <recent name="$PROJECT_DIR$/c/code/lab04" />
+      <recent name="$PROJECT_DIR$/c/code/lab03" />
+      <recent name="$PROJECT_DIR$/c/code/lab02" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/c/code/lab02" />
+      <recent name="$PROJECT_DIR$/c/slides/markdown/images" />
+      <recent name="$PROJECT_DIR$/c/code" />
+      <recent name="$PROJECT_DIR$/c/code/basic programming" />
+      <recent name="$PROJECT_DIR$/c/code/basic programming/lab01" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.echo">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cat" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="cat" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="cat">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cmp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="cmp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="cmp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="cp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="cp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="echo" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="echo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="echo">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="example">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="head" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="head" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="head">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="size" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="size" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="size">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tail" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="tail" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="tail">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="touch" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="operatingsystemsbsc" TARGET_NAME="touch" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="operatingsystemsbsc" RUN_TARGET_NAME="touch">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.cat" />
+      <item itemvalue="CMake Application.cmp" />
+      <item itemvalue="CMake Application.cp" />
+      <item itemvalue="CMake Application.echo" />
+      <item itemvalue="CMake Application.example" />
+      <item itemvalue="CMake Application.head" />
+      <item itemvalue="CMake Application.size" />
+      <item itemvalue="CMake Application.tail" />
+      <item itemvalue="CMake Application.touch" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbefa415-c4b4-415e-a26c-6a1bff3e2526" name="Default Changelist" comment="" />
+      <created>1617463695471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617463695471</updated>
+      <workItem from="1617463698936" duration="929000" />
+      <workItem from="1617473469873" duration="5128000" />
+      <workItem from="1617692878055" duration="14000" />
+      <workItem from="1618392952621" duration="3138000" />
+      <workItem from="1618492265421" duration="206000" />
+      <workItem from="1618494632332" duration="222000" />
+      <workItem from="1618584497287" duration="27208000" />
+      <workItem from="1618821021742" duration="14305000" />
+      <workItem from="1619040168767" duration="70273000" />
+      <workItem from="1619787835145" duration="197000" />
+      <workItem from="1619788319160" duration="7596000" />
+      <workItem from="1620028914709" duration="3919000" />
+      <workItem from="1620079873557" duration="8637000" />
+      <workItem from="1620227723575" duration="12316000" />
+      <workItem from="1620307277453" duration="27148000" />
+      <workItem from="1620661676301" duration="24413000" />
+      <workItem from="1620806283128" duration="2551000" />
+      <workItem from="1620817020084" duration="1990000" />
+      <workItem from="1620836058629" duration="6435000" />
+      <workItem from="1620896914091" duration="2527000" />
+      <workItem from="1620906590156" duration="7601000" />
+      <workItem from="1621008888902" duration="14033000" />
+      <workItem from="1621333144131" duration="5261000" />
+      <workItem from="1621367963912" duration="9464000" />
+      <workItem from="1621516136254" duration="191000" />
+      <workItem from="1621519059937" duration="393000" />
+      <workItem from="1621519896157" duration="9122000" />
+      <workItem from="1621890502066" duration="548000" />
+      <workItem from="1621956797787" duration="15133000" />
+      <workItem from="1622194060104" duration="3736000" />
+      <workItem from="1628269954935" duration="7225000" />
+      <workItem from="1631699925540" duration="1069000" />
+      <workItem from="1631722490746" duration="12512000" />
+      <workItem from="1631871030115" duration="890000" />
+      <workItem from="1632387160494" duration="8723000" />
+      <workItem from="1632604360402" duration="1366000" />
+    </task>
+    <task id="LOCAL-00074" summary="update">
+      <created>1621113120612</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1621113120612</updated>
+    </task>
+    <task id="LOCAL-00075" summary="update">
+      <created>1621113250723</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1621113250723</updated>
+    </task>
+    <task id="LOCAL-00076" summary="update">
+      <created>1621149794802</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1621149794802</updated>
+    </task>
+    <task id="LOCAL-00077" summary="update">
+      <created>1621246479434</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1621246479434</updated>
+    </task>
+    <task id="LOCAL-00078" summary="update">
+      <created>1621367491011</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1621367491011</updated>
+    </task>
+    <task id="LOCAL-00079" summary="update">
+      <created>1621367520955</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1621367520956</updated>
+    </task>
+    <task id="LOCAL-00080" summary="update">
+      <created>1621367735607</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1621367735607</updated>
+    </task>
+    <task id="LOCAL-00081" summary="update">
+      <created>1621367786848</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1621367786848</updated>
+    </task>
+    <task id="LOCAL-00082" summary="update">
+      <created>1621367984785</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1621367984785</updated>
+    </task>
+    <task id="LOCAL-00083" summary="update">
+      <created>1621371004567</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1621371004567</updated>
+    </task>
+    <task id="LOCAL-00084" summary="update">
+      <created>1621371169173</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1621371169173</updated>
+    </task>
+    <task id="LOCAL-00085" summary="update">
+      <created>1621371232060</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1621371232060</updated>
+    </task>
+    <task id="LOCAL-00086" summary="update">
+      <created>1621371288808</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1621371288809</updated>
+    </task>
+    <task id="LOCAL-00087" summary="update">
+      <created>1621371434854</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1621371434854</updated>
+    </task>
+    <task id="LOCAL-00088" summary="update">
+      <created>1621421560044</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1621421560044</updated>
+    </task>
+    <task id="LOCAL-00089" summary="update">
+      <created>1621421777571</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1621421777571</updated>
+    </task>
+    <task id="LOCAL-00090" summary="update">
+      <created>1621516247031</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1621516247032</updated>
+    </task>
+    <task id="LOCAL-00091" summary="update">
+      <created>1621520244193</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1621520244193</updated>
+    </task>
+    <task id="LOCAL-00092" summary="update">
+      <created>1621521327563</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1621521327563</updated>
+    </task>
+    <task id="LOCAL-00093" summary="update">
+      <created>1621522263714</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1621522263714</updated>
+    </task>
+    <task id="LOCAL-00094" summary="update">
+      <created>1621522348573</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1621522348573</updated>
+    </task>
+    <task id="LOCAL-00095" summary="update">
+      <created>1621880483066</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1621880483066</updated>
+    </task>
+    <task id="LOCAL-00096" summary="update">
+      <created>1621880550792</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1621880550792</updated>
+    </task>
+    <task id="LOCAL-00097" summary="update">
+      <created>1621880622689</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1621880622689</updated>
+    </task>
+    <task id="LOCAL-00098" summary="update">
+      <created>1621880743111</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1621880743111</updated>
+    </task>
+    <task id="LOCAL-00099" summary="update">
+      <created>1621887938131</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1621887938131</updated>
+    </task>
+    <task id="LOCAL-00100" summary="update">
+      <created>1621888828001</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1621888828001</updated>
+    </task>
+    <task id="LOCAL-00101" summary="update">
+      <created>1621888915756</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1621888915756</updated>
+    </task>
+    <task id="LOCAL-00102" summary="update">
+      <created>1621888948031</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1621888948031</updated>
+    </task>
+    <task id="LOCAL-00103" summary="update">
+      <created>1621890810670</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1621890810670</updated>
+    </task>
+    <task id="LOCAL-00104" summary="update">
+      <created>1621891069546</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1621891069546</updated>
+    </task>
+    <task id="LOCAL-00105" summary="update">
+      <created>1621957877813</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1621957877813</updated>
+    </task>
+    <task id="LOCAL-00106" summary="update">
+      <created>1621958267970</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1621958267971</updated>
+    </task>
+    <task id="LOCAL-00107" summary="update">
+      <created>1621958302734</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1621958302734</updated>
+    </task>
+    <task id="LOCAL-00108" summary="update">
+      <created>1621958497942</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1621958497942</updated>
+    </task>
+    <task id="LOCAL-00109" summary="update">
+      <created>1621966840141</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1621966840141</updated>
+    </task>
+    <task id="LOCAL-00110" summary="update">
+      <created>1622051673433</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1622051673433</updated>
+    </task>
+    <task id="LOCAL-00111" summary="update">
+      <created>1622198613643</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1622198613644</updated>
+    </task>
+    <task id="LOCAL-00112" summary="update">
+      <created>1628273914887</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1628273914887</updated>
+    </task>
+    <task id="LOCAL-00113" summary="update">
+      <created>1628274882315</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1628274882315</updated>
+    </task>
+    <task id="LOCAL-00114" summary="update">
+      <created>1628353751402</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1628353751402</updated>
+    </task>
+    <task id="LOCAL-00115" summary="update">
+      <created>1631810098626</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1631810098626</updated>
+    </task>
+    <task id="LOCAL-00116" summary="update">
+      <created>1631871144783</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1631871144784</updated>
+    </task>
+    <task id="LOCAL-00117" summary="update">
+      <created>1631871360918</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1631871360918</updated>
+    </task>
+    <task id="LOCAL-00118" summary="update">
+      <created>1631871895070</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1631871895070</updated>
+    </task>
+    <task id="LOCAL-00119" summary="update">
+      <created>1631872023172</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1631872023172</updated>
+    </task>
+    <task id="LOCAL-00120" summary="update">
+      <created>1632408602205</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1632408602205</updated>
+    </task>
+    <task id="LOCAL-00121" summary="update">
+      <created>1632409069215</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1632409069215</updated>
+    </task>
+    <task id="LOCAL-00122" summary="update">
+      <created>1632605447962</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1632605447963</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+</project>

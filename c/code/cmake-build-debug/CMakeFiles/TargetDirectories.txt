@@ -1,0 +1,11 @@
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/size.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/echo.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/cp.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/cmp.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/touch.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/head.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/cat.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/tail.dir
+/Volumes/GoogleDrive/My Drive/Unimore/Didattica/operatingsystemsbsc/c/code/cmake-build-debug/CMakeFiles/example.dir
