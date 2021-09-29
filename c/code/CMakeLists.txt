@@ -85,14 +85,14 @@ add_executable(example examples/example.c)
 #add_executable(0415 lab04/0415.c)
 
 # Basic Programming lab05
-add_executable(cat lab05/cat.c)
-add_executable(cmp lab05/cmp.c)
-add_executable(cp lab05/cp.c)
-add_executable(echo lab05/echo.c)
-add_executable(head lab05/head.c)
-add_executable(size lab05/size.c)
-add_executable(tail lab05/tail.c)
-add_executable(touch lab05/touch.c)
+#add_executable(cat lab05/cat.c)
+#add_executable(cmp lab05/cmp.c)
+#add_executable(cp lab05/cp.c)
+#add_executable(echo lab05/echo.c)
+#add_executable(head lab05/head.c)
+#add_executable(size lab05/size.c)
+#add_executable(tail lab05/tail.c)
+#add_executable(touch lab05/touch.c)
 
 # System Programming labs01
 #add_executable(s011 labs01/s011.c utils/utils.c)

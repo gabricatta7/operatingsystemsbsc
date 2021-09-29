@@ -1,43 +1,58 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define TRUE 1
 #define FALSE 0
 
-/* Functions for swapping two integers numbers */
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+void init(int arr[], int size) {
+    int i;
+    for (i = 0; i < size; i++) {
+        arr[i] = rand() % 100;
+    }
 }
 
 /* Function to implement bubble sort */
-void bubble_sort(int arr[], int n) {
-    int i, j, changed;
+void sort(int arr[], int n) {
+    int i, j, tmp, changed;
     for (i = 0; i < n-1; i++) {
         changed = FALSE;
         for (j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 changed = TRUE;
-                swap(&arr[j], &arr[j + 1]);
+                tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
             }
         }
         if (!changed) break;
     }
 }
 
-/* Function to print an array */
-void show_array(int arr[], int size) {
+/* Function to search a value within an array */
+int search(const int arr[], int size, int value) {
     int i;
-    for (i=0; i < size; i++) {
+    for (i = 0; i < size; i++ ) {
+        if (arr[i] == value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+/* Function to print an array */
+void show(int arr[], int size) {
+    int i;
+    for (i = 0; i < size; i++) {
         printf("[%d] %d\n", i, arr[i]);
     }
 }
 
 int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90, 1};
+    int arr[100];
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    show_array(arr, n);
-    bubble_sort(arr, n);
-    show_array(arr, n);
+    init(arr, n);
+    sort(arr, n);
+    show(arr, n);
+    printf("%d index=%d\n", 10, search(arr, n, 10));
 }

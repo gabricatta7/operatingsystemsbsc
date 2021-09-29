@@ -213,15 +213,20 @@ dove:
 
 ---
 
-Esercizio 16. Implementare una funzione *bubble_sort* che ordini un vettore di interi in modo crescente utilizzando l'algoritmo Bubble Sort (https://en.wikipedia.org/wiki/Bubble_sort). La funzione deve rispettare il seguente prototipo.
+Esercizio 16. Implementare un gruppo di funzioni *init, sort, search, show* per trattare vettori di interi. *init* inizializza il vettore con numeri random compresi fra 0 e 100. *sort* ordina il vettore in modo crescente utilizzando l'algoritmo Bubble Sort (https://en.wikipedia.org/wiki/Bubble_sort). *search* ritorna l'indice in cui il valore *value* si trova, -1 in caso non sia presente nel vettore. *show* mostra il contenuto del vettore a video. Le funzioni devono rispettare i seguenti prototipi:
 
 ```c
-void bubble_sort(int arr[], int n);
+void init(int arr[], int n);
+void sort(int arr[], int n);
+int search(int arr[], int n, int value);
+void show(int arr[], int n).
 ```
 
 dove:
 
-* **arr** è il vettore da ordinare, composto da **n** elementi.
+* **arr** è il vettore;
+* **n** è la dimensione del vettore;
+* **value** è il valore da cercare.
 
 ---
 
