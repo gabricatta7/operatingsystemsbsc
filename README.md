@@ -47,12 +47,10 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 ## Moduli Bash
 [M1] Introduzione a Unix
-* Installazione OS virtualizzato (VirtualBox)
-* Kernelspace/Userspace
+* Installazione sistema operativo
+* Kernelspace e Userspace
 * Utenti (gruppi, permessi)
-* Gestione utenti (adduser, rmuser, whoami, id, sudo, chmod, chown)
 * Filesystem (struttura interna, file, directory, devices)
-* Gestione filesystem (mount, umount, mkfs)
 * Processi (sequenza di boot, processo init, stdin/stdout/stderr)
 * Manuale di sistema (man)
 * Editor di testo (vim, nano)
@@ -65,7 +63,6 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Composizione comandi (|)
 * Variabili locali
 * Variabili d'ambiente
-* Variabile PATH
 * Metacaratteri
 * Espansione ed inibizione
 
@@ -75,50 +72,44 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Strutture di controllo (if, test, for, case)
 * Funzioni
 * Arrays
-* Gestione argomenti linea di comando con getopts
-* Buone pratiche
+* Gestione argomenti linea di comando (getopts)
 
 [M4] Comandi Unix
 * Filesystem (ls, pwd, basename, dirname, cp, mv, ln, stat, rm, mkdir, rmdir, which, locate, touch, chmod, chown, cmp, diff, find)
 * Filtri (cat, grep, sort, head, tail, cut, wc, tr, uniq, sed)
 * Processi (ps, top, kill, fg, bg, &)
-* Utenti (adduser, deluser, su, sudo)
+* Utenti (adduser, rmuser, whoami, id, sudo)
 * Compressione (tar, gzip, bzip2)
 * Varie (dd, echo, read, true, false, expr, date, man, apropos)
 
 ## Moduli C
 [M1] Introduzione al linguaggio C
-* Processo di compilazione
 * Identificatori
-* Parole chiave 
 * Variabili
 * Espressioni
+* Parole chiave
 
 [M2] Preprocessore
-* Introduzione, utilizzo, invocazione
-* \#define
-* \#include
-* \#if
-* \#ifdef
+* *\#define*
+* *\#include*
+* *\#if*
+* *\#ifdef*
 
 [M3] Istruzioni e strutture di controllo
 * Costrutto condizionale *if-else*
-* Costrutto iterativo *for*
-* Costrutto iterativo *while*
-* Costrutto iterativo *do-while*
 * Costrutto di selezione *switch-case*
-* Istruzioni *break, continue*
-* Operatori
+* Costrutti iterativi *for*, *while*, *do-while*
+* Istruzioni *break*, *continue*
 
 [M4] Tipi di dati
-* Organizzazione in memoria
-* Tipi interi
-* Tipi in virgola mobile
+* Organizzazione della memoria
+* Tipi interi ed in virgola mobile
 * Puntatori
 * Array
 * Stringhe 
 * Conversione di tipo (casting implicito, esplicito)
 * Funzioni (matematiche, numeri pseudo-casuali, stringhe, I/O console)
+* Operatori
 
 [M5] Funzioni
 * Dichiarazione, definizione, chiamata a funzione
@@ -128,8 +119,6 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 
 [M6] Tipi di dati derivati
 * Array multi-dimensionali
-* Array multi-dimensionali come parametri di funzione
-* Matrici
 * Strutture dati
 * Enumerazioni
 * *typedef*
@@ -143,9 +132,8 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 [M8] File
 * File binari e file di testo
 * Apertura, chiusura, posizione corrente
-* Lettura e scrittura
-* Lettura e scrittura con formattazione
-* I flussi standard (stdin, stdout, stderr)
+* Lettura e scrittura (con e senza formattazione)
+* Flussi standard (stdin, stdout, stderr)
 
 ## Esame
 L'esame consiste in 2 esercizi al calcolatore (1x Bash, 1x C). Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
