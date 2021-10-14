@@ -1,7 +1,5 @@
 # Programmazione di Sistema (DIEF, UNIMORE)
 
-Il corso tratta gli aspetti fondamentali della gestione dei sistemi Unix. Utenti, processi, filesystem, comandi principali, ed utilizzo della shell Bash. Il corso inoltre introduce il linguaggio C, frequentemente utilizzato nella programmazione di sistema. Il corso si rivolge a studenti senza esperienze precedenti di programmazione.
-
 ## Software
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Ubuntu Linux](https://ubuntu.com/download/desktop)
