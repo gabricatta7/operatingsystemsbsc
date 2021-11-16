@@ -134,4 +134,4 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 * Flussi standard (stdin, stdout, stderr)
 
 ## Esame
-L'esame consiste in 2 esercizi al calcolatore (1x Bash, 1x C). Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
+L'esame consiste in 2 esercizi al calcolatore (1x Bash, 1x C) che gli studenti sono tenuti a svolgere sul loro calcolatore (utilizzando le pagine man, in caso) spiegando al docente lo svolgimento. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
