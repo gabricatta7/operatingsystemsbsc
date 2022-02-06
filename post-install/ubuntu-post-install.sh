@@ -11,6 +11,7 @@ sudo apt-get -y clean
 
 sudo snap install sublime-text --classic
 sudo snap install atom --classic
+sudo snap install clion --classic
 
 cp -r extra/.vim* "$HOME"
 
