@@ -40,11 +40,11 @@ int main(){
 * La si può immaginare come una procedura di manipolazione di testo: l’input è codice sorgente l’output è codice sorgente
 * Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di un meccanismo per manipolare il codice sorgente prima della compilazione
 * Per mostrare/salvare solo l’output del preprocessore si può usare:
-  
+
 ```shell
 $ gcc -E filename.c
 ```
-  
+
 
 
 # Direttive rilevanti
@@ -139,19 +139,19 @@ add_executable(main main.c mymath.c)
 #define MAX 10
 int main() {
     printf("Il valore massimo è %d\n", MAX);
-    return 0; 
+    return 0;
 }
 ```
 
 # Direttiva #define parametrica
 
-* Il valore di sostituzione può anche essere parametrico 
+* Il valore di sostituzione può anche essere parametrico
 
 ```c
 #define N(x) (10*(x))
 int main(){
     int a=N(5);
-    return 0; 
+    return 0;
 }
 ```
 
@@ -167,7 +167,7 @@ int main(){
 #define SQUARE(a) a*a
 
 SQUARE(3);  // Output:9
-SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5 
+SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 ```
 
 * Definizione robusta
@@ -177,12 +177,12 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 ```
 
 # Direttiva #undef
-* La direttiva \#define non ha scope 
+* La direttiva \#define non ha scope
 * Il preprocessore non conosce le funzioni o altri costrutti di aggregazione/visibilità del linguaggio. Legge i sorgenti e opera in modo sequenziale dall’inizio alla fine del file sorgente
 * Per eliminare una definizione è necessario utilizzare la direttiva \#undef in modo esplicito
 
 ```c
-#define MAX 128 
+#define MAX 128
 ...
 printf("%d\n", MAX);
 ...
@@ -223,7 +223,7 @@ printf("%d\n", MAX);    /* Errore! */
 #ifndef MYMATH_H
 #define MYMATH_H
 
-unsigned mypow(unsigned, unsigned); 
+unsigned mypow(unsigned, unsigned);
 
 #endif // MYMATH_H
 ```
