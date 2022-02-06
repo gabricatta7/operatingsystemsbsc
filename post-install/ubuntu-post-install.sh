@@ -15,4 +15,5 @@ sudo snap install clion --classic
 
 cp -r extra/.vim* "$HOME"
 
+
 exit 0
