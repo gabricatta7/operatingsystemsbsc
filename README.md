@@ -51,10 +51,12 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 ```bash
 $ git pull 
 ```
-In caso di errori, utilizzare invece il comando sotto (tutte le modifiche locali al repository andranno perdute)
+In caso di errori, utilizzare invece i comandi sotto (tutte le modifiche locali al repository andranno perdute)
 
 ```bash
-$ git reset --hard HEAD; git clean -df; git pull
+$ git reset --hard HEAD
+$ git clean -df
+$ git pull
 ```
 
 ## Moduli Bash
