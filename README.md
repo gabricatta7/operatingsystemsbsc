@@ -35,9 +35,16 @@
 Durante il corso utilizzeremo Microsoft Teams per tenerci in contatto, discutere esercizi e problemi vari. Chi non lo avesse ancora fatto, è pregato di iscriversi al canale dedicato al corso.
 
 ## Materiale didattico
-L'intero materiale puo' essere scaricato con il comando seguente:
 
-> git clone https://github.com/nbicocchi/operatingsystemsbsc.git
+Una volta terminata l'installazione di Ubuntu, per completare l' installazione del materiale didattico aprire un terminale ed inserire i seguenti comandi. 
+
+```bash
+$ sudo apt install git 
+$ git clone https://github.com/nbicocchi/operatingsystemsbsc.git
+$ cd operatingsystemsbsc/post-install/
+$ chmod 755 ./ubuntu-post-install.sh
+$ sudo ./ubuntu-post-install.sh
+```
 
 Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del corso. Per scaricare la versione piu' recente, entrare nella cartella del materiale e digitare il comando seguente:
 
