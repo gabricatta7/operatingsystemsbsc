@@ -48,7 +48,14 @@ $ sudo ./ubuntu-post-install.sh
 
 Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del corso. Per scaricare la versione piu' recente, entrare nella cartella del materiale e digitare il comando seguente:
 
-> $ git pull (in caso di errori: git reset --hard; git pull)
+```bash
+$ git pull 
+```
+In caso di errori, utilizzare invece il comando sotto (tutte le modifiche locali al repository andranno perdute)
+
+```bash
+$ git reset --hard; git clean -df; git pull
+```
 
 ## Moduli Bash
 [M1] Introduzione a Unix
