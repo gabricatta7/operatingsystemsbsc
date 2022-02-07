@@ -1,13 +1,13 @@
 ---
-date: Aprile 2021
-author: Nicola Bicocchi
+date: Marzo 2022
+author: Dr. Nicola Bicocchi
 institute: DIEF/UNIMORE
 title: Introduzione al C
 subtitle: Corso di Programmazione di Sistema
 section-titles: true
 theme: Madrid
 colortheme: crane
-fontsize: 12pt
+fontsize: 10pt
 aspectratio: 1610
 lang: it
 ---

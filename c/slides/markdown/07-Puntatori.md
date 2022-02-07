@@ -1,11 +1,15 @@
 ---
-author: Nicola Bicocchi
+date: Marzo 2022
+author: Dr. Nicola Bicocchi
+institute: DIEF/UNIMORE
 title: Puntatori
-institute: DIEF - UNIMORE
+subtitle: Corso di Programmazione di Sistema
+section-titles: true
 theme: Madrid
-fontsize: 10pt
 colortheme: crane
-aspectratio: 169
+fontsize: 10pt
+aspectratio: 1610
+lang: it
 ---
 
 # Puntatori a void
