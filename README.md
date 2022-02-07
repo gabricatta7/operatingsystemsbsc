@@ -43,7 +43,7 @@ $ sudo apt install git
 $ git clone https://github.com/nbicocchi/operatingsystemsbsc.git
 $ cd operatingsystemsbsc/post-install/
 $ chmod 755 ./ubuntu-post-install.sh
-$ sudo ./ubuntu-post-install.sh
+$ ./ubuntu-post-install.sh
 ```
 
 Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del corso. Per scaricare la versione piu' recente, entrare nella cartella del materiale e digitare il comando seguente:
