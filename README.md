@@ -16,14 +16,14 @@
 * http://en.wikibooks.org/wiki/C_Programming
 * http://cppreference.com 
 
-## Libri
+## Libri Bash
 * Marco Liverani - Unix introduzione elementare
 * Marco Liverani - Programmazione della Shell Bash
 * Jason Bacon, Lars Olson - Unix User's Guide
 * Chet Ramey, Brian Fox - Bash Reference Manual
 
 
-
+## Libri C
 * **Facchinetti, Larizza, Rubini - Programmare in C**
 * BlackLight - Il Linguaggio C
 * Banahan, Brady, Doran - The C Book
