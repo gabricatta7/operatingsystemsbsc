@@ -21,7 +21,9 @@
 * Marco Liverani - Programmazione della Shell Bash
 * Jason Bacon, Lars Olson - Unix User's Guide
 * Chet Ramey, Brian Fox - Bash Reference Manual
-* Facchinetti, Larizza, Rubini - Programmare in C
+
+
+* **Facchinetti, Larizza, Rubini - Programmare in C**
 * BlackLight - Il Linguaggio C
 * Banahan, Brady, Doran - The C Book
 * Burgess - The GNU C Programming Tutorial
