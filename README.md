@@ -42,6 +42,7 @@ Durante il corso utilizzeremo Microsoft Teams per tenerci in contatto, discutere
 Una volta terminata l'installazione di Ubuntu, per completare l' installazione del materiale didattico aprire un terminale ed inserire i seguenti comandi. 
 
 ```bash
+$ sudo apt update
 $ sudo apt install git 
 $ git clone https://github.com/nbicocchi/operatingsystemsbsc.git
 $ cd operatingsystemsbsc/post-install/
