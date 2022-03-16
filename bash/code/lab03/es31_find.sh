@@ -21,6 +21,6 @@ if [ ! -d "$1" -o ! -x "$1" ]; then
 fi
 
 # Main body
-find "$1" -type d -executable -printf "[%d] %p\n"
+find "$1" -type d -printf "[%d] %p\n"
 
 exit 0
