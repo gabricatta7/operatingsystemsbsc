@@ -44,7 +44,7 @@ shift $(expr $OPTIND - 1)
 # Main body
 echo "processing..."
 rm -rf "$LOG"
-list=$(find "$D" -type d -executable 2>/dev/null)
+list=$(find "$D" -type d 2>/dev/null)
 for item in $list; do
   files=$(find "$item" -maxdepth 1 -type f -readable)
   tsize=0

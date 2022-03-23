@@ -38,7 +38,7 @@ shift $(expr $OPTIND - 1)
 [ -z "$M" ] && usage
 
 # Main body
-list=$(find "$D" -type d -executable 2>/dev/null)
+list=$(find "$D" -type d 2>/dev/null)
 for item in $list; do
   ndirs=$(find "$item" -maxdepth 1 -type d | wc -l 2>/dev/null)
   nfiles=$(find "$item" -maxdepth 1 -type f | wc -l 2>/dev/null)

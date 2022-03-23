@@ -35,7 +35,7 @@ shift $(expr $OPTIND - 1)
 # Main body
 echo "processing..."
 rm -rf "$LOG"
-dirs=$(find "$D" -type d -executable 2>/dev/null)
+dirs=$(find "$D" -type d 2>/dev/null)
 for dir in $dirs; do
     found=0
     for file in $*; do
