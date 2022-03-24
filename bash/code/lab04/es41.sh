@@ -40,8 +40,8 @@ shift $(expr $OPTIND - 1)
 # Main body
 list=$(find "$D" -type d 2>/dev/null)
 for item in $list; do
-  ndirs=$(find "$item" -maxdepth 1 -type d | wc -l 2>/dev/null)
-  nfiles=$(find "$item" -maxdepth 1 -type f | wc -l 2>/dev/null)
+  ndirs=$(find "$item" -mindepth 1 -maxdepth 1 -type d | wc -l 2>/dev/null)
+  nfiles=$(find "$item" -mindepth 1 -maxdepth 1 -type f | wc -l 2>/dev/null)
   [ "$M" == "EQ" -a "$ndirs" -eq "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
   [ "$M" == "NE" -a "$ndirs" -ne "$nfiles" ] && echo "$item" ["$ndirs" dirs, "$nfiles" files]
 done
