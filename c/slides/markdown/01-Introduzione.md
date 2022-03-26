@@ -284,14 +284,6 @@ max = a > b ? a : b
 a % b
 ```
 
-
-# CMake
-* CLion utilizza un sistema chiamato CMake (https://cmake.org/)
-* Il file che gestisce i processi di compilazione è CmakeLists.txt
-* Si tratta di un sistema per generare il Makefile molto utile per aumentare la portabilità e la robustezza del processo di compilazione
-* Anche se possibile, *nel corso non utilizzeremo CMake in modo esplicito, ma lo utilizzeremo attraverso la GUI di CLion*
-
-
 # makefile
 * Per gestire la compilazione di un progetto C complesso si fa uso di tool ausiliari (e.g., make).
 * Il comando make cerca all'intero della directory corrente un file di nome *makefile* o *Makefile*.
@@ -330,35 +322,13 @@ helloworld: helloworld.c
     $(CC) $(CFALGS) -o $@ $^
 ```
 
+# CMake
+* CLion utilizza un sistema chiamato CMake (https://cmake.org/)
+* Il file che gestisce i processi di compilazione è CmakeLists.txt
+* Si tratta di un sistema per generare il Makefile molto utile per aumentare la portabilità e la robustezza del processo di compilazione
+* Anche se possibile, *nel corso non utilizzeremo CMake in modo esplicito, ma lo utilizzeremo attraverso la GUI di CLion*
 
 # CMakeLists.txt
-```cmake
-cmake_minimum_required(VERSION 3.15)
-project(hello C)
-set(CMAKE_C_STANDARD 99)
-
-add_executable(hello main.c)
-```
-
-**project(hello C)**: nome del progetto, linguaggio
-
-**set(CMAKE_C_STANDARD 99)**: standard C99
-
-
-# CMakeLists.txt - Opzioni di compilazione
-```cmake
-cmake_minimum_required(VERSION 3.15)
-project(hello C)
-set(CMAKE_C_FLAGS "-Wall -Wconversion -Wformat")
-set(CMAKE_C_STANDARD 99)
-
-add_executable(hello main.c)
-```
-
-**set(CMAKE_C_FLAGS "-Wall -Wconversion -Wformat")**: opzioni di compilazione
-
-
-# CMakeLists.txt - Opzioni di linking
 ```cmake
 cmake_minimum_required(VERSION 3.15)
 project(hello C)
@@ -368,5 +338,10 @@ set(CMAKE_C_STANDARD 99)
 add_executable(hello main.c)
 target_link_libraries(hello m)
 ```
+**project(hello C)**: nome del progetto, linguaggio
+
+**set(CMAKE_C_FLAGS "-Wall -Wconversion -Wformat")**: opzioni di compilazione
+
+**set(CMAKE_C_STANDARD 99)**: standard C99
 
 **target_link_libraries(hello m)**: configura il linker per collegare libreria matematica (m)
