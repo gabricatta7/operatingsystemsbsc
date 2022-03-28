@@ -13,6 +13,7 @@ void complex_product(struct complex *r, const struct complex *c1, const struct c
 
 
 #define SIZE 128
+
 int main(void) {
     struct complex c1 = {.real=1, .imaginary=1};
     struct complex c2 = {.real=1, .imaginary=3};

@@ -11,13 +11,14 @@ char *reverses(const char *src) {
     if (!dst) return NULL;
 
     for (i = 0; i < size; i++) {
-        dst[size-1-i] = src[i];
+        dst[size - 1 - i] = src[i];
     }
     dst[size] = '\0';
     return dst;
 }
 
 #define SIZE 128
+
 int main(void) {
     char src[SIZE] = "Rosso di sera, bel tempo si spera";
     char *dst;

@@ -22,6 +22,7 @@ float compute_area(const polygon_t *p) {
 }
 
 #define SIZE 3
+
 int main(void) {
     point_t vertices[SIZE] = {
             {.x=0.0F, .y=0.0F},

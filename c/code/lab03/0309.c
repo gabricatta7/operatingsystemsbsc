@@ -23,8 +23,9 @@ int isinside(const point_t *p, const circle_t *c) {
 }
 
 #define SIZE 3
+
 int main(void) {
-    point_t p = { .x=8, .y=8 };
+    point_t p = {.x=8, .y=8};
     circle_t c = {
             .center = {.x=0, .y=0},
             .radius = 10,

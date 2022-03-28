@@ -22,8 +22,7 @@ void copy_data(FILE *source, FILE *target) {
     }
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     FILE *source, *target;
 
     if (argc != 3) {

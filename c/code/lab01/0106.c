@@ -5,7 +5,7 @@ int main() {
     int max, i;
 
     max = v[0];
-    for (i=0; i<5; i++) {
+    for (i = 0; i < 5; i++) {
         if (v[i] > max) {
             max = v[i];
         }

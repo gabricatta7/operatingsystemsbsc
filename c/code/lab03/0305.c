@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
- struct array_info {
+
+struct array_info {
     int max;
     int min;
     float mean;
@@ -23,20 +24,21 @@ void array_stats(struct array_info *r, const int *values, unsigned size) {
         if (values[i] < r->min) {
             r->min = values[i];
         }
-        r->mean += (float)values[i];
+        r->mean += (float) values[i];
     }
 
     /* compute mean */
-    r->mean /= (float)size;
+    r->mean /= (float) size;
 
     /* compute variance */
     for (i = 0; i < size; i++) {
-        r->variance += powf((float)values[i] - r->mean, 2.0F);
+        r->variance += powf((float) values[i] - r->mean, 2.0F);
     }
-    r->variance /= (float)size;
+    r->variance /= (float) size;
 }
 
 #define SIZE 128
+
 int main(void) {
     int i, src[SIZE];
     struct array_info info;

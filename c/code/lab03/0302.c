@@ -9,13 +9,14 @@ void diagonals(int *rdp, int *rds, unsigned cols, const int m[][cols]) {
 }
 
 #define SIZE 4
+
 int main(void) {
     int i;
     int rdp[SIZE], rds[SIZE];
     int m[SIZE][SIZE] = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
+            {1,  2,  3,  4},
+            {5,  6,  7,  8},
+            {9,  10, 11, 12},
             {13, 14, 15, 16},
     };
 

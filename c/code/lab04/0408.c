@@ -32,13 +32,13 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m) {
 
     m_diags->rows = m->rows;
     m_diags->cols = m->cols;
-    m_diags->data = malloc((unsigned long)(m_diags->rows * m_diags->cols) * sizeof(*(m_diags->data)));
+    m_diags->data = malloc((unsigned long) (m_diags->rows * m_diags->cols) * sizeof(*(m_diags->data)));
     if (!m_diags->data) return NULL;
 
     for (i = 0; i < m_diags->rows; i++) {
         for (j = 0; j < m_diags->cols; j++) {
             /* check if the element is on a diagonal */
-            if ((i == j) || (i == m->cols - j - 1)){
+            if ((i == j) || (i == m->cols - j - 1)) {
                 /* copy and swap */
                 m_diags->data[i * m->cols + j] = m->data[i * m->cols + (m->cols - j - 1)];
             } else {

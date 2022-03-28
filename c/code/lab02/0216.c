@@ -15,7 +15,7 @@ void init(int v[], int size) {
 /* Function to implement bubble sort */
 void sort(int v[], int n) {
     int i, j, tmp, changed;
-    for (i = 0; i < n-1; i++) {
+    for (i = 0; i < n - 1; i++) {
         changed = FALSE;
         for (j = 0; j < n - i - 1; j++) {
             if (v[j] > v[j + 1]) {
@@ -32,7 +32,7 @@ void sort(int v[], int n) {
 /* Function to search a value within an array */
 int search(const int v[], int size, int value) {
     int i;
-    for (i = 0; i < size; i++ ) {
+    for (i = 0; i < size; i++) {
         if (v[i] == value) {
             return i;
         }

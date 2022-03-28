@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     }
 
     while ((r = fread(buffer, 1, sizeof(buffer), source)) > 0) {
-	    count += r;
+        count += r;
     }
 
     fprintf(stdout, "size=%ld bytes\n", count);

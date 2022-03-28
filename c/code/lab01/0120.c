@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-void romans_notations(unsigned number, char symbol1, char symbol2, char symbol3){
-    switch(number) {
+void romans_notations(unsigned number, char symbol1, char symbol2, char symbol3) {
+    switch (number) {
         case 1:
             printf("%c", symbol1);
             break;
@@ -35,18 +35,18 @@ void romans_notations(unsigned number, char symbol1, char symbol2, char symbol3)
     }
 }
 
-void to_romans(unsigned v){
+void to_romans(unsigned v) {
     unsigned x;
 
-    if(v==0){
+    if (v == 0) {
         printf("0");
     }
 
-    for( ; v > 1000 ; v-=1000){
+    for (; v > 1000; v -= 1000) {
         printf("M");
     }
 
-    if(v > 100){
+    if (v > 100) {
         x = v / 100;
         romans_notations(x, 'C', 'D', 'M');
         v -= x * 100;

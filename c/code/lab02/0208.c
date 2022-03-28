@@ -9,7 +9,7 @@ void fibonacci(unsigned *dst, unsigned n) {
     dst[1] = 1;
 
     for (i = 2; i < n; i++) {
-        dst[i] = dst[i-1] + dst[i-2];
+        dst[i] = dst[i - 1] + dst[i - 2];
     }
 }
 

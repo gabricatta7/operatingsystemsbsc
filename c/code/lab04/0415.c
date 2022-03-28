@@ -135,7 +135,7 @@ int main(void) {
 
     /* insert elements */
     for (index = 0; index < 10; index++) {
-        add(l, (double)index);
+        add(l, (double) index);
     }
 
     /* modify existing elements */

@@ -4,11 +4,11 @@
 #include <ctype.h>
 
 /* count the number of space separated words in a string */
-unsigned word_count(const char *s){
-    unsigned count=0, length, i;
+unsigned word_count(const char *s) {
+    unsigned count = 0, length, i;
 
-    length = (unsigned)strlen(s);
-    for (i=0; i<length; i++) {
+    length = (unsigned) strlen(s);
+    for (i = 0; i < length; i++) {
         if (isspace(s[i])) count++;
     }
     return count + 1;
@@ -16,7 +16,7 @@ unsigned word_count(const char *s){
 
 /* splits the string s into an array of strings (dinamically allocated) */
 char **split(const char *s) {
-    int index=0;
+    int index = 0;
     char *str, *ptr, **list;
     unsigned words;
 
@@ -30,7 +30,7 @@ char **split(const char *s) {
     list[words] = NULL;
 
     ptr = strtok(str, " ");
-    while(ptr != NULL) {
+    while (ptr != NULL) {
         /* allocate each string */
         list[index] = malloc((strlen(ptr) + 1) * sizeof(**list));
         if (!list[index]) return NULL;

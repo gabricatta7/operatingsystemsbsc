@@ -10,7 +10,7 @@ int main() {
         printf("%d negativo\n", n);
     }
 
-    if (n%2 == 0) {
+    if (n % 2 == 0) {
         printf("%d pari\n", n);
     } else {
         printf("%d dispari\n", n);

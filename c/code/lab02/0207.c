@@ -24,8 +24,8 @@ void merge(int *dst, const int *a1, unsigned s1, const int *a2, unsigned s2) {
 
 int main(void) {
     int i;
-    int a2[SIZE] = {21,22,23,24,25,26,27,28,29,30};
-    int a1[SIZE] = {1,2,3,4,5,6,7,8,9,10};
+    int a2[SIZE] = {21, 22, 23, 24, 25, 26, 27, 28, 29, 30};
+    int a1[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int dst[SIZE * 2];
 
     merge(dst, a1, SIZE, a2, SIZE);

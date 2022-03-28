@@ -26,19 +26,20 @@ array_info_t *array_stats(const int *values, unsigned size) {
     for (i = 0; i < size; i++) {
         if (values[i] > info->max) info->max = values[i];
         if (values[i] < info->min) info->min = values[i];
-        info->mean += (float)values[i];
+        info->mean += (float) values[i];
     }
-    info->mean /= (float)size;
+    info->mean /= (float) size;
 
     /* compute variance */
     for (i = 0; i < size; i++) {
-        info->variance += powf((float)values[i] - info->mean, 2.0F);
+        info->variance += powf((float) values[i] - info->mean, 2.0F);
     }
-    info->variance /= (float)size;
+    info->variance /= (float) size;
     return info;
 }
 
 #define SIZE 128
+
 int main(void) {
     int i;
     int src[SIZE];

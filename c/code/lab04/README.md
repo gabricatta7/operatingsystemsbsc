@@ -1,11 +1,13 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
 ## Esercizi C (Allocazione dinamica della memoria)
+
 Si propone un gruppo di esercizi per imparare ad utilizzare tecniche di allocazione dinamica della memoria.
 
 ---
 
-Esercizio 1. Implementare una funzione *reversei* che inverta l’ordine dei valori di un array di dati interi che rispetti il seguente prototipo:
+Esercizio 1. Implementare una funzione *reversei* che inverta l’ordine dei valori di un array di dati interi che
+rispetti il seguente prototipo:
 
 ```c
 int *reversei(const int *src, unsigned size);
@@ -15,11 +17,13 @@ dove:
 
 * **src** è il puntatore all’array di input;
 * **size** è la dimensione dell’array;
-* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di allocazione.
+* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di
+  allocazione.
 
 ---
 
-Esercizio 2. Implementare una funzione *reverses* che inverta l’ordine dei caratteri di una stringa C che rispetti il seguente prototipo:
+Esercizio 2. Implementare una funzione *reverses* che inverta l’ordine dei caratteri di una stringa C che rispetti il
+seguente prototipo:
 
 ```c
 char *reverses(const char *src);
@@ -28,19 +32,23 @@ char *reverses(const char *src);
 dove:
 
 * **src** è il puntatore alla stringa in input.
-* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di allocazione.
-
+* la funzione ritorna il puntatore all’array invertito, allocato dalla funzione. Ha valore NULL in caso di errore di
+  allocazione.
 
 ---
 
-Esercizio 3. Implementare una funzione *merge* che dati due array di valori interi ordinati, generi un terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
+Esercizio 3. Implementare una funzione *merge* che dati due array di valori interi ordinati, generi un terzo array che
+contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci possano essere
+elementi duplicati. La funzione rispetti il seguente prototipo:
 
 ```c
 void merge(int **dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
 ```
 
 dove:
-* **dst** è il puntatore all’array generato, della dimensione opportuna per contenere il numero opportuno di elementi. Ha valore NULL in caso di errore di allocazione;
+
+* **dst** è il puntatore all’array generato, della dimensione opportuna per contenere il numero opportuno di elementi.
+  Ha valore NULL in caso di errore di allocazione;
 * **a1** è il puntatore al primo array di input;
 * **s1** è la dimensione del primo array;
 * **a2** è il puntatore al secondo array di input;
@@ -48,7 +56,8 @@ dove:
 
 ---
 
-Esercizio 4. Implementare una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
+Esercizio 4. Implementare una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della
+media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
 
 ```c
 typedef struct array_info {
@@ -65,11 +74,15 @@ dove:
 
 * **values** è il puntatore all’array;
 * **size** è la dimensione dell’array;
-* **(array_info_t \*)** è un puntatore alla struct che gestisce la informazioni dell’array. 
+* **(array_info_t \*)** è un puntatore alla struct che gestisce la informazioni dell’array.
 
 ---
 
-Esercizio 5. Implementare una funzione *split* che, data una stringa contenente una sequenza di parole separate da spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). E' consigliabile l'utilizzo delle funzioni di libreria *strdup*, *strcpy*, *strlen*, *strtok*. La funzione deve rispettare il seguente prototipo:
+Esercizio 5. Implementare una funzione *split* che, data una stringa contenente una sequenza di parole separate da
+spazio, crei una lista di stringhe in cui l’ultimo elemento della lista è seguito da un valore NULL (ad esempio, in
+presenza di una stringa C di N parole, se la variabile char **list punta alla lista, list[N] == NULL). E' consigliabile
+l'utilizzo delle funzioni di libreria *strdup*, *strcpy*, *strlen*, *strtok*. La funzione deve rispettare il seguente
+prototipo:
 
 ```c
 char **split(const char *s);
@@ -77,12 +90,13 @@ char **split(const char *s);
 
 dove:
 
-* **s** è il puntatore alla stringa C data in input; 
+* **s** è il puntatore alla stringa C data in input;
 * la funzione funzione restituisce il puntatore alla lista, e vale NULL in caso di errore di memoria.
 
 ---
 
-Esercizio 6. Implementare una funzione *matrix_transpose* che data una matrice, ritorna la sua matrice trasposta (le righe diventano colonne e viceversa). La funzione deve rispettare il seguente prototipo:
+Esercizio 6. Implementare una funzione *matrix_transpose* che data una matrice, ritorna la sua matrice trasposta (le
+righe diventano colonne e viceversa). La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct matrix {
@@ -96,11 +110,15 @@ struct matrix *matrix_transpose(const struct matrix *m);
 dove:
 
 * **m** è il puntatore alla struttura che rappresenta la matrice originale;
-* la funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+* la funzione deve ritornarne il puntatore alla matrice trasposta, allocata dinamicamente. Il puntatore vale NULL in
+  caso di errore di memoria.
 
 ---
 
-Esercizio 7. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio precedente in cui *struct matrix* è definita come segue:
+Esercizio 7. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array
+monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di
+accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio
+precedente in cui *struct matrix* è definita come segue:
 
 ```c
 struct matrix {
@@ -113,7 +131,10 @@ struct matrix *matrix_transpose(const struct matrix *m);
 
 ---
 
-Esercizio 8. Implementare una funzione *matrix_swap_diagonals* che accetta come parametro un puntatore ad una matrice quadrata e deve restituire un puntatore a una nuova matrice allocata dinamicamente che contenga la matrice ottenuta scambiando la diagonale principale con l’antidiagonale, ovvero la diagonale che va dall’angolo in alto a destra all’angolo in basso a sinistra. La funzione deve rispettare il seguente prototipo:
+Esercizio 8. Implementare una funzione *matrix_swap_diagonals* che accetta come parametro un puntatore ad una matrice
+quadrata e deve restituire un puntatore a una nuova matrice allocata dinamicamente che contenga la matrice ottenuta
+scambiando la diagonale principale con l’antidiagonale, ovvero la diagonale che va dall’angolo in alto a destra
+all’angolo in basso a sinistra. La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct matrix {
@@ -127,11 +148,15 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m);
 dove:
 
 * **m** è il puntatore alla struttura che rappresenta la matrice originale;
-* la funzione deve ritornarne il puntatore alla matrice con le diagonali invertite, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+* la funzione deve ritornarne il puntatore alla matrice con le diagonali invertite, allocata dinamicamente. Il puntatore
+  vale NULL in caso di errore di memoria.
 
 ---
 
-Esercizio 9. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio precedente in cui *struct matrix* è definita come segue:
+Esercizio 9. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array
+monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di
+accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio
+precedente in cui *struct matrix* è definita come segue:
 
 ```c
 struct matrix {
@@ -144,7 +169,9 @@ struct matrix *matrix_swap_diagonals(const struct matrix *m);
 
 ---
 
-Esercizio 10. Implementare una funzione *matrix_product* che accetta come parametri due puntatori a matrice e restituisce un puntatore a una nuova matrice allocata dinamicamente che contenga il prodotto matriciale delle due passate come parametro. La funzione deve rispettare il seguente prototipo:
+Esercizio 10. Implementare una funzione *matrix_product* che accetta come parametri due puntatori a matrice e
+restituisce un puntatore a una nuova matrice allocata dinamicamente che contenga il prodotto matriciale delle due
+passate come parametro. La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct matrix {
@@ -159,11 +186,15 @@ dove:
 
 * **m1** è il puntatore alla struttura che rappresenta la prima matrice;
 * **m2** è il puntatore alla struttura che rappresenta la seconda matrice;
-* la funzione deve ritornarne il puntatore alla matrice prodotto, allocata dinamicamente. Il puntatore vale NULL in caso di errore di memoria.
+* la funzione deve ritornarne il puntatore alla matrice prodotto, allocata dinamicamente. Il puntatore vale NULL in caso
+  di errore di memoria.
 
 ---
 
-Esercizio 11. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio precedente in cui *struct matrix* è definita come segue:
+Esercizio 11. L'esercizio precedente ha la caratteristica di definire i dati della matrice *(data)* attraverso un array
+monodimensionale. Questa soluzione semplifica nell'immediato l'allocazione della memoria ma previene la possibilità di
+accedere al campo *data* utilizzando la notazione *data[][]*. Implementare una versione alternativa dell'esercizio
+precedente in cui *struct matrix* è definita come segue:
 
 ```c
 struct matrix {
@@ -176,7 +207,8 @@ struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2);
 
 ---
 
-Esercizio 12. Implementare una funzione *matrix_compare* che accetta come parametri due puntatori a matrice e restituisce un numero intero da interpretare come un booleano. La funzione deve rispettare il seguente prototipo:
+Esercizio 12. Implementare una funzione *matrix_compare* che accetta come parametri due puntatori a matrice e
+restituisce un numero intero da interpretare come un booleano. La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct matrix {
@@ -195,7 +227,9 @@ dove:
 
 ---
 
-Esercizio 13. Implementare una funzione *invert_all* che accetta come parametro una lista (zero-terminata) di stringhe (zero-terminate) ed inverte sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa. La funzione deve rispettare il seguente prototipo:
+Esercizio 13. Implementare una funzione *invert_all* che accetta come parametro una lista (zero-terminata) di stringhe (
+zero-terminate) ed inverte sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa. La funzione deve
+rispettare il seguente prototipo:
 
 ```c
 char **invert_all(char *strings[]);
@@ -204,11 +238,14 @@ char **invert_all(char *strings[]);
 dove:
 
 * **strings** è il puntatore alla lista di stringhe (i.e., array di puntatori a carattere);
-* la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei caratteri all'interno di ogni stringa è invertito.
+* la funzione ritorna una nuova lista di stringhe (allocata dinamicamente) in cui sia l'ordine delle stringhe che dei
+  caratteri all'interno di ogni stringa è invertito.
 
 ---
 
-Esercizio 14. *(Approfondimento, non richiesto all'esame)*. Implementare un gruppo di funzioni per gestire un array ri-dimensionabile di elementi di tipo *double* simile ad una lista Java o Python. Le funzioni devono rispettare i seguenti prototipi:
+Esercizio 14. *(Approfondimento, non richiesto all'esame)*. Implementare un gruppo di funzioni per gestire un array
+ri-dimensionabile di elementi di tipo *double* simile ad una lista Java o Python. Le funzioni devono rispettare i
+seguenti prototipi:
 
 ```c
 struct arraylist {
@@ -247,7 +284,10 @@ unsigned size(struct arraylist *l);
 
 ---
 
-Esercizio 15. *(Approfondimento, non richiesto all'esame)*. Implementare un gruppo di funzioni analoghe a quelle dell'esercizio precedente ma che utilizzano come meccanismo di memorizzazione una linked list (https://en.wikipedia.org/wiki/Linked_list) al posto di un array ri-dimensionabile. Per rappresentare la linked list, utilizzare le due strutture indicate di seguito.
+Esercizio 15. *(Approfondimento, non richiesto all'esame)*. Implementare un gruppo di funzioni analoghe a quelle
+dell'esercizio precedente ma che utilizzano come meccanismo di memorizzazione una linked
+list (https://en.wikipedia.org/wiki/Linked_list) al posto di un array ri-dimensionabile. Per rappresentare la linked
+list, utilizzare le due strutture indicate di seguito.
 
 ```c
 struct node {

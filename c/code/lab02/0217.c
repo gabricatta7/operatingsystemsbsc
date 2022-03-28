@@ -26,8 +26,7 @@ void merge(int arr[], int l, int m, int r) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
-        }
-        else {
+        } else {
             arr[k] = R[j];
             j++;
         }
@@ -69,7 +68,7 @@ void merge_sort(int arr[], int l, int r) {
 /* Function to print an array */
 void show_array(int arr[], int size) {
     int i;
-    for (i=0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         printf("[%d] %d\n", i, arr[i]);
     }
 }

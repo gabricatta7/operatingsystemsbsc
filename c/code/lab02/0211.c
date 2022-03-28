@@ -14,13 +14,13 @@ void compute_mean_variance(float *rmean, float *rvariance, float *values, unsign
     for (i = 0; i < size; i++) {
         *rmean += values[i];
     }
-    *rmean /= (float)size;
+    *rmean /= (float) size;
 
     /* compute variance */
     for (i = 0; i < size; i++) {
         *rvariance += powf(values[i] - *rmean, 2.0F);
     }
-    *rvariance /= (float)size;
+    *rvariance /= (float) size;
 }
 
 int main(void) {
@@ -29,7 +29,7 @@ int main(void) {
 
     /* filling the array */
     for (i = 0; i < SIZE; i++) {
-        src[i] = (float)i;
+        src[i] = (float) i;
     }
 
     compute_mean_variance(&rmean, &rvariance, src, SIZE);

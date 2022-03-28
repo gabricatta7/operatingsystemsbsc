@@ -1,11 +1,13 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
 ## Esercizi C (Matrici e strutture)
+
 Si propongono alcuni esercizi relativi all’utilizzo di matrici (array bi-dimensionali) e strutture (struct).
 
 ---
 
-Esercizio 1. Implementare una funzione *matrix_edge* che, data una matrice come input, calcoli la somma di tutti i valori presenti nella sua *cornice*. La funzione deve rispettare il seguente prototipo:
+Esercizio 1. Implementare una funzione *matrix_edge* che, data una matrice come input, calcoli la somma di tutti i
+valori presenti nella sua *cornice*. La funzione deve rispettare il seguente prototipo:
 
 ```c
 long matrix_edge(unsigned rows, unsigned cols, int m[][cols]);
@@ -18,7 +20,8 @@ dove:
 
 ---
 
-Esercizio 2. Implementare una funzione *diagonals* che estrae la diagonale principale e la diagonale secondaria di una matrice quadrata. La funzione deve rispettare il seguente prototipo:
+Esercizio 2. Implementare una funzione *diagonals* che estrae la diagonale principale e la diagonale secondaria di una
+matrice quadrata. La funzione deve rispettare il seguente prototipo:
 
 ```c
 void diagonals(int *rdp, int *rds, unsigned cols, const int m[][cols]);
@@ -33,19 +36,21 @@ dove:
 
 ---
 
-Esercizio 3. Implementare una funzione *tabula_recta* che crei una matrice contenente la tabula recta (vedere wikipedia) dell’alfabeto inglese. Rispettare il seguente prototipo:
+Esercizio 3. Implementare una funzione *tabula_recta* che crei una matrice contenente la tabula recta (vedere wikipedia)
+dell’alfabeto inglese. Rispettare il seguente prototipo:
 
 ```c
 void tabula_recta(char t[][26]);
 ```
+
 dove:
 
 * **t** è la matrice in cui viene salvato la matrice generata.
 
-
 ---
 
-Esercizio 4. Implementatre una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
+Esercizio 4. Implementatre una funzione *array_stats* per l’individuazione del valore minimo, del valore massimo, della
+media e della varianza dei valori di un array. La funzione deve rispettare il seguente prototipo:
 
 ```c
 struct array_info {
@@ -66,7 +71,8 @@ dove:
 
 ---
 
-Esercizio 5. Implementare una variante dell’esercizio precedente che implementi le stesse funzionalità con lo stesso tipo di struct, ma che supporti un prototipo diverso.
+Esercizio 5. Implementare una variante dell’esercizio precedente che implementi le stesse funzionalità con lo stesso
+tipo di struct, ma che supporti un prototipo diverso.
 
 ```c
 void array_stats(struct array_info *r, const int *values, unsigned size);
@@ -80,7 +86,8 @@ dove:
 
 ---
 
-Esercizio 6. Implementare una funzione *complex_product* per calcolare il prodotto di due numeri complessi che rispetti il seguente prototipo:
+Esercizio 6. Implementare una funzione *complex_product* per calcolare il prodotto di due numeri complessi che rispetti
+il seguente prototipo:
 
 ```c
 struct complex {
@@ -99,7 +106,8 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una funzione *compute_length* per il calcolo della lunghezza di una linea spezzata. La funzione supporti il seguente prototipo:
+Esercizio 7. Implementare una funzione *compute_length* per il calcolo della lunghezza di una linea spezzata. La
+funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
@@ -114,13 +122,15 @@ dove:
 
 * **point_t** rappresenta un punto sul piano con coordinate x e y;
 * **compute_length** è la funzione per il calcolo della lunghezza:
-  * accetta il puntatore ad un vettore di point_t;
-  * accetta il numero di point_t contenuti nel vettore;
-  * restituisce la lunghezza della linea spezzata.
+    * accetta il puntatore ad un vettore di point_t;
+    * accetta il numero di point_t contenuti nel vettore;
+    * restituisce la lunghezza della linea spezzata.
 
 ---
 
-Esercizio 8. Implementare una funzione *compute_area* per il calcolo dell’area di un poligono irregolare date le coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente prototipo:
+Esercizio 8. Implementare una funzione *compute_area* per il calcolo dell’area di un poligono irregolare date le
+coordinate dei suoi vertici (https://arachnoid.com/area_irregular_polygon/index.html). La funzione supporti il seguente
+prototipo:
 
 ```c
 typedef struct point {
@@ -138,15 +148,16 @@ float compute_area(const polygon_t *p);
 
 dove:
 
-* **point_t** rappresenta un punto sul piano con coordinate x e y; 
+* **point_t** rappresenta un punto sul piano con coordinate x e y;
 * **polygon_t** rappresenta il poligono con n vertici, ognuno identificato come un punto sul piano;
 * **compute_area** è la funzione per il calcolo dell’area:
-   * accetta il puntatore alla struttura che rappresenta il poligono;
-   * restituisce l’area del poligono.
+    * accetta il puntatore alla struttura che rappresenta il poligono;
+    * restituisce l’area del poligono.
 
 ---
 
-Esercizio 9. Implementare una funzione *isinside* per che verifichi se un punto 2D si trova all'interno di un cerchio. La funzione supporti il seguente prototipo:
+Esercizio 9. Implementare una funzione *isinside* per che verifichi se un punto 2D si trova all'interno di un cerchio.
+La funzione supporti il seguente prototipo:
 
 ```c
 typedef struct point {
@@ -167,13 +178,14 @@ dove:
 * **point_t** rappresenta un punto sul piano con coordinate x e y;
 * **circle_t** rappresenta il poligono con n vertici, ognuno identificato come un punto sul piano;
 * **isinside** è la funzione che verifica se il punto è contenuto oppure no all'interno del cerchio:
-  * accetta il puntatore alla struttura che rappresenta il punto;
-  * accetta il puntatore alla struttura che rappresenta il cerchio;
-  * ritorna 0 (falso) oppure 1 (vero).
+    * accetta il puntatore alla struttura che rappresenta il punto;
+    * accetta il puntatore alla struttura che rappresenta il cerchio;
+    * ritorna 0 (falso) oppure 1 (vero).
 
 ---
 
-Esercizio 10. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono memorizzate in modo contiguo, riga dopo riga. 
+Esercizio 10. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono
+memorizzate in modo contiguo, riga dopo riga.
 
 ```c
 void show_addresses(int rows, int cols, int m[][cols]);

@@ -6,7 +6,7 @@ void reversei(int *dst, const int *src, unsigned size) {
     unsigned i;
 
     for (i = 0; i < size; i++) {
-        dst[i] = src[size-1-i];
+        dst[i] = src[size - 1 - i];
     }
 }
 

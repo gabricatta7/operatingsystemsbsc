@@ -8,7 +8,7 @@ void reverses(char *dst, const char *src) {
 
     l = strlen(src);
     for (i = 0; i < l; i++) {
-        dst[l-1-i] = src[i];
+        dst[l - 1 - i] = src[i];
     }
     dst[l] = '\0';
 }

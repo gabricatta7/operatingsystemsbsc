@@ -10,7 +10,7 @@ void capitalize(char *dst, const char *src) {
     l = strlen(src);
     if (l > 0) dst[0] = src[0];
     for (i = 1; i < l; i++) {
-        dst[i] = src[i-1] == ' ' ? (char)toupper(src[i]) : (char)tolower(src[i]);
+        dst[i] = src[i - 1] == ' ' ? (char) toupper(src[i]) : (char) tolower(src[i]);
     }
     dst[l] = '\0';
 }

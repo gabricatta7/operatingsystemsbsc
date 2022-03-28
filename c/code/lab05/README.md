@@ -1,7 +1,9 @@
 ﻿# Programmazione di Sistema - DIEF/UNIMORE
 
 ## Esercizi C (File ed integrazione con la shell)
-Si propone un gruppo di esercizi per imparare ad utilizzare l'accesso ai file e l'integrazione del C con la shell. In particolare, viene proposta una serie di implementazioni semplificate di famosi comandi shell.
+
+Si propone un gruppo di esercizi per imparare ad utilizzare l'accesso ai file e l'integrazione del C con la shell. In
+particolare, viene proposta una serie di implementazioni semplificate di famosi comandi shell.
 
 --- 
 
@@ -51,7 +53,8 @@ $ cmp filename_a filename_b
 dove:
 
 * **filename_a, filename_b** rappresentano due nomi di file da confrontare;
-* il comando informa l'utente se i 2 file sono uguali o diversi. Se sono diversi, indica byte e linea della primo carattere diverso.
+* il comando informa l'utente se i 2 file sono uguali o diversi. Se sono diversi, indica byte e linea della primo
+  carattere diverso.
 
 ---
 

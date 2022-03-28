@@ -9,12 +9,13 @@ int *reversei(const int *src, unsigned size) {
     if (!dst) return NULL;
 
     for (i = 0; i < size; i++) {
-        dst[i] = src[size-1-i];
+        dst[i] = src[size - 1 - i];
     }
     return dst;
 }
 
 #define SIZE 9
+
 int main(void) {
     int src[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int *dst;

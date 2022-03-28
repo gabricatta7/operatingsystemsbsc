@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
- struct array_info {
+struct array_info {
     int max;
     int min;
     float mean;
@@ -21,17 +21,17 @@ struct array_info array_stats(const int *values, unsigned size) {
         if (values[i] < min) {
             min = values[i];
         }
-        mean += (float)values[i];
+        mean += (float) values[i];
     }
 
     /* compute mean */
-    mean /= (float)size;
+    mean /= (float) size;
 
     /* compute variance */
     for (i = 0; i < size; i++) {
-        variance += powf((float)values[i] - mean, 2.0F);
+        variance += powf((float) values[i] - mean, 2.0F);
     }
-    variance /= (float)size;
+    variance /= (float) size;
 
     /* return array_info_t variable */
     struct array_info info = {.max = max, .min = min, .mean = mean, .variance = variance};
@@ -39,6 +39,7 @@ struct array_info array_stats(const int *values, unsigned size) {
 }
 
 #define SIZE 128
+
 int main(void) {
     int i, src[SIZE];
     struct array_info info;

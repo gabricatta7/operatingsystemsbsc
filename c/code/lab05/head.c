@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int main(int argc , char *argv[]) {
-    FILE  *source;
+int main(int argc, char *argv[]) {
+    FILE *source;
 
     char buffer[LINE_MAX];
     int lines;

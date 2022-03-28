@@ -32,7 +32,7 @@ struct matrix *matrix_product(const struct matrix *m1, const struct matrix *m2) 
 
     m_prod->rows = m1->rows;
     m_prod->cols = m2->cols;
-    m_prod->data = malloc((unsigned long)(m_prod->rows * m_prod->cols) * sizeof(*(m_prod->data)));
+    m_prod->data = malloc((unsigned long) (m_prod->rows * m_prod->cols) * sizeof(*(m_prod->data)));
     if (!m_prod->data) return NULL;
 
     for (i = 0; i < m_prod->rows; i++) {

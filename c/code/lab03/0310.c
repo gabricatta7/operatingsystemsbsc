@@ -16,6 +16,7 @@ void show_addresses(int rows, int cols, int v[][cols]) {
 
 #define ROWS 10
 #define COLS 10
+
 int main(void) {
     int v[ROWS][COLS];
     for (int i = 0; i < ROWS; i++) {

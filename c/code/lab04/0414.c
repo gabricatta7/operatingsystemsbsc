@@ -24,7 +24,7 @@ struct arraylist *allocate_list() {
 
     a->elements = 0;
     a->size = DEFAULT_SIZE;
-    a->data = calloc((unsigned long)(DEFAULT_SIZE), sizeof(*(a->data)));
+    a->data = calloc((unsigned long) (DEFAULT_SIZE), sizeof(*(a->data)));
     if (a->data == NULL) return NULL;
 
     return a;
@@ -89,7 +89,7 @@ int main(void) {
 
     /* insert elements */
     for (index = 0; index < 35; index++) {
-        add(l, (double)index);
+        add(l, (double) index);
     }
 
     /* modify existing elements */
