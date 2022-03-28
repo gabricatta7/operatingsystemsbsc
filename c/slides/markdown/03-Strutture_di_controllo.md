@@ -13,9 +13,9 @@ lang: it
 ---
 
 # Strutture di controllo
-* Il paradigma di programmazione strutturata consente di dirigere il flusso delle istruzioni a tempo di esecuzione, in base allo stato dinamico del programma
-* Il programmatore può predisporre molteplici blocchi di istruzioni da eseguire alternativamente o ripetutamente in base al soddisfacimento di determinate condizioni
-* A parte alcune minime differenze sintattiche, queste istruzioni sono simili a quelle che si possono trovare negli altri linguaggi
+* Il paradigma di programmazione strutturata consente di dirigere il flusso delle istruzioni a tempo di esecuzione, in base allo stato del programma
+* Il programmatore può predisporre molteplici blocchi di istruzioni da eseguire alternativamente, o ripetutamente, in base al soddisfacimento di determinate condizioni
+* A parte alcune minime differenze sintattiche, queste istruzioni sono simili a quelle che si possono trovare nella maggior parte dei linguaggi
 * E' possibile realizzare due forme principali di controllo:
   * Esecuzioni condizionali
   * Esecuzioni iterative
@@ -59,7 +59,7 @@ else
 # Costrutto if
 
 * Principali operatori di verifica delle condizioni: < , > , == , != , >= , <=
-* Le condizioni valutate dal costrutto *if* sono valori *interi* interpretati come *booleani* (convenzionalmente, 0 == falso, 1 == vero)
+* Le condizioni valutate dal costrutto *if* sono valori *interi* interpretati come *boolean* (convenzionalmente, 0 == falso, 1 == vero)
 * Il tipo *bool* è stato introdotto a partire dallo standard C99
 
 ```c
@@ -375,7 +375,8 @@ int main(){
 
 end:
     printf("Fine\n");
-return 0;
+
+    return 0;
 }
 ```
 
