@@ -182,13 +182,12 @@ SQUARE(1+2) // Sostituito in s = 1+2*1+2 -> Output:5
 * Per eliminare una definizione è necessario utilizzare la direttiva \#undef in modo esplicito
 
 ```c
+int main(void) {
 #define MAX 128
-...
-printf("%d\n", MAX);
-...
+    printf("%d\n", MAX);
 #undef MAX
-...
-printf("%d\n", MAX);    /* Errore! */
+    printf("%d\n", MAX);    /* Errore! MAX non è più definita */
+}
 ```
 
 # Direttiva #if
@@ -198,28 +197,39 @@ printf("%d\n", MAX);    /* Errore! */
 * Utile per: (a) scegliere tipi diversi di implementazione, (b) stabilire tipi di dati utilizzati, (c) stabilire comportamenti speciali per la fase di sviluppo (debug)
 
 ```c
-#define MAX 10 \
-#if (MAX==1024)
-    // implementazione 1
+#define ARCH amd64
+
+int main(void) {
+#if (ARCH==amd64)
+    printf("amd64\n");
 #else
-    // implementazione 2
+    printf("i386\n");
 #endif
+}
 ```
 
 # Direttiva #if (Esempi)
-
 * message(S) stampa il messaggio solo se la MACRO DEBUG è definita
 ```c
-#ifndef DEBUG
-#define message(S) printf(S) \
+#define DEBUG
+
+#ifdef DEBUG
+#define message(S) printf(S)
 #else
 #define message(S)
 #endif
+
+int main(void) {
+    message("Hello world!");
+}
 ```
 
-* Include guards
+# Direttiva #if (Esempi)
+* Per evitare errori dovuti ad inclusioni multiple dello stesso file header (.h) vengono utilizzate le *include guards* come nell'esempio sotto. Il file viene incluso solo se la direttiva *MYMATH_H* non è definita. 
+* In questo caso, cioè alla prima inclusione, la costante *MYMATH_H* viene definita per evitare future inclusioni.
 
 ```c
+/* mymath.h with include guards */
 #ifndef MYMATH_H
 #define MYMATH_H
 
