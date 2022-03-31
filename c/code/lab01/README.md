@@ -8,7 +8,7 @@
 1. Calcolare (float) e visualizzare l’area di un triangolo avendo la base (int) e l’altezza (int)
 1. Calcolare (float) e visualizzare la distanza fra due punti 2D date le loro coordinate (int)
 1. Dato un numero (int), visualizzare se il numero è positivo o negativo, e se pari o dispari
-1. Trovare il massimo fra cinque numeri (int) e visualizzarlo
+1. Trovare il massimo fra tre numeri (int) e visualizzarlo
 1. Dato un numero n (int), calcolare e visualizzare l’operazione di elevamento a potenza con base 2 ed esponente n
 1. Calcolare (int) e visualizzare la somma dei numeri dispari da 1 a N (int)
 1. Calcolare e visualizzare il logaritmo in base 10 approssimando il risultato al valore intero inferiore. L’input e

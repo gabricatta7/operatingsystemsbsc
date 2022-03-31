@@ -1,14 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    int v[] = {1, 5, 34, 187, -2};
-    int max, i;
+    int a=101, b=12, c=77;
+    int max;
 
-    max = v[0];
-    for (i = 0; i < 5; i++) {
-        if (v[i] > max) {
-            max = v[i];
-        }
-    }
+    if ((a >= b) && (a >= c)) max = a;
+    if ((b >= a) && (b >= c)) max = b;
+    if ((c >= a) && (c >= b)) max = c;
+
     printf("max=%d\n", max);
 }
