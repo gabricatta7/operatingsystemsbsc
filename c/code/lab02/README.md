@@ -8,8 +8,7 @@ di memoria valida e di dimensioni appropriate.
 
 ---
 
-Esercizio 1. Implementare una funzione *reversei* che inverta l’ordine dei valori di un array di dati interi che
-rispetti il seguente prototipo:
+Esercizio 1. Implementare una funzione *reversei* che inverte l’ordine di un array di interi rispettando il seguente prototipo:
 
 ```c
 void reversei(int *dst, const int *src, unsigned size);
@@ -17,13 +16,13 @@ void reversei(int *dst, const int *src, unsigned size);
 
 dove:
 
-* **dst** è il puntatore all’array dove verrà salvata l’array invertito
-* **src** è il puntatore all’array di input
+* **dst** è il puntatore all’array destinazione (invertito)
+* **src** è il puntatore all’array sorgente
 * **size** è la dimensione dell’array
 
 ---
 
-Esercizio 2. Implementare una funzione *reverses* che inverta l’ordine dei caratteri di una stringa C che rispetti il
+Esercizio 2. Implementare una funzione *reverses* che inverte l’ordine dei caratteri di una stringa C rispettando il seguente prototipo:
 seguente prototipo:
 
 ```c
@@ -32,28 +31,28 @@ void reverses(char *dst, const char *src);
 
 dove:
 
-* **dst** è il puntatore all’array dove verrà salvata la stringa C invertita
-* **src** è il puntatore alla stringa in input
+* **dst** è il puntatore all’array destinazione (invertito)
+* **src** è il puntatore all’array sorgente
 
 ---
 
-Esercizio 3. Implementare una funzione *rotate13* che trasforma una stringa in un’altra stringa di uguale dimensione, ma
-in cui ogni carattere della stringa generate è dal carattere alla stessa posizione nella stringa originale "spostato" di
-13 caratteri (considerando una successione di caratteri "ciclica", dove la a segue la z).
+Esercizio 3. Implementare una funzione *rotate* che trasforma una stringa in un’altra stringa di uguale dimensione, ma
+in cui ogni carattere è "spostato" di *shift* caratteri (considerando una successione di caratteri "ciclica", dove la *a* segue la *z*).
 
 ```c
-void rotate13(char *dst, const char *src);
+void rotate(char *dst, const char *src, char shift);
 ```
 
 dove:
 
-* **dst** è il puntatore alla stringa dove verrà salvata la stringa in output
-* **src** è il puntatore alla stringa in input
+* **dst** è il puntatore all’array destinazione (ruotato)
+* **src** è il puntatore all’array sorgente
+* **shift** il numero di caratteri con cui ruotare **src**
 
 ---
 
 Esercizio 4. Implementare una funzione *findi* che individua la posizione di un valore all’interno di un array di
-interi. La funzione rispetti il seguente prototipo:
+interi. La funzione rispetta il seguente prototipo:
 
 ```c
 long findi(int t, const int *values, unsigned size);
@@ -68,9 +67,9 @@ dove:
 
 ---
 
-Esercizio 5. Implementare una funzione *capitalize* che, data una stringa C di input, ne generi un’altra in cui tutte le
+Esercizio 5. Implementare una funzione *capitalize* che, data una stringa C di input, ne genera un’altra in cui tutte le
 lettere alfabetiche che seguono uno spazio siano maiuscole, mentre tutte le altre minuscole. Assumere che l’input possa
-avere sia lettere maiuscole sia minuscole sparse, e anche altri simboli.
+contenere lettere maiuscole, minuscole, altri simboli.
 
 ```c
 void capitalize(char *dst, const char *src);
@@ -78,8 +77,8 @@ void capitalize(char *dst, const char *src);
 
 dove:
 
-* **dst** è il puntatore alla stringa di output
-* **src** è il puntatore alla stringa in input
+* **dst** è il puntatore all’array destinazione
+* **src** è il puntatore all’array sorgente
 
 ---
 
@@ -93,15 +92,14 @@ void frequencies(unsigned *freqs, const char *src);
 
 dove:
 
-* **freqs** è il puntatore all’array generato con il risultato. Assumere che il puntatore si riferisca a un array di
-  dimensioni 26, che possa contenere il conteggio di tutte le lettere dell’alfabeto inglese
-* **src** è il puntatore alla stringa di input
+* **freqs** è il puntatore all’array delle frequenze (array di 26 elementi, uno per ogni lettera dell'alfabeto inglese)
+* **src** è il puntatore all’array sorgente
 
 ---
 
-Esercizio 7. Implementare una funzione *merge* che dati due array di valori interi ordinati in modo crescente, generi un
+Esercizio 7. Implementare una funzione *merge* che dati due array di interi ordinati in modo crescente, generi un
 terzo array che contenga tutti i valori dei precedenti array in modo ordinato. Assumere che all’interno degli array ci
-possano essere elementi duplicati. La funzione rispetti il seguente prototipo:
+possano essere elementi duplicati. La funzione rispetta il seguente prototipo:
 
 ```c
 void merge(int *dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
@@ -109,7 +107,7 @@ void merge(int *dst, const int *a1, unsigned s1, const int *a2, unsigned s2);
 
 dove:
 
-* **dst** è il puntatore all’array generato
+* **dst** è il puntatore all’array destinazione
 * **a1** è il puntatore al primo array di input
 * **s1** è la dimensione del primo array
 * **a2** è il puntatore al secondo array di input
@@ -117,8 +115,8 @@ dove:
 
 ---
 
-Esercizio 8. Implementare una funzione *fibonacci* per il calcolo della serie di Fibonacci, in cui si calcolano i primi
-N valori e li si salvano in un array. La funzione rispetti la seguente interfaccia:
+Esercizio 8. Implementare una funzione *fibonacci* per il calcolo della serie di Fibonacci, che calcola i primi
+n valori della serie e li memorizza di un array. La funzione rispetta il seguente prototipo:
 
 ```c
 void fibonacci(unsigned *dst, unsigned n);
@@ -126,13 +124,13 @@ void fibonacci(unsigned *dst, unsigned n);
 
 dove:
 
-* **dst** è il puntatore all’array generato
-* **n** è il numero di valori della serie da generate
+* **dst** è il puntatore all’array destinazione
+* **n** è il numero di valori della serie di fibonacci da calcolare
 
 ---
 
 Esercizio 9. Implementare una funzione *trova_max* per individuare il valore massimo all’interno di un array di numeri
-interi che rispetti il seguente prototipo:
+interi che rispetta il seguente prototipo:
 
 ```c
 void trova_max(int *rmax, const int *values, unsigned size);
@@ -150,7 +148,7 @@ Si assuma che il puntatore all’array sia valido, che la dimensione indicata da
 ---
 
 Esercizio 10. Implementare una funzione *trova_minmax* simile a quella indicata nell’esercizio precedente, ma che
-individui sia il valore minimo, sia il valore massimo. La funzione deve rispettare il seguente prototipo:
+individui sia il valore minimo che quello massimo. La funzione rispettara il seguente prototipo:
 
 ```c
 void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size);

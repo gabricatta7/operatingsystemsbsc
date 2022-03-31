@@ -4,9 +4,8 @@
 
 #define SIZE 128
 
-void rotate13(char *dst, const char *src) {
+void rotate13(char *dst, const char *src, char shift) {
     unsigned long i, l;
-    char shift = 1;
 
     l = strlen(src);
     for (i = 0; i < l; i++) {
@@ -23,10 +22,9 @@ void rotate13(char *dst, const char *src) {
 }
 
 int main(void) {
-    char src[SIZE] = "zzzzzz";
+    char src[SIZE] = "klmnopqrs";
     char dst[SIZE];
 
-    rotate13(dst, src);
+    rotate13(dst, src, 10);
     printf("%s\n", dst);
-
 }
