@@ -37,31 +37,54 @@ short s;
 int i;
 long l; 
 long long ll;
+```
+
+```c
 float f;
 double d;
-long double ld;
 ```
 
 # Definizione (o inizializzazione) di variabili
-
-* *Dopo la dichiarazione le variabili non hanno un valore predefinito*. Quindi è necessario eseguire un'operazione di assegnamento per definirne un valore
-* In questo modo la memoria allocata per la variabile viene anche riempita con un valore iniziale. Negli esempi sotto vengono utilizzate solo espressioni composte da *letterali numeriche* per definire i valori delle variabili
+* *Dopo la dichiarazione le variabili non hanno un valore predefinito*
+* E' necessario eseguire un'operazione di *assegnamento* per definirne un valore. In questo modo la memoria allocata per la variabile viene anche riempita con un valore specifico
+* Negli esempi sotto vengono utilizzate solo espressioni composte da *letterali numeriche* per definire i valori delle variabili
 
 ```c
-<tipo> <nome-varibile> = <espressione> ;
+char c = 64;
+short s = (short)1024;
+int i = 1024;
+long l = 1024L;
+long long ll = 1024LL; 
 ```
 
 ```c
-char c = 'a';
-short s = 0xffff;
-int i = 1024;
-long n = 1024L;
 float f = 3.1415F;
 double d = 3.1415;
 ```
 
-# Variabili costanti (di sola lettura)
+# Letterali numeriche
+* Le sequenze che iniziano con un numero (non possono essere identificatori!) sono chiamate letterali numeriche. *Da non confondere con le variabili dichiarate costanti (const)*
+  * decimali: cominciano con una cifra da 1 a 9 e proseguono con altre cifre da 0 a 9
+  * ottali: cominciano con 0 e proseguono con altre cifre da 0 a 7
+  * esadecimali: cominciano con *0x* o *0X* e proseguono con altre cifre da 0 a 9 o con lettere (maiuscole o minuscole) da *A* a *F*
+* Ogni letterale può essere inoltre seguita un postfisso (L=long, U=unsigned, F=float)
 
+```
+int n1 = 127  // 1 * 10^2 + 2 * 10^1 + 7 * 10^0
+int n2 = 0177 // 1 * 8^2  + 7 * 8^1  + 7 * 8^0 
+int n3 = 0x7f // 7 * 16^1 + 15 * 16^0
+```
+
+```
+long n1 = 0x7fL // 127 (long) in esadecimale
+unsigned long long n2 = 0x7fULL // 127 (unsigned long long) in esadecimale
+```
+
+# Letterali numeriche
+![Letterali Numerici](./images/literals_interi.png)
+
+
+# Variabili costanti (di sola lettura)
 * È possibile specificare che la variabile in memoria potrà essere solo letta, ovvero che è una variabile read-only, tramite la parola riservata *const*
 * Questa variabile è identica alle altre (ha un tipo, una locazione di memoria e viene definita), se non per il fatto che nessun comando successivo potrà modificarne il valore
 * *Attenzione!* Nel caso di variabili *const* dobbiamo definirne il valore nel momento della dichiarazione
@@ -112,15 +135,11 @@ short s1, s2 = 33, s3;
   * sono variabili definite all’interno di una funzione (e.g., funzione main)
   * sono allocate in una parte di memoria chiamata *stack*
   * il processo in esecuzione alloca automaticamente la memoria necessaria a contenerle nel momento in cui esegue la funzione
-  * *ogni variabile occupa uno spazio di memoria contiguo. le variabili, fra di loro, possono non essere contigue*
+  * *Ogni variabile occupa uno spazio di memoria contiguo. Le variabili, fra di loro, possono non essere contigue*
 
 * Il tipo che associamo a una variabile identifica due caratteristiche:
   * la modalità di rappresentazione della variabile in memoria
   * la quantità di memoria occupata da quella variabile
-
-
-# Memoria
-![Variabili in memoria]()
 
 
 # Memoria
@@ -130,12 +149,12 @@ short s1, s2 = 33, s3;
 # I tipi di dati numerici interi
 * Esistono due tipi di numeri interi (a prescindere dalla dimensione)
 * **signed**: con segno (il termine signed è implicito nei tipi)  
-  * intervallo = [-2^(bit-1) : +2^(bit-1)-1]
+  * intervallo = [-2^(bit-1) : +2^(bit-1)-1]  (int32 [-2,147,483,648, +2,147,483,647])
 * **unsigned**: senza segno, ovvero solo numeri positivi 
-  * intervallo = [0 : +2^(bit)-1]
-
+  * intervallo = [0 : +2^(bit)-1]             (uint32 [0, +4294967295])
+  
 | **Nome**  | **Dimensione Tipica** | **Descrizione** |
-| --------- | -------------- | --------------- |
+| --------- | --------------------- | --------------- |
 | [unsigned] char      | 1 byte | numero intero 8bit  |
 | [unsigned] short     | 2 byte | numero intero 16bit |
 | [unsigned] int       | 4 byte | numero intero 32bit |
@@ -145,14 +164,15 @@ short s1, s2 = 33, s3;
 # I tipi di dati numerici interi (rappresentazione)
 * I numeri positivi sono rappresentati alla stesso modo sia nei tipi signed che unsigned. I numeri negativi utilizzano la notazione in complemento a 2 (-N viene rappresentato come 2^bit – N)
 * La rappresentazione dei numeri è indipendente dall’endianness (*Big endian* byte meno significativo mantenuto negli indirizzi più alti, *Little endian*: byte più significativo mantenuto negli indirizzi più alti)
-  
+
 | **Valore numerico** | **Rappresentazione binaria** | 
-| ---------- | -------------------- | 
-| 0          | 0 0 0 0 0 0 0 0      |
-| 1          | 0 0 0 0 0 0 0 1      |
-| -1         | 1 1 1 1 1 1 1 1      |
-| -2         | 1 1 1 1 1 1 1 0      |
-| -128       | 1 0 0 0 0 0 0 0      |
+|---------------------|------------------------------| 
+| +2                  | 0 0 0 0 0 0 1 0              |
+| +1                  | 0 0 0 0 0 0 0 1              |
+| 0                   | 0 0 0 0 0 0 0 0              |
+| -1                  | 1 1 1 1 1 1 1 1              |
+| -2                  | 1 1 1 1 1 1 1 0              |
+| -128                | 1 0 0 0 0 0 0 0              |
 
 # I tipi di dati numerici interi (rappresentazione)
 ![Complemento a 2](./images/rappresentazione_int.png)
@@ -170,48 +190,32 @@ short s1, s2 = 33, s3;
   * int8_t, int16_t, int32_t, int64_t
   * uint8_t, uint16_t, uint32_t, uint64_t
 
-# Letterali numeriche
-* *Dopo la dichiarazione le variabili non hanno un valore predefinito*. Quindi è necessario eseguire un'operazione di *assegnamento* per definirne un valore. In questo modo la memoria allocata per la variabile viene anche riempita con un valore specifico
-* Negli esempi sotto vengono utilizzate solo espressioni composte da *letterali numeriche* per definire i valori delle variabili
-
+# limits.h
 ```c
-short s = (short)1024;
-int i = 1024;
-long l = 1024L;
-long long ll = 1024LL; 
+/* Minimum and maximum values a `signed short int' can hold.  */
+#  define SHRT_MIN        (-32768)
+#  define SHRT_MAX        32767
+/* Maximum value an `unsigned short int' can hold.  (Minimum is 0.)  */
+#  define USHRT_MAX        65535
+/* Minimum and maximum values a `signed int' can hold.  */
+#  define INT_MIN        (-INT_MAX - 1)
+#  define INT_MAX        2147483647
+/* Maximum value an `unsigned int' can hold.  (Minimum is 0.)  */
+#  define UINT_MAX        4294967295U
+/* Minimum and maximum values a `signed long int' can hold.  */
+#  if __WORDSIZE == 64
+#   define LONG_MAX        9223372036854775807L
+#  else
+#   define LONG_MAX        2147483647L
+#  endif
+#  define LONG_MIN        (-LONG_MAX - 1L)
 ```
-
-```c
-float f = 3.1415F;
-double d = 3.1415;
-```
-
-# Letterali numeriche
-* Le sequenze che iniziano con un numero (non possono essere identificatori!) sono chiamate costanti o letterali (literals) numeriche. *Da non confondere con le variabili dichiarate costanti (const)*
-  * decimali: cominciano con una cifra da 1 a 9 e proseguono con altre cifre da 0 a 9
-  * ottali: cominciano con 0 e proseguono con altre cifre da 0 a 7
-  * esadecimali: cominciano con *0x* o *0X* e proseguono con altre cifre da 0 a 9 o con lettere (maiuscole o minuscole) da *A* a *F*
-* Ogni letterale può essere inoltre seguita un postfisso (L=long, U=unsigned, F=float)
-  
-```
-int n1 = 127  // 1 * 10^2 + 2 * 10^1 + 7 * 10^0
-int n2 = 0177 // 1 * 8^2  + 7 * 8^1  + 7 * 8^0 
-int n3 = 0x7f // 7 * 16^1 + 15 * 16^0
-```
-
-```
-long n1 = 0x7fL // 127 (long) in esadecimale
-unsigned long long n2 = 0x7fULL // 127 (unsigned long long) in esadecimale
-```
-
-# Letterali numeriche
-![Letterali Numerici](./images/literals_interi.png)
-
 
 # I tipi di dati numerici in virgola mobile (IEEE 754-1985)
 * I tipi *float* e *double* sono i cosiddetti numeri in virgola mobile che rappresentano l’insieme dei numeri reali: con essi possiamo rappresentare numeri molto piccoli o numeri molto grandi, positivi e negativi, con e senza decimali
-* La differenza tra i due sta nel numero di bit riservati alla rappresentazione dei numeri, che si va a riflettere sul range di numeri e sul numero di cifre dopo la virgola che possiamo memorizzare 
+* La differenza tra i due sta nel numero di bit riservati alla rappresentazione dei numeri, che si riflette sul range di numeri rappresentabili e sul numero di cifre dopo la virgola 
 * Se abbiamo bisogno di particolare accuratezza, utilizziamo il tipo *double*
+
 
 | **Nome** | **Dimensione Tipica** | **Descrizione** |
 | -------- | -------------- | --------------- |
@@ -222,6 +226,7 @@ unsigned long long n2 = 0x7fULL // 127 (unsigned long long) in esadecimale
 # I tipi di dati numerici in virgola mobile (Rappresentazione)
 * Standard IEEE 754
 * *N = -1 x segno x mantissa x 2^esponente*
+* http://weitz.de/ieee/
 
 ![double](./images/rappresentazione_double_float.png)
 
@@ -239,34 +244,30 @@ unsigned long long n2 = 0x7fULL // 127 (unsigned long long) in esadecimale
 * *sizeof* ritorna una variabile di tipo *unsigned long*
 
 ```c
-printf("Size of:\n");
 printf("char=%lu\n", sizeof(char));
 printf("short=%lu\n", sizeof(short));
 printf("int=%lu\n", sizeof(int));
 printf("long=%lu\n", sizeof(long));
 printf("longlong=%lu\n", sizeof(long long));
+printf("float=%lu\n", sizeof(float));
+printf("double=%lu\n", sizeof(double));
 ```
 
 # Errori comuni
 * L’utilizzo inappropriato delle variabili può causare problemi seri e difficili da diagnosticare!
-* **Errata interpretazione di dati** (e.g., dati signed negativi letti come unsigned danno vita a numeri e calcoli sbagliati!)
+* **Overflow, underflow, errata interpretazione di dati** 
 
 ```c
-/* numero negativo salvato in notazione complemento a 2, ma interpretato come positivo */
+/* numero negativo, ma interpretato come positivo */
 int main(){
-    int a = -5;
-    printf("a=%u\n", a);
+    int a = -1;
+    printf("a=%u\n", a);  /* Output: 4294967295 */
     return 0;
 }
 ```
 
-# Errori comuni
-* L’utilizzo inappropriato delle variabili può causare problemi seri e difficili da diagnosticare!
-* **Overflow o underflow delle variabili** (e.g., calcoli che sforano i range ammissibili producono errori nei calcoli e nel controllo di flusso)
-
 ```c
-/* esempio di overflow char[-128, 127] */
-/* dovrebbe terminare non NON termina perchè char non può rappresentare il valore 200 */
+/* overflow char[-128, 127] */
 int main() {
   char a;
   for(a = 0; a < 200; a++) { }
@@ -304,8 +305,9 @@ num2 = *p;
 ![Puntatore](./images/puntatore.jpg)
 
 # Puntatori
-* Come tutte le variabili, i puntatori sono caratterizzati da un proprio indirizzo e da una dimensione. I puntatori sulla stessa macchina sono tutti della stessa dimensione. 16, 32 o 64 bit a seconda del processore (o sistema
-operativo) su cui si lavora.
+* Come tutte le variabili, i puntatori sono caratterizzati da un proprio indirizzo e da una dimensione 
+* I puntatori sulla stessa macchina sono tutti della stessa dimensione. 16, 32 o 64 bit a seconda del processore (o sistema
+operativo) su cui si lavora
 * Come ogni altra variabile, anche un puntatore, finché non viene inizializzato, contiene una sequenza di bit casuali che
 difficilmente corrisponde a un indirizzo di memoria valido. *Tale situazione può essere causa di errori difficilmente identificabili*
 
@@ -341,7 +343,7 @@ if (p) {
 * Gli array permettono di memorizzare *in aree contigue di memoria* un numero fissato di elementi di tipo omogeneo
 (tutti dello stesso tipo)
 * E' possibile identificare univocamente tutti gli oggetti dell’array in modo sistematico tramite l’uso di indici numerici che, in un array di lunghezza N, vanno da 0 ad N-1
-* A seconda del numero di dimensioni dell'array, essi vengono chiamati vettori (d=1), matrici (d=2), o array multidimensionali (d>2)
+* A seconda del numero di dimensioni dell'array (d), essi vengono chiamati vettori (d=1), matrici (d=2), o array multidimensionali (d>2)
 
 # Vettori
 * I vettori, o array monodimensionali, permettono di allocare un insieme di elementi dello stesso tipo in aree contigue di memoria
@@ -355,9 +357,6 @@ nome-tipo identificatore [ cardinalità ] ;
 * *identificatore* è il nome che identifica il vettore
 * *cardinalità* è una costante intera che indica da quanti elementi è costituito il vettore
 
-# Limiti di indicizzazione di un vettore
-* Si consideri, come esempio, il vettore riportato sotto di cardinalità 5
-
 ```c
 int num[5];
 ```
@@ -365,6 +364,7 @@ int num[5];
 * L'identificatore associato al vettore è num
 * Ciascun elemento del vettore è di tipo int
 * I valori validi dell'indice sono limitati all'intervallo [0, 5-1]
+
 
 # Vettori
 ![Array](./images/puntatore_vettore.jpg)
@@ -403,14 +403,6 @@ int main() {
 }
 ```
 
-# Violazione dei limiti di un vettore
-* Nel caso si tenti di accedere ad un elemento del vettore utilizzando un indice con valore al di fuori dell'intervallo
-ammesso, nel migliore dei casi il programma termina con un errore di *segmentation fault* (violazione di memoria),
-ovvero di accesso ad una area di memoria alla quale non è permesso accedere
-* In altri casi l'accesso errato va a leggere/scrivere una porzione di memoria che appartiene al programma corrente,
-allocata nella memoria presente oltre la dimensione del vettore. Questa situazione è molto pericolosa per il funzionamento del programma, in quanto possono verificarsi comportamenti indesiderati, imprevedibili, e spesso difficili da diagnosticare
-
-
 # Inizializzazione di un vettore
 * L'inizializzazione di un vettore può essere effettuata senza specificarne la dimensione, ma semplicemente elencandone gli elementi. Non viene specificata la cardinalità del vettore, ma si racchiude tra parentesi graffe una lista di elementi separati
 da virgola. Il compilatore dimensiona il vettore sulla base del numero di valori utilizzati per l'inizializzazione
@@ -428,6 +420,15 @@ int n[10] = {1, 5, 3};
 ```c
 int n[10] = {};
 ```
+
+
+# Violazione dei limiti di un vettore
+* Nel caso si tenti di accedere ad un elemento del vettore utilizzando un indice con valore al di fuori dell'intervallo
+  ammesso, nel migliore dei casi il programma termina con un errore di *segmentation fault* (violazione di memoria),
+  ovvero di accesso ad una area di memoria alla quale non è permesso accedere
+* In altri casi l'accesso errato va a leggere/scrivere una porzione di memoria che appartiene al programma corrente,
+  allocata nella memoria presente oltre la dimensione del vettore. Questa situazione è molto pericolosa per il funzionamento del programma, in quanto possono verificarsi comportamenti indesiderati, imprevedibili, e spesso difficili da diagnosticare
+
 
 # Uso di macro con vettori e cicli
 * In ogni punto del programma viene usata la macro MAX per fare riferimento alla dimensione del vettore
@@ -464,7 +465,7 @@ i = sizeof(v)/sizeof(*v); /* 10: numero di elementi del vettore v */
 * Nella maggior parte dei casi, puntatori ed array possono essere utilizzati in modo intercambiabile. Esistono però alcune eccezioni:
 
 * Operatore *sizeof*
-  * sizeof(array) ritorna la quantità di memoria usata da tutti gli elementi dell'array
+  * sizeof(array) ritorna la quantità di memoria usata dall'array nel suo complesso
   * sizeof(puntatore) ritorna la quantità di memoria usata dal puntatore stesso
 * Operatore *&*
   * &array è un alias di &array[0] e ritorna l'indirizzo del primo elemento dell'array
@@ -487,8 +488,8 @@ int main(void) {
 
     printf("%ld\n", sizeof(v));     /* 64 */
     printf("%ld\n", sizeof(v2));    /* 8 */
-    printf("%p\n", &v[0]);          /* 0x7ffeedce4890 */
-    printf("%p\n", &v2);            /* 0x7ffeedce4888 */
+    printf("%p\n", &v[0]);          /* 0x7ffee0d7c8a0 */
+    printf("%p\n", &v2);            /* 0x7ffee0d7c898 */
 }
 ```
 
@@ -558,7 +559,7 @@ char str3[4] = "str3";
 # Caratteri e Stringhe
 * Caratteri e stringhe sono diversi e non vanno confusi:
   * un carattere è in realtà un numero intero (per denotare una costante di tipo carattere: 'x')
-  * una stringa è un vettore di caratteri che termina con il carattere '\0' (per denotare costanti di tipo stringa: "un esempio di stringa")
+  * una stringa è un vettore di caratteri che termina con il carattere '\0' 
 * Una variabile di tipo stringa è in realtà un puntatore al primo carattere del vettore
 
 ```c
