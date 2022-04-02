@@ -91,10 +91,10 @@ int main() {
 ```
 
 # Parametri di input
-* È obbligatorio indicare il tipo delle variabili. Se non ci sono variabili, si usa il tipo speciale *void*
+* È obbligatorio indicare il tipo delle variabili. Se non ci sono variabili, si usa il tipo *void*
 * Non è possibile indicare parametri facoltativi
 * È possibile indicare funzioni con numero di parametri variabile, (vedi *printf*)
-* Il passaggio dei parametri avviene *sempre per copia (per valore)*
+* Il passaggio dei parametri avviene *sempre per copia (copia del valore)*
 
 ```c
 void try_modification(int value) {
@@ -103,9 +103,9 @@ void try_modification(int value) {
 }
 
 int main(){
-    int a=5;
+    int a = 5;
     try_modification(a);
-    printf("a = %d\n", a);
+    printf("a = %d\n", a); /* a = 5 */
     return 0;
 }
 ```
@@ -135,8 +135,8 @@ void try_modification(void){
 }
 
 int main(){
-    a=5;
-    try_modification();
+    a = 5;
+    try_modification(); /* a = 10 */
     printf("a=%d\n", a);
 }
 ```
@@ -154,14 +154,14 @@ void counter() {
 }
 
 int main(){
-    counter();
-    counter();
+    counter(); /* count=1 */
+    counter(); /* count=2 */
     
     return 0;
 }
 ```
 
-# Passaggio per valore (copia)
+# Passaggio per valore (copia del valore)
 * Secondo la modalità del passaggio per valore *ogni funzione ha una propria zona di memoria per memorizzare i dati* (messa a disposizione solo al momento dell’effettivo utilizzo e rilasciata quando non è più necessaria)
 * Al momento dell’uso della funzione *i parametri sono copiati*, quindi non vi è un accesso diretto ai valori del codice chiamante
 
@@ -179,8 +179,8 @@ int main() {
 }
 ```
 
-# Passaggio per valore (copia)
-![Passaggio di parametri per valore](./images/passaggio_copia.png)
+# Passaggio per valore (copia del valore)
+![Passaggio di parametri per valore](./images/passaggio_valore.png)
 
 
 # Passaggio per riferimento (copia del riferimento)
@@ -215,8 +215,8 @@ int main() {
 ```c
 void scambia(const int *a, const int *b) {
     int tmp = *a;
-    *a = *b;        // errori di compilazione!
-    *b = tmp;       // errori di compilazione!
+    *a = *b;        /* errore di compilazione */
+    *b = tmp;       /* errore di compilazione */
 }
 
 int main() {
@@ -278,11 +278,11 @@ int main(int argc, char *argv[]) {
 ```
 
 ```shell
-$ ./a.out ciao nicola bicocchi
+$ ./a.out -a -b -c
 [0] ./a.out
-[1] ciao
-[2] nicola
-[3] bicocchi
+[1] -a
+[2] -b
+[3] -c
 ```
 
 # Passaggio di parametri al programma principale
@@ -300,6 +300,8 @@ int main(int argc, char *argv[]) {
     a = atoi(argv[1]);
     b = atof(argv[2]);
     strncpy(c, argv[3], sizeof(c));
+    /* secure code, guarantees that the string is null-terminated */
+    c[sizeof(c) - 1] = '\0';
     printf("%d %f %s\n", a, b, c);
 }
 ```
@@ -308,8 +310,8 @@ int main(int argc, char *argv[]) {
 # Ricorsione
 * Una funzione è definita in modo ricorsivo se è definita in termini di se stessa.
 * Nella definizione ricorsiva di una funzione è possibile identificare *casi base* e *casi ricorsivi*:
-* I casi base permettono di calcolare il valore della funzione, anche se solo nei casi più semplici
-* I casi ricorsivi permettono di calcolare la funzione mediante altre valutazioni della funzione
+* I *casi base* permettono di calcolare il valore della funzione, anche se solo nei casi più semplici
+* I *casi ricorsivi* permettono di calcolare la funzione mediante altre valutazioni della funzione
 
 ```c
 n! = 1 x 2 x ... x (n-2) x (n-1) x n

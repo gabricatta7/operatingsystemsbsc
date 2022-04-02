@@ -275,8 +275,66 @@ int main() {
 }
 ```
 
-# Puntatori
+# Casting implicito
+```c
+int main(void) {
+    int  i = 17;
 
+    /* ascii value is 99 */
+    char c = 'c';
+
+    float f = 3.14F;
+
+    i = f + c;
+    f = (i + c);
+
+    printf("i=%d\n", i); /* i=102 */
+    printf("f=%f\n", f); /* f=201.000000 */
+}
+```
+
+```
+Warning: Implicit conversion turns floating-point number into integer: 'float' to 'int'
+Warning: Implicit conversion from 'int' to 'float' may lose precision
+```
+
+# Casting esplicito
+```c
+int main(void) {
+    int  i = 17;
+
+    /* ascii value is 99 */
+    char c = 'c';
+
+    float f = 3.14F;
+
+    i = (int)f + c;
+    f = (float)(i + c);
+
+    printf("i=%d\n", i); /* i=102 */
+    printf("f=%f\n", f); /* f=201.000000 */
+}
+```
+
+# Casting esplicito
+```c
+int main(void) {
+    unsigned int u = UINT_MAX;
+    float f = (float)u;
+    double d = (double)u;
+
+    printf("u=%u\n", u);  /* u=4294967295 */
+    printf("f=%f\n", f);  /* f=4294967296.000000 */
+    printf("d=%lf\n", d); /* d=4294967295.000000 */
+
+    d = DBL_MAX;
+    u = (unsigned int)d;
+    printf("u=%u\n", u);  /* u=0 */
+    printf("d=%lf\n", d); /* d=179769313486231570814527... */
+}
+```
+
+# Puntatori
 * Un puntatore è una variabile che contiene un indirizzo di memoria. Dal momento che gli indirizzi di memoria sono interi positivi, in pratica un puntatore è un numero intero senza segno
 * *Un puntatore non contiene il valore di una variabile tradizionale, ma l'indirizzo di una locazione di memoria in cui sono immagazzinati un numero congruo di bit per essere interpretati come il tipo indicato*
 * L'operatore **&** (si legge *l'indirizzo di*) e consente di conoscere l'indirizzo di una variabile
@@ -645,13 +703,6 @@ int main() {
     scanf("%lf", &lf);
 }
 ```
-
-
-# Casting implicito
-
-
-# Casting esplicito
-
 
 # Funzioni di libreria (caratteri)
 * La libreria standard del C (LibC) contiene un'ampia varietà di funzioni per manipolare tutti gli aspetti di un sistema operativo. Sotto sono riportare quelle principali che riguardano il trattatamento dei caratteri

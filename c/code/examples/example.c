@@ -1,10 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <limits.h>
+#include <float.h>
+#include <string.h>
 
 
-int main(void) {
-    char c = 'a';
-    int d=1;
-    long ld=1L;
-    long long lld = 1LL;
+int main(int argc, char *argv[]) {
+
 }
