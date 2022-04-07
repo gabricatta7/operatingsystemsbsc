@@ -747,6 +747,8 @@ char *fgets(char *str, int n, FILE *stream);
 * Funzioni principali che riguardano le funzioni matematiche
 
 ```c
+#include <math.h>
+
 /* funzioni trigonometriche */
 double sin(double x)
 double cos(double x)
@@ -772,6 +774,7 @@ double round(double x)
 ```c
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main () {
    int i;
