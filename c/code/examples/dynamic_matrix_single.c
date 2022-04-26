@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fill_matrix(int rows, int cols, int *m) {
-    int i, j, offset;
-    for (i = 0; i<rows; i++) {
-        for (j = 0; j<cols; j++) {
+void fill_matrix(unsigned rows, unsigned cols, int *m) {
+    unsigned i, j, offset;
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
             offset = i * cols + j;
-            m[offset] = i * j;
+            m[offset] = (int)(i * j);
         }
     }
 }
 
-void show_matrix(int rows, int cols, int *m) {
-    int i, j, offset;
+void show_matrix(unsigned rows, unsigned cols, int *m) {
+    unsigned i, j, offset;
 
-    for (i = 0; i<rows; i++) {
-        for (j = 0; j<cols; j++) {
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
             offset = i * cols + j;
             printf("%4d", m[offset]);
         }
@@ -30,14 +30,13 @@ void free_matrix(int *m) {
 int *allocate_matrix(int rows, int cols) {
     int *m;
 
-    m = malloc((unsigned long)(rows * cols) * sizeof(*m));
-    if (m == NULL) return NULL;
-
+    m = malloc((unsigned long) (rows * cols) * sizeof(*m));
     return m;
 }
 
 #define ROWS 10
 #define COLS 10
+
 int main(void) {
     int *m;
 

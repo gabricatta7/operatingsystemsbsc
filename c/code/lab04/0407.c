@@ -10,12 +10,12 @@ struct matrix {
 
 struct matrix *allocate_matrix(size_t rows, size_t cols) {
     struct matrix *m;
-    int i;
+    size_t i;
 
     m = malloc(sizeof(*m));
     m->rows = rows;
     m->cols = cols;
-    m->data = malloc((unsigned long) (rows) * sizeof(*m));
+    m->data = malloc((unsigned long) (rows) * sizeof(*(m->data)));
     if (m == NULL) return NULL;
 
     for (i = 0; i < rows; i++) {
@@ -28,7 +28,7 @@ struct matrix *allocate_matrix(size_t rows, size_t cols) {
 
 void fill_matrix(struct matrix *m) {
     size_t i, j;
-    double value = 0.0;
+    double value = 1.0;
 
     for (i = 0; i < m->rows; i++) {
         for (j = 0; j < m->cols; j++) {
@@ -38,7 +38,7 @@ void fill_matrix(struct matrix *m) {
 }
 
 void free_matrix(struct matrix *m) {
-    int i;
+    size_t i;
 
     for (i = 0; i < m->rows; i++) {
         free(m->data[i]);

@@ -36,8 +36,7 @@ dove:
 
 ---
 
-Esercizio 3. Implementare una funzione *tabula_recta* che crei una matrice contenente la tabula recta (vedere wikipedia)
-dell’alfabeto inglese. Rispettare il seguente prototipo:
+Esercizio 3. Implementare una funzione *tabula_recta* che crei una matrice contenente la [tabula recta](https://en.wikipedia.org/wiki/Tabula_recta) dell’alfabeto inglese. Rispettare il seguente prototipo:
 
 ```c
 void tabula_recta(char t[][26]);
