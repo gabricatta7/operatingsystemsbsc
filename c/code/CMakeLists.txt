@@ -10,8 +10,9 @@ add_executable(example examples/example.c)
 #add_executable(file_copy_text examples/file_copy_text.c)
 #add_executable(file_position examples/file_position.c)
 #add_executable(printf_scanf examples/printf_scanf.c)
-add_executable(matrix_single examples/dynamic_matrix_single.c)
-add_executable(matrix_double examples/dynamic_matrix_double.c)
+#add_executable(matrix_single examples/dynamic_matrix_single.c)
+#add_executable(matrix_double examples/dynamic_matrix_double.c)
+#add_executable(array_pointer examples/array_pointer.c)
 #add_executable(printf_types examples/printf_types.c)
 
 # Basic Programming lab01
