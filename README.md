@@ -6,11 +6,10 @@
 * [CLion](https://www.jetbrains.com/clion/)
 
 ## Tutorial, Esercizi Online
-* https://www.hackerrank.com/domains/shell
 * https://www.tutorialspoint.com/unix/
 * https://seankross.com/the-unix-workbench/
 * https://explainshell.com/
-* https://www.hackerrank.com/domains/c
+* https://pythontutor.com/
 * http://en.wikipedia.org/wiki/C_(programming_language)
 * http://en.wikipedia.org/wiki/C_syntax
 * http://en.wikibooks.org/wiki/C_Programming
@@ -21,7 +20,6 @@
 * Marco Liverani - Programmazione della Shell Bash
 * Jason Bacon, Lars Olson - Unix User's Guide
 * Chet Ramey, Brian Fox - Bash Reference Manual
-
 
 ## Libri C
 * **Facchinetti, Larizza, Rubini - Programmare in C**
