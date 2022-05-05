@@ -32,6 +32,16 @@ File binari:
 * Un file di testo è un caso particolare di file binario che utilizza un sottoinsieme dei caratteri ASCII (i caratteri stampabili). Può essere manipolato con le funzioni dedicate ai file binari; è infatti possibile leggerli a blocchi di byte come per i file binari
 * Operare su file binari con le funzioni usate per i file di testo non è invece agevole
 
+```c
+/* Prints the full ASCII table */
+int main(void) {
+    int i;
+    for (i = 0; i < 255; i++) {
+        printf("[%3d] -> %c\n", i, i);
+    }
+}
+```
+
 
 # File binari e file di testo
 * Uno stesso dato può sempre essere memorizzato sia in file di testo che in file binari utilizzando un'opportuna rappresentazione. La scelta del tipo di rappresentazione dipende da considerazioni legate al tipo di utilizzo che viene fatto dei dati
@@ -42,6 +52,11 @@ File binari:
 Esempio: memorizzazione del numero decimale 214439
 File di testo: '2' '1' '4' '4' '3' '9'                          (6 byte)
 File di binario (in base alla endianness): 0x00 0x03 0x45 0xa7  (4 byte)
+```
+```
+Esempio: memorizzazione del numero decimale 6
+File di testo: '6'                                              (1 byte)
+File di binario (in base alla endianness): 0x00 0x00 0x00 0x06  (4 byte)
 ```
   
 # Il tipo FILE
@@ -56,16 +71,16 @@ File di binario (in base alla endianness): 0x00 0x03 0x45 0xa7  (4 byte)
 ```c
 struct file {
     ...
-	struct path		f_path;
-	struct inode		*f_inode;	/* cached value */
+	struct path		        f_path;
+	struct inode		    *f_inode;	/* cached value */
 	const struct file_operations	*f_op;
 	...
-	unsigned int 		f_flags;
-	fmode_t			f_mode;
-	struct mutex		f_pos_lock;
-	loff_t			f_pos;
-	struct fown_struct	f_owner;
-	const struct cred	*f_cred;
+	unsigned int 		    f_flags;
+	fmode_t			        f_mode;
+	struct mutex		    f_pos_lock;
+	loff_t			        f_pos;
+	struct fown_struct	    f_owner;
+	const struct cred	    *f_cred;
 	struct file_ra_state	f_ra;
 	...
 };

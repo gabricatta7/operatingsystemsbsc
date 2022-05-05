@@ -47,12 +47,12 @@ dove:
 Esercizio 4. Implementare una versione semplificata del comando *cmp*
 
 ```shell
-$ cmp filename_a filename_b
+$ cmp filename_1 filename_2
 ```
 
 dove:
 
-* **filename_a, filename_b** rappresentano due nomi di file da confrontare;
+* **filename_1, filename_2** rappresentano due nomi di file da confrontare;
 * il comando informa l'utente se i 2 file sono uguali o diversi. Se sono diversi, indica byte e linea della primo
   carattere diverso.
 
@@ -61,12 +61,12 @@ dove:
 Esercizio 5. Implementare una versione semplificata del comando *cat*
 
 ```shell
-$ cat [file ...]
+$ cat [filename ...]
 ```
 
 dove:
 
-* **[file ...]** rappresenta un gruppo di percorsi a file. In caso nessun percorso venga indicato, cat legge da stdin;
+* **[filename ...]** rappresenta un gruppo di percorsi a file. In caso nessun percorso venga indicato, cat legge da stdin;
 * il comando visualizza il contenuto dei file passati come parametro.
 
 ---
