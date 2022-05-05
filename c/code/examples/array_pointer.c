@@ -88,14 +88,14 @@ void show_matrix_double(unsigned rows, unsigned cols, int **m) {
 #define COLS 3
 
 int main(void) {
-    int v[ROWS][COLS];
-    fill_matrix_static(ROWS, COLS, v);
+    //int v[ROWS][COLS];
+    //fill_matrix_static(ROWS, COLS, v);
 
     //int *v = allocate_matrix_single(ROWS, COLS);
     //fill_matrix_single(ROWS, COLS, v);
 
-    //int **v = allocate_matrix_double(ROWS, COLS);
-    //fill_matrix_double(ROWS, COLS, v);
+    int **v = allocate_matrix_double(ROWS, COLS);
+    fill_matrix_double(ROWS, COLS, v);
 
     show_matrix_static(ROWS, COLS, v);
     show_matrix_single(ROWS, COLS, v);
