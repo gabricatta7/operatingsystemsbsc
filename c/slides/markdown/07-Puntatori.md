@@ -243,6 +243,13 @@ void *realloc(void *ptr, size_t size);
 free(void *ptr);
 ```
 
+```c
+#include <string.h>
+void bzero(void *str, size_t size);
+void *memset(void *str, int c, size_t size)
+void *memmove(void *str1, const void *str2, size_t size)
+```
+
 # L'allocazione dinamica della memoria (malloc)
 
 ```c

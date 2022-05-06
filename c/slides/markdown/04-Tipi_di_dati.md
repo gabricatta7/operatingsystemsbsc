@@ -718,8 +718,6 @@ int islower(int ch);
 int isalpha(int ch);
 int isdigit(int ch);
 int isspace(int ch);
-
-int fgetc(FILE *stream);
 ```
 
 # Funzioni di libreria (stringhe)
@@ -739,8 +737,6 @@ char *strcpy(char *dest, const char *src);
 char *strcat(char *dest, const char *src);
 char *strdup(const char *s1);
 size_t strlen(const char *str);
-
-char *fgets(char *str, int n, FILE *stream);
 ```
 
 # Funzioni di libreria (matematica)

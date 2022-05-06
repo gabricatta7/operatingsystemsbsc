@@ -3,6 +3,21 @@
 #include <string.h>
 #include <ctype.h>
 
+/* trim spaces both the beginning and at the end of the string */
+void trim(char *str) {
+    char *begin = str;
+    char *end;
+    long length = (unsigned)strlen(str), trimmed_length;
+
+    while(isspace((unsigned char)*begin)) begin++;
+    end = str + length - 1;
+    while(end > str && isspace((unsigned char)*end)) end--;
+    trimmed_length = end - begin + 1;
+
+    memmove(str, begin, trimmed_length);
+    memset(str + trimmed_length, 0, length - trimmed_length);
+}
+
 /* count the number of space separated words in a string */
 unsigned word_count(const char *s) {
     unsigned count = 0, length, i;
@@ -14,22 +29,23 @@ unsigned word_count(const char *s) {
     return count + 1;
 }
 
-/* splits the string s into an array of strings (dinamically allocated) */
-char **split(const char *s) {
+/* splits the string str into an array of strings */
+char **split(const char *str) {
     int index = 0;
-    char *str, *ptr, **list;
+    char *copy, *ptr, **list;
     unsigned words;
 
-    /* create a copy of s because of strtok modifies the passed string */
-    str = strdup(s);
-    words = word_count(str);
+    /* create a copy of str because of strtok modifies the passed string */
+    copy = strdup(str);
+    trim(copy);
 
+    words = word_count(copy);
     /* allocate the NULL-terminated list of pointers */
     list = malloc((words + 1) * sizeof(*list));
     if (!list) return NULL;
     list[words] = NULL;
 
-    ptr = strtok(str, " ");
+    ptr = strtok(copy, " ");
     while (ptr != NULL) {
         /* allocate each string */
         list[index] = malloc((strlen(ptr) + 1) * sizeof(**list));
@@ -40,12 +56,12 @@ char **split(const char *s) {
 
         ptr = strtok(NULL, " ");
     }
-    free(str);
+    free(copy);
     return list;
 }
 
 int main(void) {
-    char **list, str[] = "Rosso di sera bel tempo si spera";
+    char **list, str[] = "   Rosso di sera bel tempo si spera    ";
     int i;
 
     list = split(str);
@@ -59,8 +75,6 @@ int main(void) {
     for (i = 0; list[i] != NULL; i++) {
         free(list[i]);
     }
-    /* free NULL string (the last one) */
-    free(list[i]);
 
     /* free array of char pointers */
     free(list);
