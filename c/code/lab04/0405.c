@@ -5,9 +5,8 @@
 
 /* trim spaces both the beginning and at the end of the string */
 void trim(char *str) {
-    char *begin = str;
-    char *end;
     long length = (unsigned)strlen(str), trimmed_length;
+    char *begin = str, *end = str + length - 1;
 
     while(isspace((unsigned char)*begin)) begin++;
     end = str + length - 1;
