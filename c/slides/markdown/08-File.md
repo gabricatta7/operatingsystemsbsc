@@ -139,8 +139,15 @@ int fclose(FILE *f);
 * I file devono essere chiusi utilizzando la funzione *fclose()*
 * La chiusura del file serve per liberare delle aree di memoria allocate dalle funzioni della libreria per memorizzare le informazioni lette e scritte sul file
 * *fclose()* accetta come parametro il puntatore a FILE che identifica il file da chiudere
-* *fopen()* restituisce 0 se la chiusura avviene con successo, 1 in caso di errore
-    
+
+```c
+int fflush(FILE *f);
+```
+
+* La funzione *fflush()* forza la scrittura di tutti i dati non ancora scritti sul dispositivo fisico
+* In caso riceva come parametro un puntatore null, forza la scrittura in tutti i file aperti
+* *fclose()* chiama *fflush()* prima di chiudere definitivamente i file
+
 # Esempio: apertura di un file
 
 ```c
@@ -187,41 +194,24 @@ size_t fwrite(void *ptr, size_t size, size_t nelem, FILE *f);
 
 # Esempio: copia di un file binario
 ```c
-void copy_by_byte_blocks(FILE *source, FILE *target) {
-    size_t n, m;
-    unsigned char buffer[BUFFER_SIZE];
-    do {
-        n = fread(buffer, 1, sizeof(buffer), source);
-        if (n) {
-            m = fwrite(buffer, 1, n, target);
-        } else {
-            m = 0;
-        }
-    } while ((n > 0) && (n == m));
+void copy_data(FILE *source, FILE *target) {
+    unsigned long nread, nwrite;
+    char buffer[4096];
 
-    if (m != 0) {
-        perror("copy");
+    do {
+        nread = nwrite = 0;
+        nread = fread(buffer, 1, sizeof(buffer), source);
+        if (nread > 0) {
+            nwrite = fwrite(buffer, 1, nread, target);
+        }
+    } while ((nread > 0) && (nread == nwrite));
+
+    if (nread != nwrite) {
+        perror("copy_data()");
+        exit(EXIT_FAILURE);
     }
 }
 ```
-
-# Posizione corrente all'interno del file
-
-* Dal punto di vista logico, un file è una sequenza di byte [0, size - 1]
-* Quando un programma accede ad un file, in lettura o in scrittura, il sistema ricorda la sua posizione corrente (all'interno della struttura FILE)
-* La posizione corrente è relativa ad un singola apertura. Un file può essere aperto contemporaneamente più volte ed avere di conseguenza molteplici posizioni correnti (ognuna annotata all'interno della variabile FILE dedicata)
-
-```c
-#include <stdio.h>
-int fseek(FILE *stream, long offset, int whence);
-long ftell(FILE *stream);
-void rewind(FILE *stream);
-
-/* alternatives to fseek, ftell */
-int fgetpos(FILE *stream, fpos_t *pos);
-int fsetpos(FILE *stream, fpos_t *pos);
-```
-
 # Accesso a file di testo
 ```c
 #include <stdio.h>
@@ -233,6 +223,7 @@ int fputs(const char *str, FILE *stream)
 
 * Le funzioni *fgetc()* ed *fputc()* vengono utilizzate per leggere e scrivere singoli caratteri (impacchettati all'interno di una variabile di tipo intero)
 * Le funzioni *fgets()* ed *fputs()* vengono utilizzate per leggere e scrivere array di caratteri. La funzione *fgets()* è particolarmente utile in quanto consente la lettura di un file di testo orientata alla singola linea (la lettura viene interrotta in corrispondenza del carattere *newline* oppure in caso dell'esaurimento del buffer)
+* Nota bene: la lettura orientata alla linea ha significato solo nel caso di file di testo. Nei file binari, il carattere a capo ('\\n') non ha significato. Rappresenta solo un byte di valore 10.
 
 # Esempio: copia di un file di testo
 ```c
@@ -254,6 +245,48 @@ int main() {
 
     FILE *source, *target;
     ...
+}
+```
+
+# Posizione corrente all'interno del file
+
+* Dal punto di vista logico, un file è una sequenza di byte [0, size - 1]
+* Quando un programma accede ad un file, in lettura o in scrittura, il sistema ricorda la sua posizione corrente (all'interno della struttura FILE)
+* La posizione corrente è relativa ad un singola apertura. Un file può essere aperto contemporaneamente più volte ed avere di conseguenza molteplici posizioni correnti (ognuna annotata all'interno della variabile FILE dedicata)
+
+```c
+#include <stdio.h>
+/* whence [SEEK_SET, SEEK_CUR, SEEK_END] */
+int fseek(FILE *stream, long offset, int whence);
+long ftell(FILE *stream);
+void rewind(FILE *stream);
+
+/* alternatives to fseek, ftell */
+int fgetpos(FILE *stream, fpos_t *pos);
+int fsetpos(FILE *stream, fpos_t *pos);
+```
+
+# Posizione corrente all'interno del file
+```bash
+echo -n "0123456789" > test.txt
+```
+
+```c
+int main(void) {
+    FILE *src;
+    long i, length;
+
+    if (!(src = fopen("test.txt", "r"))) {
+        perror("fopen()");
+        exit(EXIT_FAILURE);
+    }
+
+    fseek(src, 0L, SEEK_END);
+    length = ftell(src);
+    for (i = -1; i >= -length; i--) {
+        fseek(src, i, SEEK_END);
+        printf("%c\n", fgetc(src));
+    }
 }
 ```
 
@@ -285,5 +318,35 @@ int sscanf(const char *str, const char *format, ...);
 * *printf()* e *scanf()* offrono funzionità di input (lettura) ed output (scrittura) formattate. In particolare è possibile specificare un formato all'interno del quale posizionare delle variabili.
 * Ne esistono diverse versioni, caratterizzate dalla lettera iniziale, che utilizzano canali di input o di output diversi. Ad esempio, *fprintf()* stampa stringhe formattate su un file, mentre *sprintf()* su una stringa di caratteri.
   
+# argc, argv
+```c
+int main(void) { /* ... */ }
+int main (int argc, char *argv[]) { /* ... */ }
+```
+* La funzione *main()* può essere invocata utilizzando due interfacce distinte in base alla necessità, o meno, di intercettare parametri passati dalla shell
+* int argc: contiene il numero di stringhe inserite dall’utente a linea di comando (cardinalità del 2° argomento)
+* char *argv[]: l’array che contiene le stringhe inserite dall’utente a linea di comando (ogni elemento dell’array è un puntatore a carattere)
+* argv[argc] contiene un puntatore NULL (per terminare la lista di stringhe)
 
+# argc, argv
+```c
+int main(int argc, char **argv) {
+    int i;
+    printf("argc=%d\n", argc);
+    for (i = 0; i < argc; i++) {
+        printf("argv[%d] = %s\n", i, argv[i]);
+    }
+    /* argv[argc] is printed as an int (NULL pointer) */
+    printf("argv[%d] = %d\n", i, argv[i]);
+}
+```
 
+```
+./example a b c 
+argc=4
+argv[0] = ./example
+argv[1] = a
+argv[2] = b
+argv[3] = c
+argv[4] = 0
+```

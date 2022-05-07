@@ -612,3 +612,26 @@ void free_matrix(struct matrix *m) {
     free(m);
 }
 ```
+
+# Puntatori a funzione
+* In C, così come il nome di un array è un puntatore al suo primo elemento, il nome di una funzione è un puntatore alla funzione stessa. Il C permette la manipolazione esplicita dei puntatori a funzione. Data la funzione *f()*: 
+
+```c
+int f(short, double)
+```
+
+* Allora il nome f è un puntatore di tipo:
+
+```c
+int (*)(short, double)
+```
+
+* Dichiarando un puntatore dello stesso tipo, si pu`o effettuare, ad esempio, un assegnamento:
+
+```c
+int (*ptr_to_f)(short, double);     /* ptrtof puntatore a funzione */
+ptrtof = f;                         /* assegna indirizzo di f a ptrtof */
+(*ptr_to_f)(2,3.14);                /* invoca f attraverso un puntatore */
+```
+
+* Si presti attenzione alla sintassi: int \*f(int); dichiara il prototipo di una funzione che restituisce un puntatore a intero. int (\*f)(int); dichiara un puntatore a funzione.

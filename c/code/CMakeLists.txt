@@ -14,6 +14,8 @@ add_executable(example examples/example.c)
 #add_executable(matrix_double examples/dynamic_matrix_double.c)
 #add_executable(array_pointer examples/array_pointer.c)
 #add_executable(printf_types examples/printf_types.c)
+#add_executable(function_pointer_sort examples/function_pointer_sort.c)
+#add_executable(function_pointer_struct examples/function_pointer_struct.c)
 
 # Basic Programming lab01
 #add_executable(0101 lab01/0101.c)

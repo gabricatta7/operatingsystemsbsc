@@ -5,18 +5,18 @@
 #define FALSE 0
 
 void copy_data(FILE *source, FILE *target) {
-    unsigned long r, w;
+    unsigned long nread, nwrite;
     char buffer[4096];
 
     do {
-        r = fread(buffer, 1, sizeof(buffer), source);
-        w = 0;
-        if (r > 0) {
-            w = fwrite(buffer, 1, r, target);
+        nread = nwrite = 0;
+        nread = fread(buffer, 1, sizeof(buffer), source);
+        if (nread > 0) {
+            nwrite = fwrite(buffer, 1, nread, target);
         }
-    } while ((r > 0) && (r == w));
+    } while ((nread > 0) && (nread == nwrite));
 
-    if (r != w) {
+    if (nread != nwrite) {
         perror("copy_data()");
         exit(EXIT_FAILURE);
     }
