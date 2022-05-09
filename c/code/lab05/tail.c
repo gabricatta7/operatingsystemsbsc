@@ -1,42 +1,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
+
+struct buffer {
+    int n;
+    char **lines;
+};
+
+struct buffer *allocate_buffer(int n) {
+    struct buffer *buffer = malloc(sizeof(*buffer));
+    buffer->n = n;
+    buffer->lines = calloc((unsigned long)n, sizeof(*(buffer->lines)));
+    return buffer;
+}
+
+void add_line_to_buffer(struct buffer *buffer, char *line) {
+    int i;
+    if (buffer->lines[0]) {
+        free(buffer->lines[0]);
+    }
+    for (i = 0; i < buffer->n - 1; i++) {
+        buffer->lines[i] = buffer->lines[i+1];
+    }
+    buffer->lines[buffer->n - 1] = malloc(strlen(line) + 1);
+    strcpy(buffer->lines[buffer->n - 1], line);
+}
+
+void show_buffer(struct buffer *buffer) {
+    int i;
+    for (i = 0; i < buffer->n; i++) {
+        if (buffer->lines[i]) {
+            fprintf(stdout, "%s", buffer->lines[i]);
+        }
+    }
+}
+
+void free_buffer(struct buffer *buffer) {
+    int i;
+    for (i = 0; i < buffer->n; i++) {
+        if (buffer->lines[i]) {
+            free(buffer->lines[i]);
+        }
+    }
+    free(buffer);
+}
 
 int main(int argc, char *argv[]) {
-    FILE *source;
+    FILE *source = stdin;
+    struct buffer *buffer;
+    char line[LINE_MAX];
 
-    char buffer[LINE_MAX];
-    int n, lines, start;
-
-    if (argc != 3) {
-        fprintf(stdout, "Usage: %s filename n\n", argv[0]);
+    if (argc < 2 || argc > 3) {
+        fprintf(stdout, "Usage: %s n [filename]\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    lines = atoi(argv[2]);
-
-    if (!(source = fopen(argv[1], "r"))) {
-        perror("open()");
-        exit(EXIT_FAILURE);
+    if (argc == 3) {
+        source = fopen(argv[2], "r");
+        if (!source) {
+            perror("open()");
+            exit(EXIT_FAILURE);
+        }
     }
 
-    // count lines
-    n = 0;
-    while (((fgets(buffer, LINE_MAX, source)) != NULL)) n++;
-
-    // define the first line to be printed out
-    start = n - lines;
-    if (start < 0) start = 0;
-
-    // skip lines
-    rewind(source);
-    n = 0;
-    while ((n++ < start) && ((fgets(buffer, LINE_MAX, source)) != NULL));
-
-    // print last lines
-    while ((fgets(buffer, LINE_MAX, source)) != NULL) {
-        fputs(buffer, stdout);
+    buffer = allocate_buffer(atoi(argv[1]));
+    while ((fgets(line, LINE_MAX, source)) != NULL) {
+        add_line_to_buffer(buffer, line);
     }
+    show_buffer(buffer);
+    free_buffer(buffer);
 
     fclose(source);
     exit(EXIT_SUCCESS);

@@ -58,20 +58,7 @@ dove:
 
 ---
 
-Esercizio 5. Implementare una versione semplificata del comando *cat*
-
-```shell
-$ cat [filename ...]
-```
-
-dove:
-
-* **[filename ...]** rappresenta un gruppo di percorsi a file. In caso nessun percorso venga indicato, cat legge da stdin;
-* il comando visualizza il contenuto dei file passati come parametro.
-
----
-
-Esercizio 6. Implementare una versione semplificata del comando *cp*
+Esercizio 5. Implementare una versione semplificata del comando *cp*
 
 ```shell
 $ cp filename_1 filename_2
@@ -84,24 +71,66 @@ dove:
 
 ---
 
-Esercizio 7. Implementare una versione semplificata del comando *head*
+Esercizio 6. Implementare una versione semplificata del comando *cat*
 
 ```shell
-$ head filename n
+$ cat [filename ...]
 ```
 
 dove:
 
-* **filename** rappresenta un nome di file di cui mostrare le prime **n** linee.
+* **[filename ...]** rappresenta un gruppo di percorsi a file. In caso filename non venga indicato, il comando legge da stdin;
+* il comando visualizza il contenuto dei file passati come parametro.
+
+---
+
+
+
+---
+
+Esercizio 7. Implementare una versione semplificata del comando *head*
+
+```shell
+$ head n [filename]
+```
+
+dove:
+
+* **filename** rappresenta un nome di file di cui mostrare le prime **n** linee. In caso filename non venga indicato, il comando legge da stdin.
 
 ---
 
 Esercizio 8. Implementare una versione semplificata del comando *tail*
 
 ```shell
-$ tail filename n
+$ tail n [filename]
 ```
 
 dove:
 
-* **filename** rappresenta un nome di file di cui mostrare le ultime **n** linee.
+* **filename** rappresenta un nome di file di cui mostrare le ultime **n** linee. In caso filename non venga indicato, il comando legge da stdin.
+
+---
+
+Esercizio 9. Implementare una versione semplificata del comando *wc*
+
+```shell
+$ wc [filename]
+```
+
+dove:
+
+* b|l rappresentano bytes o linee 
+* **filename** rappresenta un nome di file di cui mostrare il numero di bytes o di linee contenute. In caso filename non venga indicato, il comando legge da stdin.
+
+---
+
+Esercizio 10. Implementare una versione semplificata del comando *grep*
+
+```shell
+$ grep string [filename]
+```
+
+dove:
+
+* **filename** rappresenta un nome di file di cui mostrare tutte le linee che contengono string. In caso filename non venga indicato, il comando legge da stdin.

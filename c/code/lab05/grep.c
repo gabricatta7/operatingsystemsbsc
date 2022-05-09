@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 int main(int argc, char *argv[]) {
     FILE *source = stdin;
     char buffer[LINE_MAX];
-    int lines;
 
     if (argc < 2 || argc > 3) {
-        fprintf(stdout, "Usage: %s n [filename]\n", argv[0]);
+        fprintf(stdout, "Usage: %s string [filename]\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    lines = atoi(argv[1]);
     if (argc == 3) {
         source = fopen(argv[2], "r");
         if (!source) {
@@ -21,8 +20,10 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    while (((fgets(buffer, LINE_MAX, source)) != NULL) && (lines-- > 0)) {
-        fputs(buffer, stdout);
+    while ((fgets(buffer, LINE_MAX, source)) != NULL) {
+        if (strstr(buffer, argv[1])) {
+            fputs(buffer, stdout);
+        }
     }
 
     fclose(source);
