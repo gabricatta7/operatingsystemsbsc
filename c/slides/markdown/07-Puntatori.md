@@ -630,7 +630,7 @@ int (*)(short, double)
 
 ```c
 int (*ptr_to_f)(short, double);     /* ptrtof puntatore a funzione */
-ptrtof = f;                         /* assegna indirizzo di f a ptrtof */
+ptr_to_f = f;                         /* assegna indirizzo di f a ptrtof */
 (*ptr_to_f)(2,3.14);                /* invoca f attraverso un puntatore */
 ```
 
