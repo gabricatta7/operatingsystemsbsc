@@ -9,6 +9,12 @@ int main(int argc, char *argv[]) {
         exit(EXIT_SUCCESS);
     }
 
+    /* file already exists */
+    if ((source = fopen(argv[1], "r"))) {
+        exit(EXIT_FAILURE);
+    }
+
+    /* create file */
     if (!(source = fopen(argv[1], "w"))) {
         perror("open()");
         exit(EXIT_FAILURE);
