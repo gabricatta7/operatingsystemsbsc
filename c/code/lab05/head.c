@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+
+#define LINE_MAX 8192
 
 int main(int argc, char *argv[]) {
     FILE *source = stdin;

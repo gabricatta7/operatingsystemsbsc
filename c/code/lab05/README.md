@@ -125,7 +125,7 @@ dove:
 
 ---
 
-Esercizio 10. Implementare una versione semplificata del comando *grep*
+Esercizio 10. Implementare una versione semplificata del comando *grep* (vedi funzione di libreria strstr())
 
 ```shell
 $ grep string [filename]

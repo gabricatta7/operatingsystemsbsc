@@ -94,10 +94,11 @@ add_executable(example examples/example.c)
 #add_executable(echo lab05/echo.c)
 #add_executable(touch lab05/touch.c)
 #add_executable(size lab05/size.c)
-#add_executable(head lab05/head.c)
-#add_executable(tail lab05/tail.c)
 #add_executable(wc lab05/wc.c)
 #add_executable(grep lab05/grep.c)
+#add_executable(head lab05/head.c)
+#add_executable(tail lab05/tail.c)
+
 
 # System Programming labs01
 #add_executable(s011 labs01/s011.c utils/utils.c)

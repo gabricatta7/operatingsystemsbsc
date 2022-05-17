@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <string.h>
+
+#define LINE_MAX 8192
 
 struct buffer {
     int n;
