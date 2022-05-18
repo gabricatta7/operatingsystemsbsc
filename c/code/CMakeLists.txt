@@ -57,6 +57,7 @@ add_executable(example examples/example.c)
 #add_executable(0215 lab02/0215.c)
 #add_executable(0216 lab02/0216.c)
 #add_executable(0217 lab02/0217.c)
+#add_executable(0218 lab02/0218.c)
 
 # Basic Programming lab03
 #add_executable(0301 lab03/0301.c)

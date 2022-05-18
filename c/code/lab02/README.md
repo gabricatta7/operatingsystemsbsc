@@ -238,7 +238,39 @@ dove:
 
 ---
 
-Esercizio 16. Implementare un gruppo di funzioni *init, sort, search, show* per trattare vettori di interi. *init*
+Esercizio 16. Le funzioni di libreria, dichiarate in string.h, memcpy e memmove vengono utilizzate per copiare aree di 
+memoria fra una sorgente ed una destinazione. La differenza principale fra le due consiste nel fatto che mentre memcpy
+è stata scritta per essere veloce, memmove è in grado di gestire correttamente casi in cui area sorgente e destinazione 
+sono sovrapposte. Per fare un esempio:
+
+```c
+int src[8] = {0,1,2,3,4,5,6,7};
+memmove(src + 4, src + 2, 4 * sizeof(*src));
+/* output: 0 1 2 3 2 3 4 5 */
+```
+
+```c
+int src[8] = {0,1,2,3,4,5,6,7};
+memcpy(src + 4, src + 2, 4 * sizeof(*src));
+/* output: 0 1 2 3 2 3 2 3  */
+```
+
+Implementare due funzioni *my_memmove*, e *my_memcpy* ispirate a *memmove* e *memcpy* rispettando il seguente prototipo:
+
+```c
+void *my_memcpy(void *dst, void *src, size_t size);
+void *my_memmove(void *dst, void *src, size_t size);
+```
+
+dove:
+
+* **dst** è il puntatore all'area (di memoria) destinazione;
+* **src** è il puntatore all'area (di memoria) sorgente;
+* la funzione ritorna l'indirizzo dell'area destinazione.
+
+---
+
+Esercizio 17. Implementare un gruppo di funzioni *init, sort, search, show* per trattare vettori di interi. *init*
 inizializza il vettore con numeri random compresi fra 0 e 100. *sort* ordina il vettore in modo crescente utilizzando
 l'algoritmo Bubble Sort (https://en.wikipedia.org/wiki/Bubble_sort). *search* ritorna l'indice in cui il valore *value*
 si trova, -1 in caso non sia presente nel vettore. *show* mostra il contenuto del vettore a video. Le funzioni devono
@@ -259,7 +291,7 @@ dove:
 
 ---
 
-Esercizio 17. *(Approfondimento, non richiesto all'esame)*. Implementare una funzione *merge_sort* che ordini un vettore
+Esercizio 18. *(Approfondimento, non richiesto all'esame)*. Implementare una funzione *merge_sort* che ordini un vettore
 di interi in modo crescente utilizzando l'algoritmo Merge Sort (https://en.wikipedia.org/wiki/Merge_sort). La funzione
 deve rispettare il seguente prototipo.
 
