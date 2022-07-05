@@ -84,7 +84,7 @@ $ git pull
 
 [M3] Bash Scripting
 * Shebang
-* Variabili speciali ($\#, $N, $\*, shift, $@, $?, $$)
+* Variabili speciali (\$\#, $N, $\*, shift, $@, $?, $$)
 * Strutture di controllo (if, test, for, case)
 * Funzioni
 * Arrays
