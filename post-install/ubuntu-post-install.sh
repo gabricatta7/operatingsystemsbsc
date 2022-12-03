@@ -2,9 +2,7 @@
 
 sudo apt -y update
 sudo apt -y dist-upgrade
-sudo apt -y install apt-transport-https
-sudo apt -y install gnome-session gdm3 gnome-tweak-tool numix-icon-theme-circle
-sudo apt -y install htop mc git build-essential cmake gdb vim
+sudo apt -y install apt-transport-https htop mc git build-essential cmake gdb vim
 sudo apt -y install pandoc texlive-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-pictures texlive-lang-italian
 sudo apt -y autoremove
 sudo apt -y clean
@@ -13,5 +11,15 @@ sudo snap install sublime-text --classic
 sudo snap install clion --classic
 
 cp -r extra/.vim* "$HOME"
+
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
+git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+
+./WhiteSur-wallpapers/install-wallpapers.sh
+./WhiteSur-icon-theme/install.sh
+./WhiteSur-gtk-theme/install.sh
+
+rm -rf WhiteSur*
 
 exit 0
