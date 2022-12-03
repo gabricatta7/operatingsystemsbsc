@@ -2,7 +2,7 @@
 
 ## Software
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Ubuntu Linux](https://ubuntu.com/download/desktop)
+* [Ubuntu MATE](https://ubuntu-mate.org/download/)
 * [CLion](https://www.jetbrains.com/clion/)
 
 ## Tutorial, Esercizi Online
