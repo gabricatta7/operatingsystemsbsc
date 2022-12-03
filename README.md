@@ -53,12 +53,11 @@ Il materiale puo' essere aggiornato e/o corretto durante lo svolgimento del cors
 ```bash
 $ git pull 
 ```
-In caso di errori, utilizzare invece i comandi sotto (tutte le modifiche locali al repository andranno perdute)
+In caso di errori, utilizzare invece i comandi sotto (tutte le modifiche locali al repository andranno perdute) oppure ri-clonare il repository.
 
 ```bash
-$ git reset --hard HEAD
-$ git clean -df
-$ git pull
+$ git fetch --all
+$ git reset --hard origin/master
 ```
 
 ## Moduli Bash
