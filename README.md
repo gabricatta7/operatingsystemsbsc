@@ -2,7 +2,7 @@
 
 ## Software
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Ubuntu Linux](https://ubuntubudgie.org/)
+* [Ubuntu 22.04 LTS](https://ubuntubudgie.org/)
 * [CLion](https://www.jetbrains.com/clion/)
 
 ## Tutorial, Esercizi Online
