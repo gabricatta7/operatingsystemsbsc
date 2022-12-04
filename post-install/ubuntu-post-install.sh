@@ -9,6 +9,7 @@ sudo apt -y autoremove
 sudo apt -y clean
 
 sudo snap install sublime-text --classic
+sudo snap install sublime-merge --classic
 sudo snap install clion --classic
 
 # osx theme
