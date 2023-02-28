@@ -33,8 +33,9 @@ void sort(int v[], int n, int (*comparator)(int, int)) {
 void show(int v[], int size) {
     int i;
     for (i = 0; i < size; i++) {
-        printf("[%d] %d\n", i, v[i]);
+        printf("[i:%d] -> [value:%d]\n", i, v[i]);
     }
+    printf("\n");
 }
 
 int ascending(int a , int b) {

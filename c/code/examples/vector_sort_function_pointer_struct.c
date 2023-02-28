@@ -22,8 +22,9 @@ void init(struct vector *vector) {
 void show(struct vector *vector) {
     unsigned i;
     for (i = 0; i < vector->length; i++) {
-        printf("[%d] %d\n", i, vector->data[i]);
+        printf("[i:%d] -> [value:%d]\n", i, vector->data[i]);
     }
+    printf("\n");
 }
 
 void sort(struct vector *vector) {
@@ -56,7 +57,7 @@ struct vector *allocate_vector(unsigned size) {
 }
 
 int main() {
-    struct vector *vector = allocate_vector(20);
+    struct vector *vector = allocate_vector(10);
     vector->init(vector);
     vector->show(vector);
     vector->sort(vector);
