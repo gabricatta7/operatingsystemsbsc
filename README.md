@@ -28,15 +28,10 @@
 * Burgess - The GNU C Programming Tutorial
 
 ## Video
-* [YouTube CLion](https://www.youtube.com/playlist?list=PLQ176FUIyIUb_J7ZEi2IDe9132-dq_vQL)
 * [YouTube Bash](https://www.youtube.com/watch?v=62-hJarauK4&list=PLhlcRDRHVUzR-5TKDC1VPMtyhEyyQ5uwy)
-* [YouTube C]()
-
-## Microsoft Teams
-Durante il corso utilizzeremo Microsoft Teams per tenerci in contatto, discutere esercizi e problemi vari. Chi non lo avesse ancora fatto, è pregato di iscriversi al canale dedicato al corso.
+* [YouTube CLion](https://www.youtube.com/playlist?list=PLQ176FUIyIUb_J7ZEi2IDe9132-dq_vQL)
 
 ## Materiale didattico
-
 Una volta terminata l'installazione di Ubuntu, per completare l' installazione del materiale didattico aprire un terminale ed inserire i seguenti comandi. 
 
 ```bash
@@ -59,6 +54,9 @@ In caso di errori, utilizzare invece i comandi sotto (tutte le modifiche locali 
 $ git fetch --all
 $ git reset --hard origin/master
 ```
+
+## Esame
+L'esame consiste in 2 esercizi (1x Bash, 1x C) che gli studenti sono tenuti a svolgere sul loro calcolatore (utilizzando le pagine man, in caso) spiegando al docente lo svolgimento. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
 
 ## Moduli Bash
 [M1] Introduzione a Unix
@@ -149,6 +147,3 @@ $ git reset --hard origin/master
 * Apertura, chiusura, posizione corrente
 * Lettura e scrittura (con e senza formattazione)
 * Flussi standard (stdin, stdout, stderr)
-
-## Esame
-L'esame consiste in 2 esercizi al calcolatore (1x Bash, 1x C) che gli studenti sono tenuti a svolgere sul loro calcolatore (utilizzando le pagine man, in caso) spiegando al docente lo svolgimento. Esempi di esercizi si trovano nelle cartelle bash/code e c/code suddivisi per livello di difficoltà.
