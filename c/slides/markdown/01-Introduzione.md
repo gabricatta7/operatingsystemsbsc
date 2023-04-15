@@ -1,5 +1,5 @@
 ---
-date: Marzo 2022
+date: Aprile 2023
 author: Dr. Nicola Bicocchi
 institute: DIEF/UNIMORE
 title: Introduzione al C
@@ -32,23 +32,17 @@ lang: it
 strutture dati), parziale visibilità architetturale. Esempi: C, Rust
 * Linguaggi di programmazione di **bassissimo livello**: programmi scritti specificamente per un tipo di architettura hardware. Esempi: assembly, VHDL
 
-
-# Caratteristiche del C
-* Il linguaggio è pensato per essere efficiente: lo sviluppatore ha il controllo completo su quello che succede.
-* Commettere errori è più facile e subdolo: il linguaggio non permette al compilatore di rilevare gli errori con la completezza con cui lavorano interpreti come Java o Python. Il suo principale inconveniente e' quello infatti di avere un metodo scadente per l'identificazione di errori, che puo' escluderne l'utilizzo ai principianti.
-* Gli errori possono produrre conseguenze gravi in termini di sicurezza ed integrità del sistema non esistendo una virtual machine (*concetto di sandbox*).
-
-
 # Caratteristiche del C
 * **Procedurale**: il programma è un insieme di *procedure* (funzioni). Non esiste supporto a strutture modulari più complesse come classi ed oggetti.
 * **Compilato**: il codice sorgente deve essere trasformato in linguaggio macchina da un compilatore (e.g., gcc) *prima di essere eseguito*.
 * **Tipizzato**: ogni variabile ha un tipo associato, lo sviluppatore deve sempre dichiarare il tipo prima di usare la variabile. E' però possibile utilizzare tipi alternativi per accedere al dato (i.e., lascamente tipizzato).
 
+Il linguaggio è pensato per essere **efficiente**: lo sviluppatore ha il controllo completo su quello che succede. Tuttavia: commettere errori è facile e subdolo: il compilatore non rileva gli errori con la completezza delle alternative più recenti (Java o Python). Inoltre, gli errori possono produrre conseguenze gravi in termini di sicurezza e integrità del sistema non esistendo una virtual machine (*sandbox*).
+
 
 # Ambito di utilizzo del C
 
 * Sistemi Operativi (e.g., kernel Windows/Linux/Mac/IoS/Android)
-* Programmi che interagiscono a basso livello con l’hardware o con il sistema operativo (e.g., device drivers)
 * Sistemi embedded (e.g., Arduino)
 * Database (e.g., MySQL, MS SQL Server, and PostgreSQL)
 * Linguaggi di programmazione (e.g., Python)
@@ -62,17 +56,11 @@ strutture dati), parziale visibilità architetturale. Esempi: C, Rust
 *Gli ambienti di sviluppo integrato – o IDE, Integrated Development Environment – sono strumenti fondamentali per il lavoro di un programmatore. Esistono una varietà di ambienti di sviluppo, dai più complessi ed articolati, fino a semplici editor di testo affiancati ad un compilatore.*
 
 * CLion
-* Microsoft Visual Studio
 * Eclipse
+* Code::Blocks
 * Visual Studio Code
-* Sublime text, vim
-
-
-# Ambienti di sviluppo (CLion)
-* Software a pagamento ma con licenze gratuite per gli studenti (https://www.jetbrains.com/community/education/#students)
-* Sviluppato in Java (richiede risorse, portabile)
-* Piattaforma moderna, ricca di features, ottimo ambiente di debug
-* Prodotto dagli stessi autori di PyCharm (Python) e IntelliJ IDEA (Java/Android)
+* Sublime text
+* Vim
 
 
 # Hello World!
@@ -128,28 +116,16 @@ int main(){
 }
 ```
 
-
 # Processo di compilazione
-* Il compilatore è un programma apposito per convertire linguaggi arbitarti in codice macchina. Esempi di compilatori popolari:
-  * GCC (the GNU Compiler Collection)
-  * Microsoft Visual C(++)
-  * ARM-GCC (ambito architetture proprietarie)
-* L’insieme dei programmi utilizzati per gestire tutta la fase di compilazione è detta *toolchain*
-* Il linguaggio C, come altri linguaggi (e.g., Java), è uno standard piuttosto che una implementazione specifica. Di conseguenza, possiamo utilizzare il compilatore che preferiamo
-
+![Processo di compilazione](images/compilazione.png)
 
 # Keywords
 * **Codice sorgente**: file di testo che contiene il software scritto dallo sviluppatore
 * **File oggetto**: file binario che contiene codice macchina corrispondente al programma C originale più informazioni simboliche
 * **File eseguibile**: file binario che contiene il codice macchina pronto per l'esecuzione su una specifica architettura
-+ **Linker**: programma per unire più file oggetto con eventuali librerie esterne per ottenere il file eseguibile
-
-
-# Processo di compilazione
-![Processo di compilazione](images/compilazione.png)
+* **Linker**: programma per unire più file oggetto con eventuali librerie esterne per ottenere il file eseguibile
 
 # Compilazione parziale
-
 ```shell
 $ gcc helloworld.c -o helloworld
 $ file helloworld
@@ -196,92 +172,6 @@ int main() {
 ```
 helloworld.c:6:1: error: expected ';' after return statement
 helloworld.c:2:1: warning: Unused "#include <stdlib.h>"
-```
-
-# Commenti
-
-* I commenti sono porzioni di testo che non vengono considerate dal compilatore (i.e., vengono eliminati dal preprocessore)
-* I commenti sono fondamentali per rendere leggibile il codice e promuovere la collaborazione fra più individui
-
-```c
-/*
- * Questo è un commento multi-linea
- */
-
-/* Questo è un commento multi-linea */
-
-// Questo è un commento singola-linea
-// Si tratta di una forma ereditata dal C++ 
-// Non molto apprezzata dai puristi C
-```
-
-# Parole chiave
-| **Parole chiave** | **Utilizzo** |
-| ----------------- | ------------ |
-| break case continue default do else for goto if return switch while | costrutti di controllo |
-| char double enum float int long short signed struct union unsigned void | tipi di dato semplice |
-| auto const extern register static volatile | modificatori di volatività e persistenza |
-| sizeof | operatore che ritorna la dimensione di una varibile |
-| typedef | definizione di tipi definiti dall'utente |
-
-
-# Identificatori
-* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice
-* Non può cominciare con un numero ma può contenere qualsiasi combinazione di:
-  * lettere maiuscole e minuscole
-  * numeri
-  * il carattere underscore (_)
-* Non può essere una parola chive del linguaggio
-* Esempi **validi**: Prova_1, prova_1, media_pasata, _tot
-* Esempi **invalidi**: 1_prova, totale_%, somma_{
-
-
-# Variabili
-* Una variabile è una porzione di memoria che contiene dei dati che possono essere modificati durante l'esecuzione. Ogni variabile deve essere dichiarata, ovvero associata ad un identificatore ed a un tipo.
-
-```c
-#include <stdio.h>
-
-int main() {
-    int a, b, somma;
-    
-    a = 10;
-    b = 12;
-    somma = a + b;
-    printf("somma=%d\n", somma);
-    return 0;
-}
-```
-
-# Variabili
-![Variabili](images/variabili.jpg)
-
-
-
-# Variabili in sola lettura
-* E' possibile dichiarare variabili *read-only* utilizzando la parola *const*
-* Il valore di una variabili in sola lettura, una volta inizializzato, non può essere modificato
-* Si tratta di una limitazione per il programmatore ma consente al compilatore di svolgere ottimizzazioni
-* Molto utile il progetti complessi
-
-```c
-int main() {
-    const double pi = 3.1415926536;
-    const double e = 2.7182818284;
-}
-```
-
-# Espressioni
-* *Un programma C e' una sequenza di espressioni. Le espressioni sono combinazioni di variabili, costanti, chiamate a funzione per mezzo di opportuni operatori*
-* Non esiste in C una reale delimitazione fra espressioni logiche ed aritmetiche in quanto lo *0* aritmetico è considerato equivalente al valore logico *falso*
-
-```c
-45 * (a + b)
-delta * sqrt(abs(x1 * x2))
-sqrt(a * b - c) <= 10
-(c1 || c2) && c3
-max = a > b ? a : b
-a % b
 ```
 
 # makefile
@@ -345,3 +235,89 @@ target_link_libraries(hello m)
 **set(CMAKE_C_STANDARD 99)**: standard C99
 
 **target_link_libraries(hello m)**: configura il linker per collegare libreria matematica (m)
+
+# Commenti
+* I commenti sono porzioni di testo che non vengono considerate dal compilatore (i.e., vengono eliminati dal preprocessore)
+* I commenti sono fondamentali per rendere leggibile il codice e promuovere la collaborazione fra più sviluppatori
+* Come regola generale, è preferibile un commento descrittivo all'inizio di ogni funzione piuttosto che commenti brevi e sparsi
+
+```c
+/*
+ * Questo è un commento multi-linea
+ */
+
+/* Questo è un commento multi-linea */
+
+// Questo è un commento singola-linea
+// Si tratta di una forma ereditata dal C++ 
+// Non molto apprezzata dai puristi C
+```
+
+# Parole chiave
+| **Parole chiave** | **Utilizzo** |
+| ----------------- | ------------ |
+| break case continue default do else for goto if return switch while | costrutti di controllo |
+| char double enum float int long short signed struct union unsigned void | tipi di dato semplice |
+| auto const extern register static volatile | modificatori di volatività e persistenza |
+| sizeof | operatore che ritorna la dimensione di una varibile |
+| typedef | definizione di tipi definiti dall'utente |
+
+
+# Identificatori
+* In C un identificatore è un nome che si riferisce a funzioni, variabili, ed oggetti in genere definiti nel codice
+* Non può cominciare con un numero ma può contenere qualsiasi combinazione di:
+  * lettere maiuscole e minuscole
+  * numeri
+  * il carattere underscore (_)
+* Non può essere una parola chive del linguaggio
+* Esempi **validi**: Prova_1, prova_1, media_pasata, _tot
+* Esempi **invalidi**: 1_prova, totale_%, somma_{
+
+
+# Variabili
+* Una variabile è una porzione di memoria che contiene dei dati che possono essere modificati durante l'esecuzione. Ogni variabile deve essere dichiarata, ovvero associata ad un identificatore ed a un tipo.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b, somma;
+    
+    a = 10;
+    b = 12;
+    somma = a + b;
+    printf("somma=%d\n", somma);
+    return 0;
+}
+```
+
+# Variabili
+![Variabili](images/variabili.jpg)
+
+
+
+# Variabili in sola lettura
+* E' possibile dichiarare variabili *read-only* utilizzando la parola *const*
+* Il valore di una variabili in sola lettura, una volta inizializzato, non può essere modificato
+* Si tratta di una comoda funzione per il programmatore che consente al compilatore d'intervenire in caso di modifiche non ammesse
+* Molto utile in progetti complessi
+
+```c
+int main() {
+    const double pi = 3.1415926536;
+    const double e = 2.7182818284;
+}
+```
+
+# Espressioni
+* *Un programma C e' una sequenza di espressioni. Le espressioni sono combinazioni di variabili, costanti, chiamate a funzione, e operatori*
+* Non esiste in C una reale delimitazione fra espressioni logiche e aritmetiche in quanto *0* è considerato equivalente al valore logico *falso*, mentre *1* è considerato equivalente al valore logico *vero*
+
+```c
+45 * (a + b)
+delta * sqrt(abs(x1 * x2))
+sqrt(a * b - c) <= 10
+(c1 || c2) && c3
+max = a > b ? a : b
+a % b
+```

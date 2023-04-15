@@ -1,5 +1,5 @@
 ---
-date: Marzo 2022
+date: Aprile 2023
 author: Dr. Nicola Bicocchi
 institute: DIEF/UNIMORE
 title: Preprocessore
@@ -60,6 +60,7 @@ $ gcc -E filename.c
 
 ```c
 #include <stdio.h>
+#include "mymath.h"
 ```
 
 * Il preprocessore genera un file sorgente intermedio in cui la direttiva \#include <stdio.h> è sostituita dal contenuto dell'intero file indicato (/usr/include, /usr/local/include)
@@ -68,31 +69,14 @@ $ gcc -E filename.c
 $ cat /usr/include/stdio.h
 ```
 
-# Progetto composto di più file
-
-* Mettiamo i nostri header in percorsi di sistema (e.g., /usr/include, /usr/local/include). Approccio utile solo per la distribuzione di librerie, non durante lo sviluppo
-* Indichiamo al compilatore gcc di cercare in percorsi arbitrari con l'opzione di compilazione -I
-
-```shell
-$ ...
-```
-
-* Indichiamo al compilatore gcc di cercare localmente il file
-
-```c
-#include "mymath.h"
-```
-
-
 # Esempio (mymath.h e mymath.c)
-
-* All'interno del file .h posizioniamo i prototipi delle funzioni
+* All'interno del file mymath.h posizioniamo i prototipi delle funzioni
 
 ```c
 unsigned mypow(unsigned int base, unsigned int exp);
 ```
 
-* All'interno del file .c posizioniamo le implementazioni delle funzioni
+* All'interno del file mymath.c posizioniamo le implementazioni delle funzioni
 
 ```c
 #include "mymath.h"

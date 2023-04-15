@@ -5,7 +5,7 @@ set(CMAKE_C_FLAGS "-Wall -Wconversion -Wformat")
 set(CMAKE_C_STANDARD 99)
 
 # Examples
-#add_executable(example examples/example.c)
+add_executable(example examples/example.c)
 #add_executable(file_copy_binary examples/file_copy_binary.c)
 #add_executable(file_copy_text examples/file_copy_text.c)
 #add_executable(file_position examples/file_position.c)
@@ -14,9 +14,9 @@ set(CMAKE_C_STANDARD 99)
 #add_executable(matrix_double examples/dynamic_matrix_double.c)
 #add_executable(array_pointer examples/array_pointer.c)
 #add_executable(printf_types examples/printf_types.c)
-add_executable(vector_sort examples/vector_sort.c)
-add_executable(vector_sort_function_pointer examples/vector_sort_function_pointer.c)
-add_executable(vector_sort_function_pointer_struct examples/vector_sort_function_pointer_struct.c)
+#add_executable(vector_sort examples/vector_sort.c)
+#add_executable(vector_sort_function_pointer examples/vector_sort_function_pointer.c)
+#add_executable(vector_sort_function_pointer_struct examples/vector_sort_function_pointer_struct.c)
 
 # Basic Programming lab01
 #add_executable(0101 lab01/0101.c)

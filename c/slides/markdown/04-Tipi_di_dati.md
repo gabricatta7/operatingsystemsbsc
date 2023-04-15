@@ -1,5 +1,5 @@
 ---
-date: Marzo 2022
+date: Aprile 2023
 author: Dr. Nicola Bicocchi
 institute: DIEF/UNIMORE
 title: Tipi di dati
