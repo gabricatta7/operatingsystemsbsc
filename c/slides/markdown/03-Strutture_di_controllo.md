@@ -119,21 +119,23 @@ espressione1 ? espressione2 : espressione3
 
 che equivale a:
 
-```c
+```
 if espressione1 then espressione2 else espressione3
 ```
 
 Ad esempio:
 
 ```c
-z=(a>b) ? a : b
+int max = (a > b) ? a : b;
 ```
 
 ```c
-if (a>b)
-    z=a;
-else
-    z=b;
+int max;
+if (a > b) {
+    max = a;
+} else {
+    max = b;
+}
 ```
 
 
@@ -143,7 +145,7 @@ else
 * L'ultimo blocco di istruzioni è detto *default* e' facoltativo e raggruppa tutti gli altri casi.
 
 ```c
-switch ( espressione ) { 
+switch (espressione) { 
     case costante1: istruzioni1; break;
     case costante2: istruzioni2; break;
     case costante3: istruzioni3; break;
@@ -347,7 +349,7 @@ int main(){
 // dovrebbe terminare non NON termina!
 int main() {
   char a;
-  for(a=0; a<200; a++) { }
+  for (a = 0; a < 200; a++) { }
   return 0;
 }
 ```
@@ -358,7 +360,7 @@ int main() {
 // non dovrebbe terminare MA termina!
 int main() {
     int a;
-    for(a=9; a>=0; a++) { }
+    for (a = 9; a >= 0; a++) { }
     return 0;
 }
 ```

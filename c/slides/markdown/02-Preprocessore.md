@@ -12,9 +12,41 @@ aspectratio: 1610
 lang: it
 ---
 
+# Processo di compilazione
+![Processo di compilazione](./images/compilazione.png)
 
-# Hello World! Direttiva include
-Linea 1: **#** introduce una direttiva del pre-processore che **include (importa)** un file (**stdio.h**) da un percorso standard (**< >**)
+# Compilazione
+
+* Direttiva per eseguire solamente il preprocessore
+```shell
+$ gcc -E helloworld.c
+```
+
+* Direttiva per disabilitare la fase di linking e produrre file oggetto (.o)
+```shell
+$ gcc -c helloworld.c
+$ file helloworld.o
+helloworld.o: Mach-O 64-bit object x86_64
+```
+
+* Direttiva per compilazione completa
+```shell
+$ gcc helloworld.c -o helloworld
+$ file helloworld
+helloworld: Mach-O 64-bit executable x86_64
+```
+
+# Preprocessore
+* Non è un comando o programma aggiuntivo, ma solo un termine con cui si definisce questa fase del processo di compilazione
+* La si può immaginare come una procedura di manipolazione di testo: l’input è codice sorgente l’output è codice sorgente
+* Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di un meccanismo per manipolare il codice sorgente prima della compilazione
+* Per mostrare/salvare solo l’output del preprocessore si può usare:
+
+
+# Direttive preprocessore
+* Il simbolo **#** (diesis, cancelletto, o hash) precede tutte le operazioni che vengono gestite dal *preprocessore*
+* Sono operazioni eseguite durante il processo di compilazione
+* Servono, in particolare, a manipolare il codice sorgente *prima* della compilazione vera e propria. In particolare, sono utilizzate per aggiungere, modificare ed escludere parti di codice sorgente
 
 ```c
 #include <stdio.h>
@@ -24,28 +56,6 @@ int main(){
     return 0;
 }
 ```
-
-
-# Direttive preprocessore
-* Il simbolo **#** (diesis, cancelletto, o hash) precede tutte le operazioni che vengono gestite dal *preprocessore*
-* Sono operazioni eseguite durante il processo di compilazione
-* Servono, in particolare, a manipolare il codice sorgente *prima* della compilazione vera e propria. In particolare, sono utilizzate per aggiungere, modificare ed escludere parti di codice sorgente
-
-
-# Processo di compilazione
-![Processo di compilazione](./images/compilazione.png)
-
-# Preprocessore
-* Non è un comando o programma aggiuntivo, ma solo un termine con cui si definisce questa fase del processo di compilazione
-* La si può immaginare come una procedura di manipolazione di testo: l’input è codice sorgente l’output è codice sorgente
-* Le direttive al preprocessore non esistono più nel codice sorgente che viene effettivamente compilato nè tantomento nel codice compilato. Si tratta di un meccanismo per manipolare il codice sorgente prima della compilazione
-* Per mostrare/salvare solo l’output del preprocessore si può usare:
-
-```shell
-$ gcc -E filename.c
-```
-
-
 
 # Direttive rilevanti
 **\#include** aggiunta di codice
@@ -76,15 +86,15 @@ $ cat /usr/include/stdio.h
 unsigned mypow(unsigned int base, unsigned int exp);
 ```
 
-* All'interno del file mymath.c posizioniamo le implementazioni delle funzioni
+* All'interno del file mymath.c posizioniamo le implementazioni delle funzioni e includiamo math.h in cui potremmo aver definito costanti utili
 
 ```c
 #include "mymath.h"
 
-unsigned mypow(unsigned int base, unsigned int exp){
+unsigned mypow(unsigned int base, unsigned int exp) {
     unsigned int result;
-    for(result=1; exp>0 ; exp--){
-        result*=base;
+    for (result = 1; exp > 0; exp--) {
+        result *= base;
     }
     return result;
 }

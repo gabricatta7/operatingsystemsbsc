@@ -25,10 +25,10 @@ lang: it
 
 
 # Caratteristiche del C
-*E' la lingua franca per gli sviluppatori. Implementazioni di nuovi algoritmi, ad esempio, sono spesso divulgate inizialmente solo in C. E' anche il linguaggio in cui si descrive spesso il comportamento della macchina. Evita superstizione!*
+E' la lingua franca per gli sviluppatori. Implementazioni di nuovi algoritmi, ad esempio, sono spesso divulgate inizialmente solo in C. E' anche il linguaggio in cui si descrive spesso il comportamento della macchina. **Evita superstizione!**
 
-* Linguaggi di programmazione di **alto livello**: gestione intermediata della memoria, oggetti, stream, stringhe, iteratori, ...). Esempi: Python, Javascript, Java, Go, C++
-* Linguaggi di programmazione di **basso livello**: gestione della memoria e astrazioni semplici (tipi di dati, funzioni,
+* Linguaggi di programmazione di **alto livello**: gestione automatica della memoria, oggetti, stream, stringhe, collections...). Esempi: Python, Java, Javascript, C#, Dart, Kotlin
+* Linguaggi di programmazione di **basso livello**: gestione manuale della memoria e astrazioni semplici (tipi di dati, funzioni,
 strutture dati), parziale visibilità architetturale. Esempi: C, Rust
 * Linguaggi di programmazione di **bassissimo livello**: programmi scritti specificamente per un tipo di architettura hardware. Esempi: assembly, VHDL
 
@@ -63,49 +63,14 @@ Il linguaggio è pensato per essere **efficiente**: lo sviluppatore ha il contro
 * Vim
 
 
-# Hello World!
+# Hello World! Funzione main()
 L'esecuzione di un programma C inizia sempre dalla prima istruzione della funzione *main*. La funzione *main* accetta argomenti (per ora ignorati) e ritorna un numero intero. Il programma termina quando la funzione *main* termina.
 
-```c
-#include <stdio.h>
-
-int main(){
-  printf("Hello, World!\n");
-  return 0;
-}
-```
-
-
-# Hello World! Direttiva include
-Linea 1: **#** introduce una direttiva del pre-processore che **include (importa)** un file (**stdio.h**) da un percorso standard (**< >**)
-
-```c
-#include <stdio.h>
-
-int main(){
-  printf("Hello, World!\n");
-  return 0;
-}
-```
-
-
-# Hello World! Funzione main()
 Linea 3: **int** tipo del valore di ritorno della funzione, **main** nome della funzione, **{** inizio del corpo della funzione. La funzione termina a linea 6 **}**.
 
-```c
-#include <stdio.h>
-
-int main(){
-  printf("Hello, World!\n");
-  return 0;
-}
-```
-
-
-# Hello World! Funzione main()
 Linea 4: **printf** invocazione della funzione di libreria printf(), che riceve come argomento la stringa costante *Hello, World!* terminata con carattere a capo **\\n**.
 
-Linea 5: **return** istruzione che termina la funzione e ritorna un valore (**0**). Convenzionalmente, ritornare 0 ha il significato di *programma eseguito con successo*.
+Linea 5: **return** istruzione che termina la funzione e ritorna **0** (successo in Unix). 
 
 ```c
 #include <stdio.h>
@@ -125,24 +90,6 @@ int main(){
 * **File eseguibile**: file binario che contiene il codice macchina pronto per l'esecuzione su una specifica architettura
 * **Linker**: programma per unire più file oggetto con eventuali librerie esterne per ottenere il file eseguibile
 
-# Compilazione parziale
-```shell
-$ gcc helloworld.c -o helloworld
-$ file helloworld
-helloworld: Mach-O 64-bit executable x86_64
-```
-
-* Direttiva per eseguire solamente il preprocessore
-```shell
-$ gcc -E helloworld.c
-```
-
-* Direttiva per disabilitare la fase di linking e produrre file oggetto (.o)
-```shell
-$ gcc -c helloworld.c
-$ file helloworld.o
-helloworld.o: Mach-O 64-bit object x86_64
-```
 
 # Compilazione ed esecuzione
 ```shell
@@ -153,12 +100,13 @@ $ ./helloworld
 * Il comando compila il codice sorgente *helloworld.c* in un programma eseguibile di nome *helloworld*
   * -Wall attiva tutti i warnings (Warnings All)
   * -o specifica il nome del file compilato (default=a.out)
-* Gli *errori* causano il fallimento della compilazione del programma
-* I *warnings*, invece, sono segnalazioni di possibili problemi ma non causano il fallimento della fase di compilazione. In linea generale, è bene risolverli tutti prima di procedere con lo sviluppo.
-* E' infine possibile eseguire il programma invocandolo dalla shell utilizzando il nome specificato con l'opzione -o
+* E' possibile eseguire il programma invocandolo dalla shell utilizzando il nome specificato con l'opzione -o
   
 
 # Messaggi di errore
+* Gli *errori* causano il fallimento della compilazione del programma
+* I *warnings*, invece, sono segnalazioni di possibili problemi ma non causano il fallimento della fase di compilazione. In linea generale, è bene risolverli tutti prima di procedere con lo sviluppo.
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -190,16 +138,6 @@ helloworld: helloworld.c
 * $(CFLAGS): variabile che contiene le opzioni di invocazione del compilatore
 * $@ : metacarattere che viene sostituito con il target (helloworld)
 * $^ : metacarattere che viene sostituito con le dipendenze (helloworld.c)
-```make
-CC=gcc
-CFLAGS=-Wall
-
-helloworld: helloworld.c
-    $(CC) $(CFLAGS) -o $@ $^
-```
-
-# makefile
-* Di solito si imposta un target speciale *clean* per pulire il sistema dai residui della compilazione
 
 ```make
 CC=gcc
@@ -293,21 +231,6 @@ int main() {
 
 # Variabili
 ![Variabili](images/variabili.jpg)
-
-
-
-# Variabili in sola lettura
-* E' possibile dichiarare variabili *read-only* utilizzando la parola *const*
-* Il valore di una variabili in sola lettura, una volta inizializzato, non può essere modificato
-* Si tratta di una comoda funzione per il programmatore che consente al compilatore d'intervenire in caso di modifiche non ammesse
-* Molto utile in progetti complessi
-
-```c
-int main() {
-    const double pi = 3.1415926536;
-    const double e = 2.7182818284;
-}
-```
 
 # Espressioni
 * *Un programma C e' una sequenza di espressioni. Le espressioni sono combinazioni di variabili, costanti, chiamate a funzione, e operatori*

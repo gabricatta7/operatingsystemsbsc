@@ -84,10 +84,6 @@ dove:
 
 ---
 
-
-
----
-
 Esercizio 7. Implementare una versione semplificata del comando *head*
 
 ```shell
@@ -112,8 +108,7 @@ dove:
 
 ---
 
-Esercizio 9. Implementare una versione semplificata del comando *wc*. 
-Il comando riporta su stdout sia il numero di bytes che di linee del file.
+Esercizio 9. Implementare una versione semplificata del comando *wc*.
 
 ```shell
 $ wc [filename]
@@ -121,7 +116,7 @@ $ wc [filename]
 
 dove:
 
-* **filename** rappresenta un nome di file di cui mostrare il numero di bytes e di linee contenute. In caso filename non venga indicato, il comando legge da stdin.
+* **filename** rappresenta un nome di file di cui mostrare su stdout sia il numero di bytes che di linee contenute. In caso filename non venga indicato, il comando legge da stdin.
 
 ---
 
