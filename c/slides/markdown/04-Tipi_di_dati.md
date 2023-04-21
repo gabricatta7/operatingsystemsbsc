@@ -211,7 +211,7 @@ short s1, s2 = 33, s3;
 #  define LONG_MIN        (-LONG_MAX - 1L)
 ```
 
-# I tipi di dati numerici in virgola mobile (IEEE 754-1985)
+# I tipi di dati numerici in virgola mobile (IEEE 754)
 * I tipi *float* e *double* sono i cosiddetti numeri in virgola mobile che rappresentano l’insieme dei numeri reali: con essi possiamo rappresentare numeri molto piccoli o numeri molto grandi, positivi e negativi, con e senza decimali
 * La differenza tra i due sta nel numero di bit riservati alla rappresentazione dei numeri, che si riflette sul range di numeri rappresentabili e sul numero di cifre dopo la virgola 
 * Se abbiamo bisogno di particolare accuratezza, utilizziamo il tipo *double*
@@ -223,12 +223,26 @@ short s1, s2 = 33, s3;
 | double | 8 byte | numero in virgola mobile 64 bit |
 | long double | 16 byte | numero in virgola mobile 128 bit |
 
-# I tipi di dati numerici in virgola mobile (Rappresentazione)
-* Standard IEEE 754
-* *N = -1 x segno x mantissa x 2^esponente*
-* http://weitz.de/ieee/
+# I tipi di dati numerici in virgola mobile (IEEE 754)
+* N = -1 x **Sign** x **Mantissa** x 2^**Exponent**
+* The exponent can be computed from bits 24-31 by subtracting 127. The mantissa is stored in bits 1-23. An invisible leading bit (i.e. it is not actually stored) with value 1.0 is placed in front, then bit 23 has a value of 1/2, bit 22 has value 1/4 etc. As a result, the mantissa has a value between 1.0 and 2. If the exponent reaches -127 (binary 00000000), the leading 1 is no longer used to enable gradual underflow.
 
 ![double](./images/rappresentazione_double_float.png)
+
+# I tipi di dati numerici in virgola mobile (IEEE 754)
+
+https://www.h-schmidt.net/FloatConverter/IEEE754.html
+
+| **Numero**    | **Esponente** | **Mantissa**       | **Errore**          |
+|---------------|---------------|--------------------|---------------------|
+| 1.0           | 0             | 1.0                | 0.0                 |
+| 3.14159265359 | 1             | 1.5707963705062866 | 8.74225732421875E-8 |
+| 4.0           | 2             | 1.0                | 0.0                 |
+| 57.347        | 5             | 1.7920937538146973 | 1.220703125E-7      |
+| 1000000       | 19            | 1.9073486328125    | 0.0                 |
+| 1000000.1     | 19            | 1.907348871231079  | 0.025               |
+| 123456789     | 26            | 1.8396495580673218 | 3.0                 |
+
 
 # I tipi di dati numerici in virgola mobile (extra)
 * I limiti degli intervalli delle variabili intere sono disponibili nella forma di macro (*float.h*)
