@@ -613,17 +613,18 @@ char str[] = "Hello World!\n";
 #include <stdio.h>
 
 int main(){
-char str1[] = "str1";
-char str2[128] = "str2";
-char str3[4] = "str3";
+    char str1[] = "str1";
+    char str2[128] = "str2";
+    char str3[4] = "str3";
 
+    // output: str1 str2 str3randomstuff
     printf("%d %d %d\n", sizeof(str1), sizeof(str2), sizeof(str3));
-    
     printf("%s %s %s\n", str1, str2, str3);
-    
-    /* Sostituisce il carattere '3' con lo 0 numerico */
+
+    /* replaces char '3' with standard termination (0) */
     str3[3] = 0;
-    
+
+    // output: str1 str2 str
     printf("%s %s %s\n", str1, str2, str3);
 }
 ```
