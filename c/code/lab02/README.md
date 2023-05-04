@@ -278,10 +278,10 @@ si trova, -1 in caso non sia presente nel vettore. *show* mostra il contenuto de
 rispettare i seguenti prototipi:
 
 ```c
-void init(int arr[], int n);
-void sort(int arr[], int n);
-int search(int arr[], int n, int value);
-void show(int arr[], int n).
+void init(int *v, unsigned size);
+void sort(int *v, unsigned size);
+int search(int *v, unsigned size, int value);
+void show(int *v, unsigned size).
 ```
 
 dove:
