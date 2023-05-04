@@ -38,6 +38,7 @@ dove:
 
 Esercizio 3. Implementare una funzione *rotate* che trasforma una stringa in un’altra stringa di uguale dimensione, ma
 in cui ogni carattere è "spostato" di *shift* caratteri (considerando una successione di caratteri "ciclica", dove la *a* segue la *z*).
+Ad esempio: rotate(dst, "nicolaz", 2) -> "pkeqncb"
 
 ```c
 void rotate(char *dst, const char *src, char shift);
@@ -55,12 +56,12 @@ Esercizio 4. Implementare una funzione *findi* che individua la posizione di un 
 interi. La funzione rispetta il seguente prototipo:
 
 ```c
-long findi(int t, const int *values, unsigned size);
+long findi(int value, const int *values, unsigned size);
 ```
 
 dove:
 
-* **t** è il valore da ricercare
+* **value** è il valore da ricercare
 * **values** è il puntatore all’array di input
 * **size** è la dimensione dell’array
 * **il valore di ritorno** indica la posizione all’interno dell’array, e ha valore speciale -1 se l’elemento non esiste

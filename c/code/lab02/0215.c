@@ -6,11 +6,12 @@ int my_strcmp(const char *s1, const char *s2) {
     for (i = 0; s1[i] && s2[i]; i++) {
         if (s1[i] != s2[i]) return 1;
     }
-    if (s1[i] != s2[i]) return 1;
+    if (s1[i] != s2[i]) {
+        return 1;
+    }
     return 0;
-
 }
 
 int main(void) {
-    printf("%d\n", my_strcmp("Dharma", "Dharma"));
+    printf("%d\n", my_strcmp("Darma", "Darma"));
 }

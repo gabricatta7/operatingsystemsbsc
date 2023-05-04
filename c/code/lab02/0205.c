@@ -5,14 +5,14 @@
 #define SIZE 1024
 
 void capitalize(char *dst, const char *src) {
-    unsigned long i, l;
+    unsigned long len;
 
-    l = strlen(src);
-    if (l > 0) dst[0] = src[0];
-    for (i = 1; i < l; i++) {
+    len = strlen(src);
+    if (len > 0) dst[0] = src[0];
+    for (unsigned long i = 1; i < len; i++) {
         dst[i] = src[i - 1] == ' ' ? (char) toupper(src[i]) : (char) tolower(src[i]);
     }
-    dst[l] = '\0';
+    dst[len] = '\0';
 }
 
 int main(void) {
@@ -20,5 +20,6 @@ int main(void) {
     char dst[SIZE];
 
     capitalize(dst, src);
-    printf("%s\n", dst);
+    printf("src=%s\n", src);
+    printf("dst=%s\n", dst);
 }

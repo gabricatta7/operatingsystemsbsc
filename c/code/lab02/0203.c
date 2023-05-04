@@ -4,11 +4,11 @@
 
 #define SIZE 128
 
-void rotate13(char *dst, const char *src, char shift) {
-    unsigned long i, l;
+void rotate(char *dst, const char *src, char shift) {
+    unsigned long len;
 
-    l = strlen(src);
-    for (i = 0; i < l; i++) {
+    len = strlen(src);
+    for (unsigned long i = 0; i < len; i++) {
         if (islower(src[i])) {
             dst[i] = src[i] + shift <= 'z' ? src[i] + shift : src[i] + shift - ('z' - 'a') - 1;
         } else if (isupper(src[i])) {
@@ -18,13 +18,13 @@ void rotate13(char *dst, const char *src, char shift) {
         }
 
     }
-    dst[l] = '\0';
+    dst[len] = '\0';
 }
 
 int main(void) {
-    char src[SIZE] = "klmnopqrs";
+    char src[SIZE] = "nicolaz";
     char dst[SIZE];
 
-    rotate13(dst, src, 10);
+    rotate(dst, src, 2);
     printf("%s\n", dst);
 }

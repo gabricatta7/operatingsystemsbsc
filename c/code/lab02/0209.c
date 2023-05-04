@@ -3,10 +3,9 @@
 #define SIZE 10
 
 void trova_max(int *rmax, const int *values, unsigned size) {
-    unsigned i;
     int max = values[0];
 
-    for (i = 0; i < size; i++) {
+    for (unsigned i = 0; i < size; i++) {
         if (values[i] > max) {
             max = values[i];
         }

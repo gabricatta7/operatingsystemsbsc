@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 void my_strcpy(char *dst, const char *src) {
-    int i;
-
-    for (i = 0; src[i]; i++) {
+    int i = 0;
+    for (; src[i]; i++) {
         dst[i] = src[i];
     }
     dst[i] = '\0';

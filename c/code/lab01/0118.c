@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    unsigned int n = 100, cols = 10, i;
+    unsigned int n = 100, cols = 10;
 
-    for (i = 0; i <= n; i++) {
+    for (int i = 0; i <= n; i++) {
         if (i % cols == 0) {
             printf("\n");
         }

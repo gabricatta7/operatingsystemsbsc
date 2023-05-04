@@ -14,11 +14,11 @@ void fibonacci(unsigned *dst, unsigned n) {
 }
 
 int main(void) {
-    unsigned i, dst[SIZE];
+    unsigned dst[SIZE];
 
     fibonacci(dst, SIZE);
-    for (i = 0; i < SIZE; i++) {
-        printf("Fibonacci[%i] = %u\n", i, dst[i]);
+    for (unsigned i = 0; i < SIZE; i++) {
+        printf("fibonacci(%u) = %u\n", i, dst[i]);
     }
 
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int a=101, b=12, c=77;
+    int a = 101, b = 12, c = 77;
     int max;
 
     if ((a >= b) && (a >= c)) max = a;

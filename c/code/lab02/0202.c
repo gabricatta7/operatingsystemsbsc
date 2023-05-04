@@ -4,13 +4,13 @@
 #define SIZE 128
 
 void reverses(char *dst, const char *src) {
-    unsigned long i, l;
+    unsigned long len;
 
-    l = strlen(src);
-    for (i = 0; i < l; i++) {
-        dst[l - 1 - i] = src[i];
+    len = strlen(src);
+    for (unsigned long i = 0; i < len; i++) {
+        dst[len - 1 - i] = src[i];
     }
-    dst[l] = '\0';
+    dst[len] = '\0';
 }
 
 int main(void) {

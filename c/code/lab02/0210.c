@@ -3,11 +3,10 @@
 #define SIZE 10
 
 void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size) {
-    unsigned i;
     int max = values[0];
     int min = values[0];
 
-    for (i = 0; i < size; i++) {
+    for (unsigned i = 0; i < size; i++) {
         if (values[i] > max) {
             max = values[i];
         }

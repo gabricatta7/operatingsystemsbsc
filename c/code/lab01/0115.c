@@ -1,23 +1,23 @@
 #include <stdio.h>
 
-const unsigned long mis_secs = 1000UL;
-const unsigned long mis_minutes = mis_secs * 60UL;
-const unsigned long mis_hours = mis_minutes * 60UL;
-const unsigned long mis_days = mis_hours * 24UL;
+const unsigned long millis_sec = 1000UL;
+const unsigned long millis_minute = millis_sec * 60UL;
+const unsigned long millis_hour = millis_minute * 60UL;
+const unsigned long millis_day = millis_hour * 24UL;
 
 int main() {
-    unsigned long mils = 1000000000UL;
+    unsigned long millis = 1000000000UL;
     unsigned long days, hours, minutes, secs;
 
-    days = mils / mis_days;
-    mils %= mis_days;
+    days = millis / millis_day;
+    millis %= millis_day;
 
-    hours = mils / mis_hours;
-    mils %= mis_hours;
+    hours = millis / millis_hour;
+    millis %= millis_hour;
 
-    minutes = mils / mis_minutes;
-    mils %= mis_minutes;
+    minutes = millis / millis_minute;
+    millis %= millis_minute;
 
-    secs = mils / mis_secs;
+    secs = millis / millis_sec;
     printf("%02lu-%02lu-%02lu-%02lu", days, hours, minutes, secs);
 }

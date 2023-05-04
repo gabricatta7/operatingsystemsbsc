@@ -2,9 +2,9 @@
 #include <math.h>
 
 int main() {
-    unsigned int i, mask, n = 255, bits = 0;
+    unsigned mask, n = 255, bits = 0;
 
-    for (i = 0; i < 32; i++) {
+    for (unsigned i = 0; i < 32; i++) {
         mask = (unsigned) pow(2, i);
         if ((n & mask) == mask) bits++;
     }

@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 unsigned my_strlen(const char *src) {
-    unsigned i;
-
-    for (i = 0; src[i]; i++);
+    unsigned i = 0;
+    for (; src[i]; i++);
     return i;
 }
 
