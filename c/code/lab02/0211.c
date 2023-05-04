@@ -24,11 +24,10 @@ void compute_mean_variance(float *rmean, float *rvariance, float *values, unsign
 }
 
 int main(void) {
-    int i;
     float src[SIZE], rmean, rvariance;
 
     /* filling the array */
-    for (i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++) {
         src[i] = (float) i;
     }
 

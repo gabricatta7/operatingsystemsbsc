@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define SIZE 128
+#define SIZE 10
 
 void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size) {
     unsigned i;
@@ -20,13 +20,10 @@ void trova_minmax(int *rmin, int *rmax, const int *values, unsigned size) {
 }
 
 int main(void) {
-    int i, rmax, rmin, src[SIZE];
-
-    /* filling the array */
-    for (i = 0; i < SIZE; i++) {
-        src[i] = i;
-    }
+    int rmax, rmin;
+    int src[] = {11, 33, 44, 32, 56, 65, 94, 23, 12, 73};
 
     trova_minmax(&rmin, &rmax, src, SIZE);
-    printf("%d %d\n", rmin, rmax);
+    printf("rmin=%d\n", rmin);
+    printf("rmax=%d\n", rmax);
 }
