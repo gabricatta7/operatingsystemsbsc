@@ -14,4 +14,5 @@ int my_strcmp(const char *s1, const char *s2) {
 
 int main(void) {
     printf("%d\n", my_strcmp("Darma", "Darma"));
+    printf("%d\n", my_strcmp("Dharma", "Darma"));
 }

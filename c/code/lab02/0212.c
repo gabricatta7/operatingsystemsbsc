@@ -13,5 +13,6 @@ int main(void) {
     char str2[1024];
 
     my_strcpy(str2, str1);
-    printf("%s\n", str2);
+    printf("str1=%s\n", str1);
+    printf("str2=%s\n", str2);
 }

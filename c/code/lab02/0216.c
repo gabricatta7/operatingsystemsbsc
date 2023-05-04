@@ -27,8 +27,6 @@ int main(void) {
     int src[8] = {0,1,2,3,4,5,6,7};
 
     show_array(src, sizeof(src) / sizeof(*src));
-
     my_memcpy(src + 4, src + 2, 4 * sizeof(*src));
-
     show_array(src, sizeof(src) / sizeof(*src));
 }

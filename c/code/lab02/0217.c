@@ -55,5 +55,5 @@ int main() {
     init(v, n);
     sort(v, n);
     show(v, n);
-    printf("%d index=%d\n", 10, search(v, n, 10));
+    printf("index(%d)=%d\n", 10, search(v, n, 10));
 }

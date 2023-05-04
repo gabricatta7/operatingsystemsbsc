@@ -17,6 +17,8 @@ int is_prime(unsigned v) {
 
 int main() {
     for (unsigned i = 0; i < 100; i++) {
-        printf("Value: %10u, Result: %d\n", i, is_prime(i));
+        if (is_prime(i)) {
+            printf("%u\n", i);
+        }
     }
 }

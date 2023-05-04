@@ -3,12 +3,10 @@
 #define SIZE 32
 
 void fibonacci(unsigned *dst, unsigned n) {
-    unsigned i;
-
     dst[0] = 0;
     dst[1] = 1;
 
-    for (i = 2; i < n; i++) {
+    for (unsigned i = 2; i < n; i++) {
         dst[i] = dst[i - 1] + dst[i - 2];
     }
 }

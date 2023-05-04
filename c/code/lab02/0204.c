@@ -21,6 +21,6 @@ int main(void) {
     }
 
     index = findi(100, src, SIZE);
-    printf("%ld\n", index);
+    printf("index=%ld\n", index);
 
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int n = 13;
+    int n = 6;
 
     switch (n) {
         case 1:

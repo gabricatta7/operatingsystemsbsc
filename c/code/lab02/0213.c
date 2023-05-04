@@ -16,5 +16,6 @@ int main(void) {
     char str2[] = "bel tempo si spera...";
 
     my_strcat(str1, str2);
-    printf("%s\n", str1);
+    printf("str1=%s\n", str1);
+    printf("str2=%s\n", str2);
 }

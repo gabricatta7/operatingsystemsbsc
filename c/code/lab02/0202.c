@@ -18,5 +18,6 @@ int main(void) {
     char dst[SIZE];
 
     reverses(dst, src);
-    printf("%s\n", dst);
+    printf("src=%s\n", src);
+    printf("dst=%s\n", dst);
 }

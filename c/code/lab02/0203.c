@@ -26,5 +26,6 @@ int main(void) {
     char dst[SIZE];
 
     rotate(dst, src, 2);
-    printf("%s\n", dst);
+    printf("src=%s\n", src);
+    printf("dst=%s\n", dst);
 }

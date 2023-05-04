@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    unsigned n = 10;
+    unsigned n = 100;
     double somma_inversi = 0.0;
 
     for (int i = 1; i <= n; i++) {
