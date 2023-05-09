@@ -186,7 +186,7 @@ int main() {
 # Passaggio per riferimento (copia del riferimento)
 * Permette alla funzione chiamata di modificare il valore della variabile passata dal chiamante
 * Evita la copia di variabili voluminose
-* Contente alla funzione chiamata di ritornare più di un valore di ritorno
+* Consente alla funzione chiamata di ritornare più di un valore di ritorno
 * Il passaggio per riferimento *implica il passaggio per valore di un puntatore alla variabile*
 
 ```c
@@ -309,7 +309,7 @@ int main(int argc, char *argv[]) {
 
 # Ricorsione
 * Una funzione è definita in modo ricorsivo se è definita in termini di se stessa.
-* Nella definizione ricorsiva di una funzione è possibile identificare *casi base* e *casi ricorsivi*:
+* Nella definizione ricorsiva di una funzione è possibile identificare *casi base* e *casi ricorsivi*
 * I *casi base* permettono di calcolare il valore della funzione, anche se solo nei casi più semplici
 * I *casi ricorsivi* permettono di calcolare la funzione mediante altre valutazioni della funzione
 
@@ -325,17 +325,19 @@ n! = n x (n-1)!   (if n > 0)  // caso ricorsivo
 // implementazione fattoriale iterativa
 int fatt(int n) {
     int fatt, i;
-    for (i=1, fatt=1; i<=n; i++)
+    for (i = 1, fatt = 1; i <= n; i++) {
         fatt = fatt * i;
+    }
     return fatt;
 }
 ```
 
 ```c
 // implementazione fattoriale ricorsiva
-int fatt_r(int n) {
-    if (n == 0)
+int fattr(int n) {
+    if (n == 0) {
         return 1;
+    }
     return n * fatt_r(n - 1);
 }
 ```
@@ -356,7 +358,7 @@ int fibonacci(int n) {
 
 ```c
 // implementazione fibonacci ricorsiva
-int fibbonacci_r(int n) {    
+int fibbonaccir(int n) {    
     if (n == 0) return 0;
     if (n == 1) return 1;
     return (fibbonacci(n-1) + fibbonacci(n-2));

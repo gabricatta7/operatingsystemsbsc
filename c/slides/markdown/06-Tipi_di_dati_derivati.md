@@ -134,14 +134,18 @@ int i, j;
 }
 
 int main(void) {
-    int v[ROWS][COLS] = { {1, 2, 3}, {4, 5, 6}, };
+    int v[ROWS][COLS] = { 
+            {1, 2, 3}, 
+            {4, 5, 6},
+    };
 
     do_stuff(ROWS, COLS, v);
 }
 ```
 
 # Le strutture
-* Una struttura, o **struct**, è un tipo di dato derivato che permette di aggregare un insieme di elementi, detti *campi*, all'interno di un unica entità utilizzabile in modo unitario (Si tratta di una forma di aggregazione dei dati, si raggruppano variabili che hanno una correlazione logica per il problema da risolvere)
+* Una struttura, o **struct**, è un tipo di dato derivato che permette di aggregare un insieme di elementi, detti *campi*, all'interno di un unica entità utilizzabile in modo unitario
+* Si tratta di una forma di aggregazione dei dati, si raggruppano variabili che hanno una correlazione logica per il problema da risolvere
 * I campi di una struttura possono essere di tipo diverso, sia semplici che derivati, incluse altre strutture
 * Dopo la dichiarazione, *struct nome* diventa il nome di un *nuovo tipo di dato* che può essere usato per dichiarare variabili e puntatori
 
@@ -151,7 +155,8 @@ int main(void) {
        [tipo-campo nome-campo ; ... ]
 };
 
-struct nome a, *p;
+struct nome a;  // variabile di tipo struct nome
+struct nome *p; // puntatore a variabile di tipo struct nome
 ```
 
 # Esempio (struct punto)
@@ -165,8 +170,8 @@ struct punto {
     int y;
 };
 
-struct punto pt, pt2; /* dichiara due variabili */
-struct punto *pt_ptr;  /* dichiara un puntatore */
+struct punto pt, pt2;  /* dichiara due variabili struct punto */
+struct punto *pt_ptr;  /* dichiara un puntatore a struct punto */
 pt_ptr = &pt;
 ```
 
@@ -184,7 +189,7 @@ pt.x = 5;
 pt.y = -7
 ```
 
-* Le strutture si possono anche assegnare direttamente (i valori vengono *copiati* fra le due aree di memoria come nel caso delle normali variabili)
+* Le strutture si possono anche assegnare direttamente (i valori vengono **copiati** fra le due aree di memoria come nel caso delle normali variabili)
 
 ```c
 pt2 = pt;
@@ -201,11 +206,13 @@ struct punto {
 int main(void) {
     struct punto pt, pt2;
 
-    pt.x = 5; pt.y = -7;
+    pt.x = 5; 
+    pt.y = -7;
 
     pt2 = pt;
 
-    pt2.x = -5; pt2.y = 7;
+    pt2.x = -5; 
+    pt2.y = 7;
 
     /* Output: pt=[5, -7] pt2=[-5, 7] */
     printf("pt=[%d, %d] pt2=[%d, %d]\n", pt.x, pt.y, pt2.x, pt2.y);
