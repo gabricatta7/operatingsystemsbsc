@@ -293,12 +293,13 @@ struct data {
     int g; int m; int a;
 };
 
+/**
+ * Confronta 2 date, ritorna 0 se sono uguali.
+ */
 int datecmp(const struct data *d1, const struct data *d2) {
-    int ret;
-    if (!(ret=(d1->a - d2->a)))
-        if (!(ret=(d1->m - d2->m)))
-            ret=(d1->g - d2->g);
-    return ret;
+    return (d1->a == d2->a) &&
+        (d1->m == d2->m) &&
+        (d1->g == d2->g);
 }
 
 int main(void) {
@@ -378,10 +379,15 @@ enum identificatore { lista-di-elementi }
 
 ```c
 enum direzioni { nord, sud, ovest, est };
-enum direzioni dir; 
+enum direzioni dir;
 dir = est;
-...
 dir = nord;
+
+switch (dir) {
+    case nord: printf("%s\n", "nord"); break;
+    case sud: printf("%s\n", "sud"); break;
+    ...
+}
 ```
 
 # Le enumerazioni (enum)
@@ -396,25 +402,4 @@ enum direzioni dir;
 dir = est;
 ...
 dir = nord;
-```
-
-# Le enumerazioni (enum)
-
-```c
-typedef enum { falso, vero } booleano;
-
-booleano flags[10] = { vero };
-booleano flag = vero;
-
-/* Output: 1 */
-printf("%d\n", flag);
-/* Output: vero */
-printf("%s\n", flag != falso ? "vero" : "falso");
-/* Non produce errori di compilazione! */
-flag = 5; 
-
-/* in alternativa... */
-#define booleano int
-#define falso 0
-#define vero 1
 ```

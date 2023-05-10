@@ -80,28 +80,29 @@ int main(void) {
 * Il puntatore *p* è utilizzato per scorrere il vettore (inizializzato all'indirizzo del primo elemento)
 * Il ciclo termina quando il valore puntato \*p, è nullo (il valore 0 equivale alla condizione logica *falso*)
 * L'unico valore di *v* con valore zero deve essere ultimo, altrimenti il puntatore assumerà valori non validi andando ad accedere oltre la fine del vettore oppure il ciclo terminerà in modo prematuro
-* Approccio seguito nella gestione delle stringhe ma non adatto a vettori numerici
+* Approccio seguito nella gestione delle stringhe ma **non adatto** a vettori numerici
 
 ```c
-int *p, v[] = {1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-int sum = 0;
+char string[] = "hello world!";
+char *p;
 
-for (p = v; *p; p++) {
-  sum += *p;
+// prints "hello world!" letter by letter
+for (p = string; *p; p++) {
+    printf("%c", *p);
 }
 ```
 
 
 # Aritmetica dei puntatori
 * E' possibile fare la differenza (ma non la somma!) tra puntatori dello stesso tipo
-* Il risultato della differenza fra puntatori è un numero intero che rappresenta il numero di elementi tra i due puntatori
+* Il risultato della differenza fra puntatori è un numero intero che rappresenta **il numero di elementi** (non di bytes!) che separano i due puntatori
 * La dimensione di un singolo elemento è quella definita dal tipo di dato puntato
 
 ```c
 int main(void) {
     int *p, *q, v[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    p = &v[0];  /* p = v */
+    p = &v[0];  /* equivalente a p = v */
     
     q = p + 2;
     printf("%ld\n", q - p);     /* Output: 2 */
@@ -123,7 +124,9 @@ Gli operatori fondamentali per usare i puntatori sono:
 * Si noti che \*p == p[0], \*(p+i) == p[i]
 
 ```c
-int i, v[10], *p;
+int i;
+int v[10];
+int *p;
 
 p = v;      /* p punta ad indice 0 di v */
 p = &v[0];  /* p punta ad elemento con indice 0 di v */
@@ -136,9 +139,9 @@ i = p - v;  /* i == 5 */
 # Puntatori e stringhe
 * Vettori e puntatori sono concetti affini, ma esistono sottili differenze
   * I puntatori possono contenere indirizzi variabili nel corso dell'esecuzione, mentre i vettori rappresentano *indirizzi costanti* (non è possibile modificare l'indirizzo ad un vettore!)
-  * Le stringhe memorizzate in un vettore possono essere modificate in ogni momento o accedendo ai singoli elementi oppure tramite apposite funzioni (e.g., *strcpy*). Le stringhe memorizzate attraverso puntatore sono stringhe *senza nome* che possono essere memorizzate in aree di memoria in *sola lettura*
+  * Le stringhe memorizzate in un vettore possono essere modificate in ogni momento o accedendo ai singoli elementi oppure tramite apposite funzioni (e.g., *strcpy*). Le stringhe memorizzate attraverso puntatore sono invece memorizzate in aree di memoria in *sola lettura*
   * *sizeof* si comporta in modo diverso. Ritorna la dimensione del vettore o la dimensione del puntatore
-  * *&* si comporta in modo diverso. Ritorna l'indirizzo del primo elemento o l'inidirizzo del puntatore
+  * *&* si comporta in modo diverso. Ritorna l'indirizzo del primo elemento o l'indirizzo del puntatore
   
 ```c
 int main(void) {
@@ -192,14 +195,19 @@ int main(void) {
     char *strings[] = {
             "Sara", "Sebastiano", "Paolo", "Agostino", "Elvira", NULL
     };
-    char **p = strings;
+    char **p;
 
-    for (i = 0; i < 3; i++) {
-        printf("[%d] %s %s %s\n", i, strings[i], *(strings + i), *(p + i));
+    for (i = 0; i < 5; i++) {
+        printf("[%d] %s\n", i, strings[i]);
     }
-    
+
+    for (i = 0; i < 5; i++) {
+        printf("[%d] %s\n", i, *(strings + i));
+    }
+
+    i = 0;
     for (p = strings; *p; p++) {
-        printf("[%d] %s\n", i, *p);
+        printf("[%d] %s\n", i++, *p);
     }
 }
 ```

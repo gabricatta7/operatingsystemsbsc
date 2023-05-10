@@ -183,7 +183,7 @@ dove:
 
 ---
 
-Esercizio 10. Implementare una funzione *show_addresses* per che mostri all'utente che le celle di una matrice sono
+Esercizio 10. Implementare una funzione *show_addresses* che mostri all'utente che le celle di una matrice sono
 memorizzate in modo contiguo, riga dopo riga.
 
 ```c
@@ -193,4 +193,32 @@ void show_addresses(int rows, int cols, int m[][cols]);
 dove:
 
 * **m** è la matrice di input, con **rows** righe e **cols** colonne.
+
+---
+
+Esercizio 11. Data la seguente definizione:
+
+```
+#define FIELD_LEN 30
+struct person {
+    char name[FIELD_LEN];
+    char lastname[FIELD_LEN];
+    double age;
+};
+```
+
+Implementare una coppia di funzioni *init_person*, *show_person* per inizializzare e visualizzare una struct person, rispettivamente. 
+Le due funzioni devono aderire ai seguenti prototipi:
+
+```c
+void init_person(struct person *person, char *name, char *lastname, double age);
+void show_person(struct person *person);
+```
+
+dove:
+
+* **person** è il puntatore alla struct person da manipolare;
+* **name** è il puntatore all'array di caratteri che contiene il nome della persona;
+* **lastname** è il puntatore all'array di caratteri che contiene il cognome della persona;
+* **age** è un valore double che rappresenta l'età della persona.
 
