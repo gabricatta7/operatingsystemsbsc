@@ -346,7 +346,8 @@ typedef long time_t;
 
 ```c
 typedef struct {
-    int x, y;
+    int x;
+    int y;
     int raggio;
 } cerchio_t;
 ```
