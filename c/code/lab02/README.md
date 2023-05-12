@@ -139,7 +139,7 @@ void trova_max(int *rmax, const int *values, unsigned size);
 
 dove:
 
-* **rmax** è il puntatore alla variabile che conterrà il valore massimo trovato;
+* **rmax** è il puntatore loralla variabile che conterrà il vae massimo trovato;
 * **values** è il puntatore all’array;
 * **size** è la dimensione dell’array.
 

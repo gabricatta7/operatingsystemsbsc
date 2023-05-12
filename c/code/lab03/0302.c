@@ -1,4 +1,4 @@
-#include <stdio.h>
+pr#include <stdio.h>
 
 void diagonals(int *rdp, int *rds, unsigned cols, const int m[][cols]) {
     unsigned row;
